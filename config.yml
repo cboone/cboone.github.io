@@ -8,78 +8,84 @@ pagination:
   pagerSize: 20
 
 taxonomies:
-    tag: tags
+  tag: tags
 
 menu:
-    main:
-        - name: Notes
-          url: notes/
-          weight: 1
-        - name: Projects
-          url: projects/
-          weight: 2
+  main:
+    - name: Notes
+      url: notes/
+      weight: 1
+    - name: Projects
+      url: projects/
+      weight: 2
 
 params:
-    author: Christopher Boone
-    DateFormat: "January 2006"
-    defaultTheme: auto
-    disableAnchoredHeadings: true
-    disableScrollToTop: true
-    disableSpecial1stPost: true
-    disableThemeToggle: false
-    hideFooter: false
-    MainSections: ["notes","projects"]
-    ShowAllPagesInArchive: false
-    ShowBreadCrumbs: false
-    ShowCodeCopyButtons: true
-    ShowPostNavLinks: false
-    ShowReadingTime: false
-    ShowShareButtons: false
-    ShowToc: false
-    ShowWordCount: false
-    TocOpen: true
-    UseHugoToc: true
-    comments: false
-    math: true
-    profileMode:
-          enabled: true
-          title: Christopher Boone
-          subtitle: ""
-          imageUrl: "picture.png"
-          imageWidth: 160
-          imageHeight: 160
-          buttons:
-            - name: Notes
-              url: notes/
-            - name: Projects
-              url: projects/
+  author: Christopher Boone
+  DateFormat: "January 2006"
+  defaultTheme: auto
+  disableAnchoredHeadings: true
+  disableScrollToTop: true
+  disableSpecial1stPost: true
+  disableThemeToggle: false
+  hideFooter: false
+  MainSections: ["notes", "projects"]
+  ShowAllPagesInArchive: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: false
+  ShowReadingTime: false
+  ShowShareButtons: false
+  ShowToc: false
+  ShowWordCount: false
+  TocOpen: true
+  UseHugoToc: true
+  comments: false
+  math: true
+  profileMode:
+    enabled: true
+    title: Christopher Boone
+    subtitle: "Hands on generalist."
+    imageUrl: "profile.png"
+    imageWidth: 160
+    imageHeight: 160
+    buttons:
+      - name: Notes
+        url: notes/
+      - name: Projects
+        url: projects/
 
-    socialIcons:
-        - name: GitHub
-          url: https://github.com/cboone
-        - name: Instagram
-          url: https://instagram.com/
-        - name: LinkedIn
-          url: https://linkedin.com/in/
+  socialIcons:
+    - name: GitHub
+      url: https://github.com/cboone
+    - name: Instagram
+      url: https://instagram.com/catamounthardware
+    - name: LinkedIn
+      url: https://linkedin.com/in/cboone
+    - name: SoundCloud
+      url: https://soundcloud.com/cboone
+    - name: Spotify
+      url: https://open.spotify.com/artist/2weE50JXxHzKpjVNr4fQiH
+    - name: AppleMusic
+      url: https://music.apple.com/artist/christopher-boone/1801335941
 
-    assets:
-        disableScrollBarStyle: true
-    cover:
-        hiddenInList: false
-        hiddenInSingle: true
-    label:
-      icon: favicon.ico
-      iconHeight: 18
-      text: "Christopher Boone"
+  assets:
+    disableScrollBarStyle: true
+  cover:
+    hiddenInList: false
+    hiddenInSingle: true
+  label:
+    icon: favicon.ico
+    iconHeight: 18
+    text: "Christopher Boone"
 
 markup:
-    goldmark:
-        renderer:
-            unsafe: true
-    highlight:
-        guessSyntax: true
-        style: autumn
-    tableOfContents:
-        endLevel: 2
-        ordered: false
-        startLevel: 2
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    guessSyntax: true
+    style: autumn
+  tableOfContents:
+    endLevel: 2
+    ordered: false
+    startLevel: 2

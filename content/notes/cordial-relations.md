@@ -2,6 +2,7 @@
 date: 2026-01-07
 description: "Notes on working with Claude Code and other AI tools."
 title: "Notes on cordial relationships with our new overlords"
+draft: true
 ---
 
 In no particular order.
@@ -76,7 +77,7 @@ There's a million blog posts out there about "context engineering", if you want 
 
 ## Command line, git
 
-In general, Claude's super good with the command line. But the specific commands it comes up with can be... idiosyncratic. Fucker *loves* `sed`.
+In general, Claude's super good with the command line. But the specific commands it comes up with can be... idiosyncratic. Fucker _loves_ `sed`.
 
 In some ways it's super good with `git`. I let it write commit messages all the time, it's great at that. But anything complex and I do it manually. I'm a big fan of `git add --patch`, which is too subtle for Claude at the moment. Simple rebases are fine, but if it gets tricky I take over. But I love `git` way more than a normal person should. YMMV.
 
