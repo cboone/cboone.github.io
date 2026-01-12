@@ -4,12 +4,60 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a GitHub Pages personal site repository (`cboone.github.io`). Currently minimal - contains only an empty README file.
+Personal website for Christopher Boone, built with Hugo and the PaperMod theme. Deployed to GitHub Pages at `https://cboone.github.io`.
 
-## GitHub Pages
+## Tech Stack
 
-The site is served at `https://cboone.github.io`. Any HTML, CSS, or JavaScript files added to the root or configured directories will be automatically served by GitHub Pages.
+- **Static site generator:** Hugo
+- **Theme:** PaperMod (Git submodule in `themes/PaperMod/`)
+- **Deployment:** GitHub Actions to GitHub Pages
+- **Branch strategy:** `main` for development, `production` for deployment
 
-To add content:
-- Add an `index.html` for the main page
-- Optionally use Jekyll for static site generation (GitHub Pages has built-in Jekyll support)
+## Common Commands
+
+```bash
+# Run local development server
+hugo server
+
+# Build site (outputs to public/)
+hugo
+
+# Create new note
+hugo new notes/my-note.md
+
+# Create new project
+hugo new projects/my-project.md
+```
+
+## Project Structure
+
+```
+.
+├── archetypes/          # Templates for new content
+├── assets/css/          # Custom CSS overrides
+├── content/
+│   ├── notes/           # Blog posts and notes
+│   └── projects/        # Project pages
+├── layouts/             # Custom layout overrides
+├── static/              # Static files (images, favicon, etc.)
+├── themes/PaperMod/     # Theme (Git submodule)
+└── config.yml           # Hugo configuration
+```
+
+## Configuration
+
+Main configuration is in `config.yml`. Key sections:
+
+- `menu.main` - Navigation menu items
+- `params.profileMode` - Homepage profile settings
+- `params.socialIcons` - Social media links
+
+## Content
+
+- Notes go in `content/notes/` with front matter including `date`, `title`, and optional `description`
+- Projects go in `content/projects/` with similar front matter
+- Static files (images, PDFs) go in `static/`
+
+## Deployment
+
+Push to `production` branch triggers GitHub Actions workflow that builds and deploys to GitHub Pages.
