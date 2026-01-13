@@ -22,8 +22,11 @@ hugo server
 # Build site (outputs to public/)
 hugo
 
-# Create new note
-hugo new notes/my-note.md
+# Create new LLM post
+hugo new llms/my-post.md
+
+# Create new math post
+hugo new math/my-post.md
 
 # Create new project
 hugo new projects/my-project.md
@@ -36,7 +39,8 @@ hugo new projects/my-project.md
 ├── archetypes/          # Templates for new content
 ├── assets/css/          # Custom CSS overrides
 ├── content/
-│   ├── notes/           # Blog posts and notes
+│   ├── llms/            # LLM-related posts
+│   ├── math/            # Math-related posts
 │   └── projects/        # Project pages
 ├── layouts/             # Custom layout overrides
 ├── static/              # Static files (images, favicon, etc.)
@@ -54,7 +58,8 @@ Main configuration is in `config.yml`. Key sections:
 
 ## Content
 
-- Notes go in `content/notes/` with front matter including `date`, `title`, and optional `description`
+- LLM posts go in `content/llms/` with front matter including `date`, `title`, and optional `description`
+- Math posts go in `content/math/` with front matter including `date`, `title`, and optional `description`
 - Projects go in `content/projects/` with similar front matter
 - Static files (images, PDFs) go in `static/`
 

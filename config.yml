@@ -12,12 +12,15 @@ taxonomies:
 
 menu:
   main:
-    - name: Notes
-      url: notes/
+    - name: LLMs
+      url: llms/
       weight: 1
+    - name: Math
+      url: math/
+      weight: 2
     - name: Projects
       url: projects/
-      weight: 2
+      weight: 3
 
 params:
   author: Christopher Boone
@@ -28,7 +31,7 @@ params:
   disableSpecial1stPost: true
   disableThemeToggle: false
   hideFooter: false
-  MainSections: ["notes", "projects"]
+  MainSections: ["llms", "math", "projects"]
   ShowAllPagesInArchive: false
   ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
@@ -49,8 +52,10 @@ params:
     imageWidth: 160
     imageHeight: 160
     buttons:
-      - name: Notes
-        url: notes/
+      - name: LLMs
+        url: llms/
+      - name: Math
+        url: math/
       - name: Projects
         url: projects/
 
