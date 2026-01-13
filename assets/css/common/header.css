@@ -41,12 +41,12 @@ button#theme-toggle {
     margin: auto 4px;
 }
 
-body.dark #moon {
+[data-theme="dark"] #moon {
     vertical-align: middle;
     display: none;
 }
 
-body:not(.dark) #sun {
+:root:not([data-theme="dark"]) #sun {
     display: none;
 }
 

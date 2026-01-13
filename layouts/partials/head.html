@@ -128,11 +128,11 @@
                 background: var(--theme);
             }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
+            .list::-webkit-scrollbar-track {
                 background: 0 0;
             }
 
-            .list:not(.dark)::-webkit-scrollbar-thumb {
+            .list::-webkit-scrollbar-thumb {
                 border-color: var(--theme);
             }
         }
@@ -153,36 +153,40 @@
 {{- partial "math.html" .}}
 {{ end }}
 
-{{- /* Theme detection script - uses documentElement since body doesn't exist yet in head */}}
+{{- /* Theme detection script - aligned with PaperMod original using data-theme attribute */}}
 {{- if (not site.Params.disableThemeToggle) }}
 {{- if (eq site.Params.defaultTheme "light") }}
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
-        document.documentElement.classList.add('dark');
+        document.querySelector("html").dataset.theme = "dark";
     }
 </script>
 {{- else if (eq site.Params.defaultTheme "dark") }}
 <script>
     if (localStorage.getItem("pref-theme") === "light") {
-        document.documentElement.classList.remove('dark')
+        document.querySelector("html").dataset.theme = "light";
     }
 </script>
 {{- else }}
 {{- /* theme is auto */}}
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
-        document.documentElement.classList.add('dark');
+        document.querySelector("html").dataset.theme = "dark";
     } else if (localStorage.getItem("pref-theme") === "light") {
-        document.documentElement.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
+        document.querySelector("html").dataset.theme = "light";
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.querySelector("html").dataset.theme = "dark";
+    } else {
+        document.querySelector("html").dataset.theme = "light";
     }
 </script>
 {{- end }}
 {{- else if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark"))}}
 <script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.querySelector("html").dataset.theme = "dark";
+    } else {
+        document.querySelector("html").dataset.theme = "light";
     }
 </script>
 {{- end }}
