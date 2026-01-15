@@ -1,10 +1,8 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+# cboone.github.io
 
 ## Project Overview
 
-Personal website for Christopher Boone, built with Hugo and the PaperMod theme. Deployed to GitHub Pages at `https://cboone.github.io`.
+Personal website for Christopher Boone, built with Hugo and the PaperMod theme, as updated by [Pascal Michaillat](https://pascalmichaillat.org)'s [hugo-website theme](https://github.com/pmichaillat/hugo-website). Deployed to GitHub Pages at `https://cboone.github.io`.
 
 ## Tech Stack
 
@@ -34,7 +32,7 @@ hugo new projects/my-project.md
 
 ## Project Structure
 
-```
+```text
 .
 ├── archetypes/          # Templates for new content
 ├── assets/css/          # Custom CSS overrides
