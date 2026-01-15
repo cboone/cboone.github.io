@@ -3,7 +3,9 @@ title: Christopher Boone
 theme: PaperMod
 
 enableInlineShortcodes: true
+
 enableRobotsTXT: true
+
 pagination:
   pagerSize: 20
 
@@ -27,33 +29,44 @@ menu:
 
 params:
   author: Christopher Boone
+
+  MainSections: ["llms", "math", "projects", "tools"]
+
   DateFormat: "January 2006"
+
+  comments: false
   defaultTheme: auto
   disableAnchoredHeadings: true
-  disableScrollToTop: true
+  disableScrollToTop: false
   disableSpecial1stPost: true
   disableThemeToggle: false
   hideFooter: false
-  MainSections: ["llms", "math", "projects", "tools"]
+  math: true
+
   ShowAllPagesInArchive: false
   ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
   ShowPostNavLinks: false
   ShowReadingTime: false
   ShowShareButtons: false
-  ShowToc: false
+
   ShowWordCount: false
+
+  ShowToc: false
   TocOpen: true
   UseHugoToc: true
-  comments: false
-  math: true
+
   profileMode:
     enabled: true
+
     title: Christopher Boone
     subtitle: "Hands on generalist."
+
     imageUrl: "profile.png"
-    imageWidth: 160
+    imageTitle: Christopher Boone
     imageHeight: 160
+    imageWidth: 160
+
     buttons:
       - name: LLMs
         url: llms/
@@ -80,9 +93,11 @@ params:
 
   assets:
     disableScrollBarStyle: true
+
   cover:
     hiddenInList: false
     hiddenInSingle: true
+
   label:
     icon: favicon.ico
     iconHeight: 18
@@ -92,9 +107,11 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+
   highlight:
     guessSyntax: true
     style: autumn
+
   tableOfContents:
     endLevel: 2
     ordered: false
