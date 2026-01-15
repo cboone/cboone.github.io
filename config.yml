@@ -21,6 +21,9 @@ menu:
     - name: Projects
       url: projects/
       weight: 3
+    - name: Tools
+      url: tools/
+      weight: 4
 
 params:
   author: Christopher Boone
@@ -31,7 +34,7 @@ params:
   disableSpecial1stPost: true
   disableThemeToggle: false
   hideFooter: false
-  MainSections: ["llms", "math", "projects"]
+  MainSections: ["llms", "math", "projects", "tools"]
   ShowAllPagesInArchive: false
   ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
@@ -58,6 +61,8 @@ params:
         url: math/
       - name: Projects
         url: projects/
+      - name: Tools
+        url: tools/
 
   socialIcons:
     - name: GitHub

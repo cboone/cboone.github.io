@@ -28,6 +28,9 @@ hugo new math/my-post.md
 
 # Create new project
 hugo new projects/my-project.md
+
+# Create new tool post
+hugo new tools/my-tool.md
 ```
 
 ## Project Structure
@@ -39,7 +42,8 @@ hugo new projects/my-project.md
 ├── content/
 │   ├── llms/            # LLM-related posts
 │   ├── math/            # Math-related posts
-│   └── projects/        # Project pages
+│   ├── projects/        # Project pages
+│   └── tools/           # Tools I use
 ├── layouts/             # Custom layout overrides
 ├── static/              # Static files (images, favicon, etc.)
 ├── themes/PaperMod/     # Theme (Git submodule)
@@ -59,6 +63,7 @@ Main configuration is in `config.yml`. Key sections:
 - LLM posts go in `content/llms/` with front matter including `date`, `title`, and optional `description`
 - Math posts go in `content/math/` with front matter including `date`, `title`, and optional `description`
 - Projects go in `content/projects/` with similar front matter
+- Tool posts go in `content/tools/` with similar front matter
 - Static files (images, PDFs) go in `static/`
 
 ## Deployment
