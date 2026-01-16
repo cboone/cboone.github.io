@@ -19,9 +19,10 @@
 
 .notice-head p {
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2;
   margin: 0;
+  opacity: 0.8;
   text-transform: uppercase;
 }
 
