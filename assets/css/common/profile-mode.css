@@ -19,7 +19,9 @@
 }
 
 .profile .profile_inner h1 {
-    font-size: 2.5rem;
+    font-size: var(--text-3xl);
+    letter-spacing: var(--tracking-tighter);
+    line-height: var(--leading-tight);
 }
 
 .profile img {

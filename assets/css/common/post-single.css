@@ -4,8 +4,10 @@
 }
 
 .post-title {
+    font-size: var(--text-3xl);
+    letter-spacing: var(--tracking-tighter);
+    line-height: var(--leading-tight);
     margin-bottom: 20px;
-    font-size: 36px;
 }
 
 .post-description {
@@ -16,7 +18,7 @@
 .post-meta,
 .breadcrumbs {
     color: var(--secondary);
-    font-size: 15px;
+    font-size: var(--text-sm);
 }
 
 .post-meta .i18n_list li {
@@ -32,44 +34,53 @@
     font-size: var(--textsize);
 }
 
-.post-content h3,
-.post-content h4,
-.post-content h5,
-.post-content h6 {
-    margin: 24px 0 16px;
-}
 
 .post-content h1 {
-    margin: 40px auto 32px;
-    font-size: 40px;
+    font-size: var(--text-3xl);
+    letter-spacing: var(--tracking-tighter);
+    line-height: var(--leading-tight);
+    margin: 48px auto 24px;
 }
 
 .post-content h2 {
-    margin: 32px auto 24px;
-    font-size: 24px;
+    font-size: var(--text-2xl);
+    letter-spacing: var(--tracking-tighter);
+    line-height: var(--leading-tight);
+    margin: 40px auto 20px;
 }
 
 .post-content h3 {
-    font-size: 19px;    
+    font-size: var(--text-xl);
+    line-height: var(--leading-tight);
+    margin: 32px 0 16px;
 }
 
 .post-content h4 {
-    font-size: 15px;    
-    font-weight: var(--semibold);
-    text-transform: uppercase;
     color: var(--gray);
+    font-size: var(--text-lg);
+    font-weight: var(--semibold);
+    line-height: var(--leading-tight);
+    margin: 28px 0 14px;
 }
 
 .post-content h5 {
-    font-size: 14px;
-    font-weight: var(--semibold);
-    text-transform: uppercase;
     color: var(--gray);
+    font-size: var(--text-base);
+    font-weight: var(--semibold);
+    letter-spacing: var(--tracking-wide);
+    line-height: var(--leading-tight);
+    margin: 24px 0 12px;
+    text-transform: uppercase;
 }
 
 .post-content h6 {
-    font-size: var(--footersize);
     color: var(--secondary);
+    font-size: var(--text-sm);
+    font-weight: var(--semibold);
+    letter-spacing: var(--tracking-wide);
+    line-height: var(--leading-tight);
+    margin: 20px 0 10px;
+    text-transform: uppercase;
 }
 
 .post-content a,
