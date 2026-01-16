@@ -28,20 +28,20 @@
 
 .post-content :not(table) ::-webkit-scrollbar-thumb {
     border: 2px solid var(--code-block-bg);
-    background: rgb(113, 113, 117);
+    background: var(--scrollbar-code-thumb);
 }
 
 .post-content :not(table) ::-webkit-scrollbar-thumb:hover {
-    background: rgb(163, 163, 165);
+    background: var(--scrollbar-code-thumb-hover);
 }
 
 .gist table::-webkit-scrollbar-thumb {
-    border: 2px solid rgb(255, 255, 255);
-    background: rgb(173, 173, 173);
+    border: 2px solid var(--scrollbar-gist-border);
+    background: var(--scrollbar-gist-thumb);
 }
 
 .gist table::-webkit-scrollbar-thumb:hover {
-    background: rgb(112, 112, 112);
+    background: var(--scrollbar-gist-thumb-hover);
 }
 
 .post-content table::-webkit-scrollbar-thumb {

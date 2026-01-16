@@ -133,7 +133,7 @@
 
 .post-content dt {
     width: 25%;
-    font-weight: 700;
+    font-weight: var(--bold);
 }
 
 .post-content dd {
@@ -266,14 +266,14 @@
 .post-content figure > figcaption {
     color: var(--primary);
     font-size: 16px;
-    font-weight: bold;
+    font-weight: var(--bold);
     margin: 8px 0 16px;
 }
 
 .post-content figure > figcaption > p {
     color: var(--secondary);
     font-size: 14px;
-    font-weight: normal;
+    font-weight: var(--normal);
 }
 
 .toc {
@@ -392,7 +392,7 @@ h6:hover .anchor {
     display: inline-flex;
     color: var(--darkcolor);
     margin-inline-start: 10px;
-    font-weight: 700;
+    font-weight: var(--bold);
     user-select: none;
 }
 

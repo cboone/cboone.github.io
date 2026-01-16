@@ -36,7 +36,7 @@
 
 .archive-entry-title {
     margin: 5px 0;
-    font-weight: normal;
+    font-weight: var(--normal);
     font-size: var(--homesize);
 }
 

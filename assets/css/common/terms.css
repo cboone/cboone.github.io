@@ -8,7 +8,7 @@
     display: block;
     padding: 3px 10px;
     background: var(--tertiary);
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     transition: transform 0.1s;
     font-size: var(--homesize);
 }
