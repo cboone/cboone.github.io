@@ -1,0 +1,101 @@
+.notice {
+  background-color: rgba(9, 195, 237, 0.15);
+  border: 1px solid;
+  border-color: currentColor;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+
+.notice-head {
+  align-items: center;
+  display: flex;
+}
+
+.notice-head svg {
+  margin-right: 0.75rem;
+}
+
+.notice-head p {
+  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+}
+
+.notice-body {
+  margin-top: 0.75rem;
+}
+
+.notice-body p {
+  margin: 0;
+}
+
+.notice.abstract {
+  background-color: rgba(12, 166, 140, 0.15);
+  color: #0ca68c;
+}
+
+.notice.bug {
+  background-color: rgba(227, 26, 0, 0.15);
+  color: #e31a00;
+}
+
+.notice.danger {
+  background-color: rgba(227, 26, 0, 0.15);
+  color: #e31a00;
+}
+
+.notice.example {
+  background-color: rgba(184, 54, 207, 0.15);
+  color: #b83acf;
+}
+
+.notice.failure {
+  background-color: rgba(227, 26, 0, 0.15);
+  color: #e31a00;
+}
+
+.notice.info {
+  background-color: rgba(9, 195, 237, 0.15);
+  color: #09c3ed;
+}
+
+.notice.note {
+  background-color: rgba(41, 61, 242, 0.15);
+  color: #293df2;
+}
+
+.notice.question {
+  background-color: rgba(227, 137, 2, 0.15);
+  color: #e38902;
+}
+
+.notice.quote {
+  background-color: rgba(145, 142, 145, 0.15);
+  color: #918e91;
+}
+
+.notice.success {
+  background-color: rgba(4, 217, 4, 0.15);
+  color: #04d904;
+}
+
+.notice.tip {
+  background-color: rgba(25, 207, 176, 0.15);
+  color: #19cfb0;
+}
+
+.notice.todo {
+  background-color: rgba(141, 5, 168, 0.15);
+  color: #8d05a8;
+}
+
+.notice.warning {
+  background-color: rgba(227, 137, 2, 0.15);
+  color: #e38902;
+}
+
+html[data-theme="dark"] .notice-head p {
+  color: #d1d5db;
+}
