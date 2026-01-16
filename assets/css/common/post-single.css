@@ -34,7 +34,6 @@
     font-size: var(--textsize);
 }
 
-
 .post-content h1 {
     font-size: var(--text-3xl);
     letter-spacing: var(--tracking-tighter);
@@ -87,7 +86,7 @@
 .post-meta a,
 .toc a:hover {
     box-shadow: 0 2px 0 var(--darkcolor);
-    color: currentColor; 
+    color: currentColor;
 }
 
 .post-content a code {
@@ -236,7 +235,7 @@
 .post-content blockquote {
     margin: 20px 0;
     padding: 0 20px;
-    color: var(--secondary);    
+    color: var(--secondary);
     border-inline-start: 6px solid var(--tertiary);
 }
 
@@ -339,7 +338,6 @@
     gap: 10px;
 }
 
-
 .post-tags li {
     display: inline-block;
 }
@@ -380,7 +378,6 @@
 .share-buttons a {
     display: inline-flex;
 }
-
 
 .share-buttons a:not(:last-of-type) {
     margin-inline-end: 12px;
@@ -424,7 +421,6 @@ h6:hover .anchor {
 .paginav .next {
     width: 50%;
 }
-
 
 .paginav .next {
     margin-inline-start: auto;
