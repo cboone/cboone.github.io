@@ -173,12 +173,12 @@
 }
 
 .post-content .highlight table {
-    border-radius: var(--radius);
+    border-radius: 0;
 }
 
 .post-content .highlight:not(table) {
     background: var(--code-block-bg) !important;
-    border-radius: var(--radius);
+    border-radius: 0;
     direction: ltr;
     margin: 10px auto;
     overflow: hidden;
@@ -219,7 +219,7 @@
     font-size: 0.78em;
     line-height: var(--lineheight);
     background: var(--code-bg);
-    border-radius: 2px;
+    border-radius: 0;
 }
 
 .post-content pre code {
@@ -227,7 +227,7 @@
     margin: auto 0;
     padding: 10px;
     color: var(--secondary);
-    border-radius: var(--radius);
+    border-radius: 0;
     overflow-x: auto;
     word-break: break-all;
 }
