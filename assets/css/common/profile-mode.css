@@ -11,14 +11,14 @@
     padding: var(--gap);
 }
 
-.profile .profile_inner {
+.profile .profile-inner {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
 }
 
-.profile .profile_inner h1 {
+.profile .profile-inner h1 {
     font-size: var(--text-3xl);
     letter-spacing: var(--tracking-tighter);
     line-height: var(--leading-tight);

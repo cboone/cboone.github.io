@@ -21,7 +21,7 @@
     font-size: var(--text-sm);
 }
 
-.post-meta .i18n_list li {
+.post-meta .i18n-list li {
     display: inline-flex;
     list-style: none;
     margin: auto 3px;
