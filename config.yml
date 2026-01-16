@@ -17,15 +17,15 @@ taxonomies:
 
 menu:
   main:
-    - name: LLMs
-      url: llms/
-      weight: 1
-    - name: Math
-      url: math/
-      weight: 2
-    - name: Projects
-      url: projects/
-      weight: 3
+    # - name: LLMs
+    #   url: llms/
+    #   weight: 1
+    # - name: Math
+    #   url: math/
+    #   weight: 2
+    # - name: Projects
+    #   url: projects/
+    #   weight: 3
     - name: Tools
       url: tools/
       weight: 4
@@ -33,7 +33,8 @@ menu:
 params:
   author: Christopher Boone
 
-  MainSections: ["llms", "math", "projects", "tools"]
+  # MainSections: ["llms", "math", "projects", "tools"]
+  MainSections: ["tools"]
 
   DateFormat: "January 2006"
 
@@ -71,12 +72,12 @@ params:
     imageWidth: 160
 
     buttons:
-      - name: LLMs
-        url: llms/
-      - name: Math
-        url: math/
-      - name: Projects
-        url: projects/
+      # - name: LLMs
+      #   url: llms/
+      # - name: Math
+      #   url: math/
+      # - name: Projects
+      #   url: projects/
       - name: Tools
         url: tools/
 
