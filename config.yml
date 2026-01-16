@@ -113,7 +113,7 @@ markup:
 
   highlight:
     guessSyntax: true
-    style: autumn
+    noClasses: false
 
   tableOfContents:
     endLevel: 2

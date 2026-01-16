@@ -1,7 +1,3 @@
-.chroma {
-    background-color: unset !important;
-}
-
 .chroma .hl {
     display: flex;
 }
