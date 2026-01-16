@@ -30,8 +30,8 @@
   margin-top: 0.625rem;
 }
 
-.notice-body p {
-  margin: 0;
+.notice-body > *:last-child {
+  margin-bottom: 0;
 }
 
 /* Light mode colors */

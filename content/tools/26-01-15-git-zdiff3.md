@@ -11,7 +11,9 @@ For years now, the better choice has been `diff3`. That setting makes it so the 
 
 Even better, since 2022 (`git` version 2.35), there's been a third setting option: `zdiff3`. Which not only includes the original context of the changes, but pulls out overlapping, similar content from each of the changes. Thus reducing the amount of conflict you need to think about.
 
-This all sounds a little abstract, I realize. The short version: in your `.gitconfig`:
+This all sounds a little abstract, I realize. The short version:
+
+In your `.gitconfig`:
 
 ```gitconfig
 [merge]

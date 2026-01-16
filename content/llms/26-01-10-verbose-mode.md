@@ -14,7 +14,6 @@ claude --verbose
 Or by typing `control-o` during a session. Or by going into `/config` and toggling it on.
 
 Once on, the setting will persist across `claude` instances and sessions.
-
 {{< /notice >}}
 
 As [the docs say](https://code.claude.com/docs/en/cli-reference) (also [here](https://code.claude.com/docs/en/common-workflows#configure-thinking-mode)), this serves to:
