@@ -1,9 +1,9 @@
 ---
 date: 2026-01-07
-description: "Notes on working with Claude Code and other AI tools."
 title: "Notes on cordial relationships with our new overlords"
-draft: true
 ---
+
+Written for a friend who's getting started with the LLMs, Claude Code specifically.
 
 In no particular order.
 
@@ -21,9 +21,11 @@ YMMV.
 
 ## Usage
 
-Don't use `/usage` in the console, it counts against you. Seems like a bug. I use [`owloops/claude-powerline`](https://github.com/Owloops/claude-powerline) to show me the usage in an ongoing way. I believe it uses data that comes back from the API with every request, so no extra calls being made. It takes a little futzing to get it set up correctly. I'll paste my config down below.
+Don't use `/usage` in the console, it counts against you. Seems like a bug.
 
-There's also [hamed-elfayome/Claude-Usage-Tracker](https://github.com/hamed-elfayome/Claude-Usage-Tracker), which is a macOS menu bar widget. Looks cool, I haven't gotten around to setting it up yet.
+I use [`owloops/claude-powerline`](https://github.com/Owloops/claude-powerline) to show me the usage in an ongoing way. I believe it uses data that comes back from the API with every request, so no extra calls being made. It takes a little futzing to get it set up correctly. I'll paste my config down below.
+
+There's also [`hamed-elfayome/Claude-Usage-Tracker`](https://github.com/hamed-elfayome/Claude-Usage-Tracker), which is a macOS menu bar widget. Looks cool, I haven't gotten around to setting it up yet.
 
 ## General workflow
 
@@ -63,9 +65,7 @@ You've got a context window. As you proceed, it fills up. The stuff in it gets s
 
 You can run `/compact` yourself at any point. More interestingly, you can give the compact command specific instructions: `/compact include new API details` or whatever is important to retain.
 
-Some people recommend running `/clear`, which wipes the context completely. I never do. Mostly because I don't want to erase the history (which does get saved, and it is possible to access it, though I've only done that once so far). What I do is just start a new session. That way the old one is still around if I want (very hypothetically) to refer to it.
-
-At the moment there's no in-console way to start a new session. You have to exit `claude` and run it again.
+Use `/clear` to start a new session. (Poorly named, IMO, though it does indeed clear the scrollback.)
 
 I always give my sessions names using `/rename`. Makes it easier to keep track of what I'm up to. `/resume` allows you to jump back into a session, or you can `claude --continue` from the command line to jump into the last one you were using. Seems to be per-directory or repo or something.
 
@@ -79,7 +79,7 @@ There's a million blog posts out there about "context engineering", if you want 
 
 In general, Claude's super good with the command line. But the specific commands it comes up with can be... idiosyncratic. Fucker _loves_ `sed`.
 
-In some ways it's super good with `git`. I let it write commit messages all the time, it's great at that. But anything complex and I do it manually. I'm a big fan of `git add --patch`, which is too subtle for Claude at the moment. Simple rebases are fine, but if it gets tricky I take over. But I love `git` way more than a normal person should. YMMV.
+In some ways it's super good with `git`. I let it write commit messages all the time, it's great at that. But anything complex and I do it manually. I'm a big fan of `git add --patch`, which Claude can't handle at the moment due to its interactive nature. (Why not? Isn't it just more typing into the shell?) Simple rebases are fine, but if it gets tricky I take over. But I love `git` way more than a normal person should. YMMV.
 
 Speaking generally, if you can do something via the command line, it's a good way to get `claude` to do it. It's shockingly good at writing bash scripts. So I'll often have it write up a script to do a thing, rather than winging it command by command. Like the plans, even if it's only around for a commit or two, it's nice to have the specific audit trail of what was going on. Again though, I like bash an unreasonable amount, so you might approach it differently. I've actually built up a pretty epic bash style guide, and I've got an associated skill (more on those below) that works well.
 
@@ -91,13 +91,13 @@ As I said above, I use the desktop and iOS apps in regular chat mode to do gener
 
 I also use code mode on them. This gets trickier.
 
-Code mode on the iOS app is the simplest. It runs in a cloud environment, some VM that Anthropic runs for you. AFAIK, the only thing you can configure is how much network access the container has: none, the normal amount (which is fairly restricted), or all. I guess the default is "some" because who knows what you have in your repo, and maybe you don't to expose it all to the web. (Though personally I feel like exfiltration risks are minimal for the things I do.) But of course you shouldn't be storing secrets or PII or whatever in your repo anyway!
+Code mode on the iOS app is the simplest. It runs in a cloud environment, some VM that Anthropic runs for you. AFAIK, the only thing you can configure is how much network access the container has: none; the normal amount (which is fairly restricted); or all. I guess the default is "some" because who knows what you have in your repo, and maybe you don't to expose it all to the web. (Though personally I feel like exfiltration risks are minimal for the things I do.) But of course you shouldn't be storing secrets or PII or whatever in your repo anyway!
 
 Regardless, Claude does a good job running in "normal" mode, but if you want it to be able to download dependencies and such, you've got to open it up.
 
 Code mode on the iOS app tends to be much more hands-off. It doesn't ask you for permissions every ten seconds, it just runs. And when it's done, it sends you a PR. Nice and simple. You can, of course, continue the chat and have it update the PR. So for certain kinds of things it's fantastic: give it a task, let it rip, see what it comes up with. Repeat.
 
-Code mode on the desktop app allows you to do all of that, plus you can run it in local mode. In which case it creates a worktree (stored in `~/.claude/` somewhere). So that's kind of a nice in between ground. More autonomous than `claude` cli, but more real than the cloud environment. And it manages the worktree (to some degree, though the problems I mentioned above still apply), so that's easier than creating one manually and firing up `claude` in it.
+Code mode on the desktop app allows you to do all of that, plus you can run it in local mode. In which case it creates a worktree (stored in `~/.claude-worktrees/`). So that's kind of a nice in between ground. More autonomous than `claude` cli, but more real than the cloud environment. And it manages the worktree (to some degree, though the problems I mentioned above still apply), so that's easier than creating one manually and firing up `claude` in it.
 
 I might jump over to the desktop app to have it do a spike on something. More specific and grounded than the kinds of general questions I'd ask the desktop chat, but not detailed work, necessarily.
 
@@ -107,7 +107,7 @@ I haven't messed around with dev containers yet. For serious work, that seems li
 
 ## Notifications
 
-I've got some scripts that get triggered by `claude` hooks and notify me via the macOS notifications system when `claude` is done with a task, or waiting for input, or whatever. I'll include them below for reference. You can (and people do) take this further, get it to text your phone or whatever. This seems like a good balance for me.
+I've got some scripts that get triggered by `claude` hooks and notify me via the macOS notifications system when `claude` is done with a task, or waiting for input, or whatever. You can (and people do) take this further, get it to text your phone or whatever. This seems like a good balance for me.
 
 ## Linting, formatting, and so on
 
@@ -131,9 +131,11 @@ That said, I do use the LSP servers when available for whatever language I'm wri
 
 There's a new experimental setting that makes `claude` talk to the MCP servers via the command line. Which is kind of hilarious. The idea being that it knows it can do stuff, but doesn't keep the whole shebang loaded into context, it just shells out as needed. I haven't played with it yet. You set `ENABLE_EXPERIMENTAL_MCP_CLI=true` and that gives you "MCP-CLI" mode. [More info.](https://github.com/anthropics/claude-code/issues/12836#issuecomment-3629052941)
 
-## Configs
+## Config
 
 ### owloops/claude-powerline
+
+The budget settings below are a bit questionable. I took them from [a GitHub issue comment](https://github.com/Owloops/claude-powerline/issues/23). Supposedly `67.5` is the magic number for the "Max 5x" plan. But since the subscription plans have soft limits, not clearly defined ones, I'm not really sure how that's supposed to work.
 
 `.claude/claude-powerline.json`:
 
@@ -184,242 +186,4 @@ There's a new experimental setting that makes `claude` talk to the MCP servers v
   },
   "theme": "light"
 }
-```
-
-### Hooks
-
-`.claude/settings.json`:
-
-```json
-"hooks": {
-  "Notification": [
-    {
-      "matcher": "idle_prompt|permission_prompt",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "bin/notify 'Claude Code' '' 'Aguarda input' Ping"
-        }
-      ]
-    }
-  ],
-  "PostToolUse": [
-    {
-      "matcher": "Bash",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "bin/post-tool-use"
-        }
-      ]
-    }
-  ],
-  "SessionEnd": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "bin/dev stop"
-        }
-      ]
-    }
-  ],
-  "Stop": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "bin/notify stop"
-        }
-      ]
-    }
-  ]
-}
-```
-
-`bin/notify`:
-
-```bash
-#!/usr/bin/env bash
-# Envia notificações macOS via terminal-notifier
-set -euo pipefail
-
-SCRIPT_NAME="$(basename "$0")"
-readonly SCRIPT_NAME
-
-# =============================================================================
-# NOTA: Ícone personalizado não funciona
-# =============================================================================
-# O terminal-notifier tem bugs conhecidos com ícones:
-# - -appIcon não mostra o ícone (bug confirmado)
-# - -sender conflitua com -activate (não podem ser usados juntos)
-#
-# Ver: https://github.com/julienXX/terminal-notifier/issues/320
-# =============================================================================
-
-function usage() {
-  cat << 'USAGE_TEXT'
-Uso: bin/notify [comando] [opções]
-
-Envia notificações macOS via terminal-notifier.
-
-Comandos:
-  send <title> [subtitle] [message] [sound]   Enviar notificação (padrão)
-  stop                                        Hook para fim de tarefa Claude Code
-
-Opções:
-  -h, --help     Mostrar esta ajuda
-
-Exemplos:
-  bin/notify "Claude Code" "" "Tarefa completa" "Glass"
-  bin/notify send "Erro" "projeto" "Falhou" "Basso"
-  bin/notify stop                  # Lê JSON do stdin (hook Stop)
-USAGE_TEXT
-}
-
-# Trunca texto com reticências se exceder limite
-function truncate_with_ellipsis() {
-  local text="$1"
-  local limit="${2:-80}"
-
-  text=$(echo "${text}" | head -c "${limit}")
-  if [[ ${#text} -eq ${limit} ]]; then
-    text="${text}…"
-  fi
-  echo "${text}"
-}
-
-# Extrai última mensagem do utilizador do transcript
-function extract_last_user_message() {
-  local transcript_path="$1"
-  local limit="${2:-80}"
-
-  if [[ -z "${transcript_path}" ]] || [[ ! -f "${transcript_path}" ]]; then
-    return 0
-  fi
-
-  # Procurar última mensagem do utilizador (type: human)
-  # Falhas de leitura são ignoradas intencionalmente (script de notificação)
-  # shellcheck disable=SC2312
-  tac "${transcript_path}" 2> /dev/null | while read -r line; do
-    local msg_type
-    msg_type=$(echo "${line}" | jq -r '.type // empty')
-    if [[ "${msg_type}" = "human" ]]; then
-      local msg
-      # shellcheck disable=SC2312
-      msg=$(echo "${line}" | jq -r '.message.content // empty' | head -c "${limit}")
-      if [[ -n "${msg}" ]]; then
-        echo "${msg}"
-        break
-      fi
-    fi
-  done
-}
-
-function do_send() {
-  local title="${1:-Claude Code}"
-  local subtitle="${2:-}"
-  local message="${3:-}"
-  local sound="${4:-Glass}"
-
-  terminal-notifier \
-    -title "${title}" \
-    -subtitle "${subtitle}" \
-    -message "${message}" \
-    -sound "${sound}" \
-    -group claude-code \
-    -activate com.apple.Terminal
-}
-
-function do_stop() {
-  # Ler JSON do stdin (contém transcript_path)
-  local input
-  input=$(cat)
-  local transcript_path
-  transcript_path=$(echo "${input}" | jq -r '.transcript_path // empty')
-
-  # Obter nome do projeto e branch atual
-  local project
-  project=$(basename "${PWD}")
-  local branch
-  branch=$(git branch --show-current 2> /dev/null || echo "unknown")
-
-  # Obter última mensagem do utilizador do transcript
-  local task
-  task=$(extract_last_user_message "${transcript_path}" 80)
-
-  # Fallback e truncagem
-  if [[ -z "${task}" ]]; then
-    task="Task completed"
-  else
-    task=$(truncate_with_ellipsis "${task}" 80)
-  fi
-
-  do_send "Claude Code" "${project} @ ${branch}" "${task}" "Glass"
-}
-
-function main() {
-  # Se primeiro argumento é -h ou --help
-  if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
-    usage
-    exit 0
-  fi
-
-  # Se primeiro argumento é um comando conhecido
-  case "${1:-}" in
-    stop)
-      do_stop
-      ;;
-    send)
-      shift
-      do_send "$@"
-      ;;
-    -*)
-      echo "Erro: opção desconhecida: $1" >&2
-      echo "Use '${SCRIPT_NAME} --help' para ver as opções disponíveis." >&2
-      exit 1
-      ;;
-    *)
-      # Comportamento padrão: tratar argumentos como send
-      do_send "$@"
-      ;;
-  esac
-}
-
-main "$@"
-```
-
-`bin/post-tool-use`:
-
-```bash
-#!/usr/bin/env bash
-# Script para PostToolUse hook do Claude Code
-# Corre após git commits para formatar e verificar código
-set -euo pipefail
-
-function main() {
-  # Ler input JSON do hook
-  local input
-  input=$(cat)
-
-  # Extrair o comando executado
-  local command
-  command=$(echo "${input}" | jq -r '.tool_input.command // ""')
-
-  # Só correr para git commit
-  if [[ ! "${command}" =~ git[[:space:]]+commit ]]; then
-    exit 0
-  fi
-
-  # Correr lint com fix e format apenas nos ficheiros do commit
-  ./bin/lint --last-commit --fix --format > /dev/null 2>&1
-
-  # Se houver alterações, fazer amend ao commit
-  if ! git diff --quiet; then
-    git add -A
-    git commit --amend --no-edit > /dev/null 2>&1
-  fi
-}
-
-main "${@}"
 ```

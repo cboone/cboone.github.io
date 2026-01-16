@@ -17,9 +17,9 @@ taxonomies:
 
 menu:
   main:
-    # - name: LLMs
-    #   url: llms/
-    #   weight: 1
+    - name: LLMs
+      url: llms/
+      weight: 1
     # - name: Math
     #   url: math/
     #   weight: 2
@@ -34,7 +34,7 @@ params:
   author: Christopher Boone
 
   # MainSections: ["llms", "math", "projects", "tools"]
-  MainSections: ["tools"]
+  MainSections: ["llms", "tools"]
 
   DateFormat: "January 2006"
 
@@ -72,8 +72,8 @@ params:
     imageWidth: 160
 
     buttons:
-      # - name: LLMs
-      #   url: llms/
+      - name: LLMs
+        url: llms/
       # - name: Math
       #   url: math/
       # - name: Projects
