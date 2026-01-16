@@ -8,8 +8,8 @@ Personal website built with [Hugo](https://gohugo.io/) and the [PaperMod](https:
 # Install Hugo (macOS)
 brew install hugo
 
-# Clone with submodules
-git clone --recurse-submodules https://github.com/cboone/cboone.github.io.git
+# Clone repository
+git clone https://github.com/cboone/cboone.github.io.git
 
 # Run local server
 hugo server

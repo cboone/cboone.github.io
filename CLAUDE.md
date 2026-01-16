@@ -7,7 +7,7 @@ Personal website for Christopher Boone, built with Hugo and the PaperMod theme, 
 ## Tech Stack
 
 - **Static site generator:** Hugo
-- **Theme:** PaperMod (Git submodule in `themes/PaperMod/`)
+- **Theme:** PaperMod (Hugo Module, see `go.mod`)
 - **Deployment:** GitHub Actions to GitHub Pages
 - **Branch strategy:** `main` for development, `production` for deployment
 
@@ -46,7 +46,7 @@ hugo new tools/my-tool.md
 │   └── tools/           # Tools I use
 ├── layouts/             # Custom layout overrides
 ├── static/              # Static files (images, favicon, etc.)
-├── themes/PaperMod/     # Theme (Git submodule)
+├── go.mod               # Hugo module dependencies (includes PaperMod theme)
 └── config.yml           # Hugo configuration
 ```
 
