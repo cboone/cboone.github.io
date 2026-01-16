@@ -394,7 +394,6 @@ h6:hover .anchor {
     margin-inline-start: 10px;
     font-weight: 700;
     user-select: none;
-    box-shadow: 0 0px 0 var(--darkcolor);
 }
 
 .paginav {
@@ -440,8 +439,9 @@ img.in-text {
     margin: auto;
 }
 
-a[href^="#fn:"], a[href^="#fnref:"] {
-     box-shadow: 0 0px 0 var(--darkcolor);
+a[href^="#fn:"],
+a[href^="#fnref:"] {
+    box-shadow: none;
 }
 
 a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
