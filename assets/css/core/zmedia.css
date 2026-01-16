@@ -1,3 +1,14 @@
+/*
+ * Responsive Media Queries
+ *
+ * Breakpoints:
+ * - 768px: Mobile/tablet (reduce gaps, scale profile, stack archive)
+ * - 900px: Adjust top-link position for shorter viewports
+ * - 340px: Minimum supported width (share buttons overflow)
+ * - prefers-reduced-motion: Disable transform animations
+ */
+
+/* Mobile and tablet */
 @media screen and (max-width: 768px) {
     /* theme-vars */
     :root {
@@ -29,21 +40,22 @@
     }
 }
 
-/* footer */
+/* Shorter viewports */
 @media screen and (max-width: 900px) {
     .list .top-link {
         transform: translateY(-5rem);
     }
 }
 
+/* Narrow screens */
 @media screen and (max-width: 340px) {
     .share-buttons {
         justify-content: unset;
     }
 }
 
+/* Accessibility: disable animations for users who prefer reduced motion */
 @media (prefers-reduced-motion) {
-    /* terms; profile-mode; post-single; post-entry; post-entry; search; search */
     .terms-tags a:active,
     .button:active,
     .post-entry:active,

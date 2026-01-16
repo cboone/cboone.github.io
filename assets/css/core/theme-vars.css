@@ -42,16 +42,20 @@
     --scrollbar-gist-border: rgb(255, 255, 255);
     --scrollbar-gist-thumb: rgb(173, 173, 173);
     --scrollbar-gist-thumb-hover: rgb(112, 112, 112);
-    /* Legacy variables (for compatibility) */
-    --homesize: var(--text-base);
-    --textsize: var(--text-base);
-    --h1size: var(--text-2xl);
+    /*
+     * Legacy variables (PaperMod compatibility)
+     * These map old variable names to the modern typography scale.
+     * Prefer using --text-* and --leading-* variables directly.
+     */
     --entrysize: var(--text-sm);
-    --headersize: var(--text-base);
     --footersize: var(--text-xs);
-    --lineheight: var(--leading-normal);
+    --h1size: var(--text-2xl);
+    --headersize: var(--text-base);
+    --homesize: var(--text-base);
     --lineclamp: 8;
+    --lineheight: var(--leading-normal);
     --marginleft: 26px;
+    --textsize: var(--text-base);
 }
 
 :root[data-theme="dark"] {
