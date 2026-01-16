@@ -1,4 +1,4 @@
 ---
-title: "Notes"
+title: "Notes on LLMs"
 description: ""
 ---
