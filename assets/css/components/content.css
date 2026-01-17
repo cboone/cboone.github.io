@@ -40,8 +40,8 @@
 
 .post-content {
     color: var(--content);
-    line-height: var(--lineheight);
-    font-size: var(--textsize);
+    line-height: var(--leading-normal);
+    font-size: var(--text-base);
 }
 
 .post-content h1 {
@@ -120,7 +120,7 @@
 .post-content ol,
 .post-content ul {
     padding-inline-start: 20px;
-    margin-left: var(--marginleft);
+    margin-left: 26px;
 }
 
 .post-content li {
@@ -165,7 +165,7 @@
 .post-content table:not(.highlighttable, .highlight table, .gist .highlight) td {
     min-width: 80px;
     padding: 8px 5px;
-    line-height: var(--lineheight);
+    line-height: var(--leading-normal);
     border-bottom: 1px solid var(--border);
 }
 
@@ -227,7 +227,7 @@
     margin: auto 4px;
     padding: 4px 6px;
     font-size: 0.78em;
-    line-height: var(--lineheight);
+    line-height: var(--leading-normal);
     background: var(--code-bg);
     border-radius: 0;
 }
@@ -419,8 +419,8 @@ h6:hover .anchor {
 
 .paginav {
     display: flex;
-    line-height: var(--lineheight);
-    font-size: var(--footersize);
+    line-height: var(--leading-normal);
+    font-size: var(--text-xs);
 }
 
 .paginav a {
@@ -503,10 +503,10 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 }
 
 .archive-month-header {
-    margin: var(--homesize) 0;
+    margin: var(--text-base) 0;
     width: 150px;
     font-weight: var(--semibold);
-    font-size: var(--homesize);
+    font-size: var(--text-base);
 }
 
 .archive-entry {
@@ -518,7 +518,7 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 .archive-entry-title {
     margin: 5px 0;
     font-weight: var(--normal);
-    font-size: var(--homesize);
+    font-size: var(--text-base);
 }
 
 .archive-count,

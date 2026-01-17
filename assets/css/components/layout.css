@@ -30,7 +30,7 @@
 }
 
 .logo a {
-    font-size: var(--headersize);
+    font-size: var(--text-base);
     font-weight: var(--semibold);
 }
 
@@ -70,7 +70,7 @@ button#theme-toggle {
 }
 
 #menu a {
-    font-size: var(--headersize);
+    font-size: var(--text-base);
     font-weight: 400;
 }
 
@@ -112,7 +112,7 @@ button#theme-toggle {
 }
 
 .page-header h1 {
-    font-size: var(--h1size);
+    font-size: var(--text-2xl);
 }
 
 .pagination {
@@ -184,7 +184,7 @@ pre:hover .copy-code {
 
 .footer,
 .top-link {
-    font-size: var(--footersize);
+    font-size: var(--text-xs);
     color: var(--secondary);
 }
 
