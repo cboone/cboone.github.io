@@ -55,7 +55,49 @@ A licença será incluída como comentário no topo de variables.css.
 - `assets/css/common/post-single.css` — dividir em content.css, code.css, navigation.css
 - `assets/css/extended/notice.css` — refatorar cores para usar variáveis
 
+## Workflow de Verificação Visual
+
+### Screenshots de Baseline (Fase 0)
+
+Antes de qualquer alteração, capturar screenshots de referência:
+
+**Páginas a capturar (light mode e dark mode):**
+1. Homepage (profile mode)
+2. Página de lista de posts (ex: /llms/)
+3. Post individual com código (ex: um post com syntax highlighting)
+4. Página de arquivo (/archives/)
+5. Página 404
+6. Post com notice blocks (se existir)
+
+**Armazenamento:**
+- Diretório: `docs/screenshots/`
+- Naming: `fase-0-[página]-[tema].png` (ex: `fase-0-homepage-light.png`)
+- Fazer commit dos screenshots de baseline antes de iniciar Fase 1
+
+### Verificação por Fase
+
+Após cada fase:
+1. Tirar novos screenshots das mesmas páginas
+2. Naming: `fase-N-[página]-[tema].png`
+3. Comparar visualmente com screenshots anteriores
+4. Fazer commit dos novos screenshots
+5. **Parar e informar o utilizador**
+6. **Aguardar confirmação explícita para continuar**
+
+### Limpeza Final
+
+Após confirmação de que o plano está completo:
+- Eliminar screenshots intermédios (manter apenas baseline e final)
+- Aguardar confirmação do utilizador antes de eliminar
+
 ## Fases de Implementação
+
+### Fase 0: Screenshots de Baseline
+1. Iniciar hugo server
+2. Capturar screenshots de todas as páginas de referência (light + dark)
+3. Guardar em `docs/screenshots/`
+4. Fazer commit
+5. **Parar e aguardar confirmação**
 
 ### Fase 1: Fundação (risco baixo)
 1. Criar `base/variables.css` — copiar de theme-vars.css
@@ -63,35 +105,53 @@ A licença será incluída como comentário no topo de variables.css.
 3. Criar `base/typography.css` — fundir declarações de fontes
 4. Criar `base/scrollbar.css` — mover de includes/scroll-bar.css
 5. Atualizar head.html para usar novos caminhos base/
-6. **Testar:** verificar que não há alterações visuais
+6. Capturar screenshots fase-1
+7. Comparar com baseline
+8. Fazer commit
+9. **Parar e aguardar confirmação**
 
 ### Fase 2: Componentes de Layout (risco médio)
-7. Criar `components/layout.css` — fundir header + footer + main
-8. Criar `components/cards.css` — fundir post-entry, profile-mode, terms, 404
-9. Atualizar head.html
-10. **Testar:** verificar homepage, páginas de lista, página 404
+1. Criar `components/layout.css` — fundir header + footer + main
+2. Criar `components/cards.css` — fundir post-entry, profile-mode, terms, 404
+3. Atualizar head.html
+4. Capturar screenshots fase-2
+5. Comparar com fase-1
+6. Fazer commit
+7. **Parar e aguardar confirmação**
 
 ### Fase 3: Componentes de Conteúdo (risco médio)
-11. Criar `components/content.css` — extrair de post-single.css
-12. Criar `components/code.css` — fundir código de post-single + main + chroma
-13. Criar `components/navigation.css` — extrair TOC, paginação + archive + search
-14. Atualizar head.html
-15. **Testar:** verificar posts, syntax highlighting, TOC, arquivo
+1. Criar `components/content.css` — extrair de post-single.css
+2. Criar `components/code.css` — fundir código de post-single + main + chroma
+3. Criar `components/navigation.css` — extrair TOC, paginação + archive + search
+4. Atualizar head.html
+5. Capturar screenshots fase-3
+6. Comparar com fase-2
+7. Fazer commit
+8. **Parar e aguardar confirmação**
 
 ### Fase 4: Refatoração de Notice (risco baixo)
-16. Adicionar variáveis de cor de notice a `base/variables.css`
-17. Refatorar `components/notice.css` para usar variáveis
-18. **Testar:** verificar os 12 tipos de notice em ambos os temas
+1. Adicionar variáveis de cor de notice a `base/variables.css`
+2. Refatorar `components/notice.css` para usar variáveis
+3. Capturar screenshots fase-4
+4. Comparar com fase-3
+5. Fazer commit
+6. **Parar e aguardar confirmação**
 
 ### Fase 5: Limpeza de Variáveis (risco médio)
-19. Substituir variáveis legacy pelos equivalentes modernos em todo o código
-20. Remover variáveis legacy de variables.css
-21. **Testar:** revisão visual completa
+1. Substituir variáveis legacy pelos equivalentes modernos em todo o código
+2. Remover variáveis legacy de variables.css
+3. Capturar screenshots fase-5
+4. Comparar com fase-4
+5. Fazer commit
+6. **Parar e aguardar confirmação**
 
 ### Fase 6: Limpeza Final (risco baixo)
-22. Eliminar diretórios antigos (core/, common/, extended/, includes/)
-23. Simplificação final de head.html
-24. **Testar:** teste completo do site
+1. Eliminar diretórios antigos (core/, common/, extended/, includes/)
+2. Simplificação final de head.html
+3. Capturar screenshots finais
+4. Comparar com baseline (devem ser idênticos)
+5. Fazer commit
+6. **Parar e aguardar confirmação final**
 
 ## Variáveis Legacy a Migrar
 
@@ -107,20 +167,15 @@ A licença será incluída como comentário no topo de variables.css.
 | `--marginleft` | valor inline (26px) |
 | `--textsize` | `--text-base` |
 
-## Verificação
+## Checklist de Verificação Visual
 
-Após cada fase, verificar:
-- [ ] Homepage (profile mode) renderiza corretamente
-- [ ] Páginas de lista de posts
-- [ ] Páginas de post individual: headings, code blocks, tabelas, imagens
-- [ ] Páginas de arquivo
-- [ ] Funcionalidade de pesquisa
-- [ ] Blocos de notice (12 tipos, ambos os temas)
-- [ ] Toggle de dark mode funciona
-- [ ] Comportamento responsivo em mobile
-- [ ] Syntax highlighting (temas light e dark)
-- [ ] TOC expand/collapse
-- [ ] Scrollbar styling
+Após cada fase, confirmar em cada screenshot:
+- [ ] Layout geral mantido
+- [ ] Cores e contrastes corretos
+- [ ] Tipografia sem alterações
+- [ ] Espaçamentos preservados
+- [ ] Dark mode funcional
+- [ ] Elementos interativos visíveis
 
 ## Resultado Esperado
 
