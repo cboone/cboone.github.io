@@ -43,15 +43,8 @@
 {{- /* Components */}}
 {{- $layout := (resources.Get "css/components/layout.css") }}
 {{- $cards := (resources.Get "css/components/cards.css") }}
-
-{{- /* Common (to be migrated in later phases) */}}
-{{- $archive := (resources.Get "css/common/archive.css") }}
-{{- $postSingle := (resources.Get "css/common/post-single.css") }}
-{{- $search := (resources.Get "css/common/search.css") }}
-
-{{- /* Syntax highlighting */}}
-{{- $chroma_styles := (resources.Get "css/includes/chroma-styles.css") }}
-{{- $chroma_mod := (resources.Get "css/includes/chroma-mod.css") }}
+{{- $content := (resources.Get "css/components/content.css") }}
+{{- $code := (resources.Get "css/components/code.css") }}
 
 {{- /* Responsive (must be last) */}}
 {{- $media := (resources.Get "css/core/zmedia.css") }}
@@ -60,7 +53,7 @@
 {{- $extended := (resources.Get "css/extended/notice.css") }}
 
 {{- /* Bundle: order is important */}}
-{{- $stylesheet := (slice $variables $reset $typography $scrollbar $layout $cards $archive $postSingle $search $chroma_styles $chroma_mod $media $extended) | resources.Concat "assets/css/stylesheet.css" | resources.Minify }}
+{{- $stylesheet := (slice $variables $reset $typography $scrollbar $layout $cards $content $code $media $extended) | resources.Concat "assets/css/stylesheet.css" | resources.Minify }}
 
 {{- if not site.Params.assets.disableFingerprinting }}
 {{- $stylesheet := $stylesheet | fingerprint }}
