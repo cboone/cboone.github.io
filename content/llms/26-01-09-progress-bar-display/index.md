@@ -1,6 +1,7 @@
 ---
-title: "owloops/claude-powerline Progress Bar Display"
 date: 2026-01-16T13:13:32-05:00
+sections: ["llms"]
+title: "owloops/claude-powerline Progress Bar Display"
 ---
 
 The [`owloops/claude-powerline`](https://github.com/Owloops/claude-powerline) status bar plugin for `code` [added a nice new setting today](https://github.com/Owloops/claude-powerline/blob/main/CHANGELOG.md#1150-2026-01-08). In your `~/.claude/claude-powerline.json` set the `.display.lines[0].segments.context.displayStyle` to `"bar"`, as so:

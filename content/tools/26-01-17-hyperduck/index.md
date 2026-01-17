@@ -1,6 +1,7 @@
 ---
-title: "Hyperduck"
 date: 2026-01-17T09:43:05-05:00
+sections: ["tools"]
+title: "Hyperduck"
 ---
 
 [Hyperduck](https://sindresorhus.com/hyperduck) is one of my all-time favorite apps. It's completely indispensable.

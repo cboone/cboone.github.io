@@ -12,6 +12,7 @@ pagination:
   pagerSize: 20
 
 taxonomies:
+  section: sections
   tag: tags
 
 menu:

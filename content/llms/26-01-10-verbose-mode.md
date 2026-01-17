@@ -1,6 +1,7 @@
 ---
-title: "Verbose Mode"
 date: 2026-01-10T10:53:25-05:00
+sections: ["llms"]
+title: "Verbose Mode"
 ---
 
 {{< notice tip >}}

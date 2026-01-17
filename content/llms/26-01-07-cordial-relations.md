@@ -1,5 +1,6 @@
 ---
 date: 2026-01-07T10:30:00-05:00
+sections: ["llms"]
 title: "Notes on cordial relationships with our new overlords"
 ---
 

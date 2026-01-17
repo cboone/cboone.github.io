@@ -1,6 +1,7 @@
 ---
-title: "Refactor early and often"
 date: 2026-01-08T10:48:12-05:00
+sections: ["llms"]
+title: "Refactor early and often"
 ---
 
 In [my description of my current working practices](26-01-07-cordial-relations.md), I forgot the most important point:
