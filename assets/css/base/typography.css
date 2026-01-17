@@ -1,0 +1,56 @@
+/* Public Sans font-face declarations */
+@font-face {
+    font-display: swap;
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/PublicSans-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Public Sans";
+    font-style: italic;
+    font-weight: 400;
+    src: url("/fonts/PublicSans-Italic.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 500;
+    src: url("/fonts/PublicSans-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 600;
+    src: url("/fonts/PublicSans-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/fonts/PublicSans-Bold.woff2") format("woff2");
+}
+
+/* Apply Public Sans to body */
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 18px;
+}
+
+/* Monospace font stack for code */
+code,
+kbd,
+pre,
+samp {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
