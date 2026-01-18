@@ -33,8 +33,7 @@ menu:
 params:
   author: Christopher Boone
 
-  # MainSections: ["llms", "math", "projects", "tools"]
-  MainSections: ["llms", "tools"]
+  MainSections: ["posts"]
 
   DateFormat: "January 2006"
 

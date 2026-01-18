@@ -1,0 +1,139 @@
+#!/usr/bin/env bash
+#
+# Creates a new Hugo post with the specified section(s) and title.
+#
+# Usage: new-post <sections> <title> [date]
+#
+# Arguments:
+#   sections  Content section(s), comma-separated (e.g., llms or llms,tools)
+#   title     Human-readable title for the post
+#   date      Optional date in YY-MM-DD format (defaults to today)
+#
+# Examples:
+#   new-post llms "My New Post"
+#   new-post llms,tools "Cross-Listed Post"
+#   new-post tools "Git Tips and Tricks" 26-01-15
+
+set -euo pipefail
+
+readonly SCRIPT_NAME="${0##*/}"
+
+usage() {
+    cat <<EOF
+Usage: ${SCRIPT_NAME} <sections> <title> [date]
+
+Creates a new Hugo post with the specified section(s) and title.
+
+Arguments:
+  sections  Content section(s), comma-separated (e.g., llms or llms,tools)
+  title     Human-readable title for the post
+  date      Optional date in YY-MM-DD format (defaults to today)
+
+Examples:
+  ${SCRIPT_NAME} llms "My New Post"
+  ${SCRIPT_NAME} llms,tools "Cross-Listed Post"
+  ${SCRIPT_NAME} tools "Git Tips and Tricks" 26-01-15
+EOF
+    exit 1
+}
+
+error() {
+    echo "Error: $1" >&2
+    exit 1
+}
+
+slugify() {
+    local title="$1"
+    echo "${title}" \
+        | tr '[:upper:]' '[:lower:]' \
+        | sed -E 's/[^a-z0-9]+/-/g' \
+        | sed -E 's/^-+|-+$//g'
+}
+
+validate_date() {
+    local date="$1"
+    if [[ ! "${date}" =~ ^[0-9]{2}-[0-9]{2}-[0-9]{2}$ ]]; then
+        error "Invalid date format. Expected YY-MM-DD, got: ${date}"
+    fi
+}
+
+readonly VALID_SECTIONS=("llms" "math" "projects" "tools")
+
+validate_section() {
+    local section="$1"
+
+    for valid in "${VALID_SECTIONS[@]}"; do
+        if [[ "${section}" == "${valid}" ]]; then
+            return 0
+        fi
+    done
+
+    error "Invalid section: ${section}. Valid sections: ${VALID_SECTIONS[*]}"
+}
+
+validate_sections() {
+    local sections_input="$1"
+    local -a sections_array
+
+    IFS=',' read -ra sections_array <<< "${sections_input}"
+
+    if [[ ${#sections_array[@]} -eq 0 ]]; then
+        error "At least one section is required"
+    fi
+
+    for section in "${sections_array[@]}"; do
+        validate_section "${section}"
+    done
+}
+
+format_sections_yaml() {
+    local sections_input="$1"
+    local -a sections_array
+    local result="["
+
+    IFS=',' read -ra sections_array <<< "${sections_input}"
+
+    for index in "${!sections_array[@]}"; do
+        if [[ ${index} -gt 0 ]]; then
+            result+=", "
+        fi
+        result+="\"${sections_array[index]}\""
+    done
+
+    result+="]"
+    echo "${result}"
+}
+
+main() {
+    if [[ $# -lt 2 ]]; then
+        usage
+    fi
+
+    local sections_input="$1"
+    local title="$2"
+    local date="${3:-$(date +%y-%m-%d)}"
+
+    validate_sections "${sections_input}"
+    validate_date "${date}"
+
+    local slug
+    slug=$(slugify "${title}")
+
+    local filename="${date}-${slug}.md"
+    local content_path="posts/${filename}"
+    local full_path="content/${content_path}"
+
+    echo "Creating post: ${content_path}"
+    hugo new "${content_path}"
+
+    local sections_yaml
+    sections_yaml=$(format_sections_yaml "${sections_input}")
+
+    sed -i '' "s/sections: \\[\\]/sections: ${sections_yaml}/" "${full_path}"
+    sed -i '' "s/^title: .*/title: \"${title}\"/" "${full_path}"
+
+    echo "Sections: ${sections_yaml}"
+    echo "Title: ${title}"
+}
+
+main "$@"
