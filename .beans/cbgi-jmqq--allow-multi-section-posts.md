@@ -2,8 +2,9 @@
 # cbgi-jmqq
 title: Allow multi-section posts
 status: completed
-type: task
+type: feature
 priority: normal
 created_at: 2026-01-17T21:19:24Z
-updated_at: 2026-01-18T00:01:18Z
+updated_at: 2026-01-21T22:46:54Z
+parent: cbgi-fckm
 ---

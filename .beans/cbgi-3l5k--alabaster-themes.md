@@ -1,10 +1,10 @@
 ---
-# cbgi-s0vo
-title: Usage monitors
+# cbgi-3l5k
+title: Alabaster themes
 status: todo
 type: feature
 priority: normal
-created_at: 2026-01-17T21:18:29Z
+created_at: 2026-01-21T02:09:54Z
 updated_at: 2026-01-21T22:46:54Z
 parent: cbgi-zsna
 ---
