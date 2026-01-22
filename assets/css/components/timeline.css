@@ -110,6 +110,14 @@
   margin: 0;
 }
 
+/* Entry cover image */
+.timeline-cover {
+  border-radius: var(--radius-sm);
+  display: block;
+  margin-top: 12px;
+  max-width: 100%;
+}
+
 /* Entry description */
 .timeline-description {
   -webkit-line-clamp: 3;

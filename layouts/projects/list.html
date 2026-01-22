@@ -27,6 +27,7 @@
           <h2 class="timeline-year-label">{{ .Key }}</h2>
 
           {{- range .Pages }}
+            {{- $page := . }}
             <a class="timeline-entry" href="{{ .Permalink }}">
               <div class="timeline-marker"></div>
               <time class="timeline-date" datetime="{{ .Date.Format "2006-01-02" }}">
@@ -35,6 +36,11 @@
               <h3 class="timeline-header">{{ .Title }}</h3>
               {{- if .Description }}
                 <p class="timeline-description">{{ .Description }}</p>
+              {{- end }}
+              {{- with .Params.cover.image }}
+                {{- with $page.Resources.GetMatch . }}
+                  <img class="timeline-cover" src="{{ .RelPermalink }}" alt="{{ $page.Title }}">
+                {{- end }}
               {{- end }}
               {{- with .Params.status }}
                 <span class="timeline-status timeline-status--{{ . }}">{{ . }}</span>
