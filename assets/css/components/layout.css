@@ -22,6 +22,7 @@
 #menu {
     display: flex;
     margin: auto var(--gap);
+    text-transform: uppercase;
 }
 
 .logo {
