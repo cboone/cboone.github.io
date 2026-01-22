@@ -15,8 +15,9 @@
     --footer-height: 70px;
     --radius: 8px;
     --radius-sm: 6px;
-    --accent-primary: #6a7ba2;
-    --accent-secondary: #cbd1de;
+    --accent-primary: #93a8d0;
+    --accent-secondary: #6a7ba2;
+    --accent-tertiary: #cbd1de;
     --background-card: rgb(255, 255, 255);
     --background-code: #f6f8fa;
     --background-page: rgb(255, 255, 255);
@@ -90,7 +91,8 @@
 :root[data-theme="dark"] {
     color-scheme: dark;
     --accent-primary: #7aa2f7;
-    --accent-secondary: #6a7ba2;
+    --accent-secondary: #93a8d0;
+    --accent-tertiary: #6a7ba2;
     --background-card: rgb(46, 46, 51);
     --background-code: rgb(36, 39, 46);
     --background-page: rgb(29, 30, 32);

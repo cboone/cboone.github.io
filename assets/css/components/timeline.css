@@ -79,7 +79,7 @@
 
 /* Entry marker (smaller circle) */
 .timeline-marker {
-  background: var(--accent-secondary);
+  background: var(--accent-tertiary);
   border: 2px solid var(--background-page);
   border-radius: 50%;
   height: 10px;
@@ -241,5 +241,5 @@
 }
 
 .project-external-link:hover {
-  background: var(--accent-secondary);
+  background: var(--accent-tertiary);
 }

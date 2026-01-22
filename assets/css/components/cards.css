@@ -231,7 +231,7 @@
 }
 
 .button:hover {
-    background: var(--accent-secondary);
+    background: var(--accent-tertiary);
     transform: scale(1.1);
 }
 
@@ -264,7 +264,7 @@
 }
 
 .terms-tags a:hover {
-    background: var(--accent-secondary);
+    background: var(--accent-tertiary);
 }
 
 /* 404 Page

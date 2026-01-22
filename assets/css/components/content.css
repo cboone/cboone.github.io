@@ -375,7 +375,7 @@
 }
 
 .post-tags a:hover {
-    background: var(--accent-secondary);
+    background: var(--accent-tertiary);
 }
 
 /* Share Buttons
@@ -431,7 +431,7 @@ h6:hover .anchor {
 }
 
 .paginav a:hover {
-    background: var(--accent-secondary);
+    background: var(--accent-tertiary);
 }
 
 .paginav .title {
