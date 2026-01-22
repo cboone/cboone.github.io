@@ -10,3 +10,6 @@
 
 # npm packages
 node_modules/
+
+# Playwright MCP screenshots
+.playwright-mcp/
