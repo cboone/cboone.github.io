@@ -8,39 +8,20 @@
   site.Params.footer.text }} {{ . | markdownify }} {{ print " &mdash; " |
   markdownify }} {{- end }}
   <span>
-    <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank"
-      >Hugo</a
-    >
+    <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a>
     /
-    <a
-      href="https://github.com/adityatelange/hugo-PaperMod/"
-      rel="noopener"
-      target="_blank"
-      >PaperMod</a
-    >
+    <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     /
-    <a
-      href="https://github.com/pmichaillat/hugo-website/"
-      rel="noopener"
-      target="_blank"
-      >Pascal Michaillat</a
-    >.
+    <a href="https://github.com/pmichaillat/hugo-website/" rel="noopener" target="_blank">Pascal Michaillat</a>
+  </span>
+  <span>
+    &mdash;
+    <a href="/about/ai-transparency-statement/">AI Transparency Statement</a>
   </span>
 </footer>
 {{- end }} {{- if (not site.Params.disableScrollToTop) }}
-<a
-  href="#top"
-  aria-label="go to top"
-  title="Go to Top (Alt + G)"
-  class="top-link"
-  id="top-link"
-  accesskey="g"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 12 6"
-    fill="currentColor"
-  >
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
     <path d="M12 6H0l6-6z" />
   </svg>
 </a>
@@ -151,7 +132,7 @@
       try {
         document.execCommand("copy");
         copyingDone();
-      } catch (e) {}
+      } catch (e) { }
       selection.removeRange(range);
     });
 
