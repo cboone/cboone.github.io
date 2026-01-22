@@ -115,8 +115,6 @@ params:
     hiddenInSingle: true
 
   label:
-    icon: favicon.ico
-    iconHeight: 18
     text: "Christopher Boone"
 
 markup:
