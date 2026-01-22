@@ -136,6 +136,12 @@
     --notice-warning-bg: rgba(249, 115, 22, 0.1);
     --notice-warning-border: #fb923c;
     --notice-warning-text: #fdba74;
+    /* Scrollbar colors */
+    --scrollbar-code-thumb: rgb(155, 156, 157);
+    --scrollbar-code-thumb-hover: rgb(180, 180, 182);
+    --scrollbar-gist-border: rgb(29, 30, 32);
+    --scrollbar-gist-thumb: rgb(100, 100, 105);
+    --scrollbar-gist-thumb-hover: rgb(140, 140, 145);
 }
 
 /* Signal dark mode support to browser extensions (e.g., Noir) that scan for prefers-color-scheme */
