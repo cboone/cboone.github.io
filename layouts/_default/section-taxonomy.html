@@ -55,11 +55,11 @@
     </header>
     {{- if (ne (.Param "hideSummary") true) }}
       <div class="entry-content">
-        <p>
-          {{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}
-            ...
-          {{ end }}
-        </p>
+        {{- if .Description }}
+          <p>{{ .Description }}</p>
+        {{- else }}
+          {{ .Content }}
+        {{- end }}
       </div>
     {{- end }}
     {{- if not (.Param "hideMeta") }}
