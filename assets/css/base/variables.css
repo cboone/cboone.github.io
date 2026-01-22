@@ -20,8 +20,8 @@
     --accent-tertiary: #cbd1de;
     --background-card: rgb(255, 255, 255);
     --background-code: #f6f8fa;
-    --background-page: rgb(255, 255, 255);
-    --background-page-rgb: 255, 255, 255;
+    --background-page: #f6f8fa;
+    --background-page-rgb: 246, 248, 250;
     --border-default: rgb(238, 238, 238);
     --border-subtle: rgb(214, 214, 214);
     --text-body: rgb(30, 30, 30);
@@ -151,10 +151,3 @@
     }
 }
 
-.list {
-    background: var(--background-code);
-}
-
-[data-theme="dark"] .list {
-    background: var(--background-page);
-}
