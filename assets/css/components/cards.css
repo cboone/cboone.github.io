@@ -222,6 +222,7 @@
     border-radius: var(--radius);
     margin: 6px 12px 6px 0;
     padding: 10px;
+    transition: background 0.1s ease, transform 0.2s ease;
 }
 
 .button-inner {
@@ -230,6 +231,7 @@
 
 .button:hover {
     background: var(--lightcolor);
+    transform: scale(1.1);
 }
 
 /* Terms/Tags Page

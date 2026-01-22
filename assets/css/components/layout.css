@@ -135,6 +135,7 @@ button#theme-toggle {
 .social-icons a {
     display: inline-flex;
     padding: 10px 14px 10px 0;
+    transition: color 0.1s ease, transform 0.2s ease;
 }
 
 .social-icons a svg {
@@ -144,6 +145,11 @@ button#theme-toggle {
 
 .social-icons a:hover {
     color: var(--darkcolor);
+    transform: scale(1.1);
+}
+
+[data-theme="dark"] .social-icons a:hover {
+    color: var(--lightcolor);
 }
 
 /* Code blocks (positioning) */
