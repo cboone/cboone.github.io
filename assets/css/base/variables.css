@@ -61,6 +61,8 @@
     --code-block-bg: rgb(36, 39, 46);
     --code-bg: rgb(46, 49, 56);
     --border: rgb(51, 51, 51);
+    --darkcolor: #cbd1de;
+    --lightcolor: #6a7ba2;
 }
 
 .list {
