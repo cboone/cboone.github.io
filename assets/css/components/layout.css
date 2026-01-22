@@ -12,7 +12,6 @@
     margin-inline-start: auto;
     margin-inline-end: auto;
     line-height: var(--header-height);
-    background: var(--code-bg);
 }
 
 .nav a {
@@ -203,7 +202,6 @@ pre:hover .copy-code {
     padding: calc((var(--footer-height) - var(--gap)) / 2) var(--gap);
     text-align: center;
     line-height: 20px;
-    background: var(--code-bg);
 }
 
 .footer span {
