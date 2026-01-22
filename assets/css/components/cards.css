@@ -214,6 +214,7 @@
 }
 
 .buttons {
+    align-items: stretch;
     flex-wrap: wrap;
 }
 
@@ -232,6 +233,16 @@
 .button:hover {
     background: var(--lightcolor);
     transform: scale(1.1);
+}
+
+.button-divider {
+    background: var(--secondary);
+    margin: 6px 12px 6px 0;
+    width: 1px;
+}
+
+[data-theme="dark"] .button-divider {
+    background: var(--border);
 }
 
 /* Terms/Tags Page

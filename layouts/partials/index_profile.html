@@ -37,6 +37,9 @@
         {{- with .buttons }}
         <div class="buttons">
             {{- range . }}
+            {{- if .divider }}
+            <span class="button-divider"></span>
+            {{- else }}
             <a class="button" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
                 <span class="button-inner">
                     {{ .name }}
@@ -50,6 +53,7 @@
                     {{- end }}
                 </span>
             </a>
+            {{- end }}
             {{- end }}
         </div>
         {{- end }}
