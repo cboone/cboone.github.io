@@ -29,9 +29,9 @@ menu:
     # - name: Math
     #   url: math/
     #   weight: 2
-    # - name: Projects
-    #   url: projects/
-    #   weight: 3
+    - name: Projects
+      url: projects/
+      weight: 3
     - name: Search
       url: search/
       weight: 5
@@ -84,8 +84,8 @@ params:
         url: llms/
       # - name: Math
       #   url: math/
-      # - name: Projects
-      #   url: projects/
+      - name: Projects
+        url: projects/
       - name: Tools
         url: tools/
       - name: Search

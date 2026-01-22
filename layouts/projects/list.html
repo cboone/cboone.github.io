@@ -1,0 +1,52 @@
+{{- define "main" }}
+
+  {{- if not .IsHome | and .Title }}
+    <header class="page-header">
+      {{- partial "breadcrumbs.html" . }}
+      <h1>{{ .Title }}</h1>
+    </header>
+  {{- end }}
+
+  {{- if .Content }}
+    <div class="post-content">
+      {{- if not (.Param "disableAnchoredHeadings") }}
+        {{- partial "anchored_headings.html" .Content -}}
+      {{- else }}
+        {{ .Content }}
+      {{ end }}
+    </div>
+  {{- end }}
+
+  {{- $pages := .RegularPages }}
+
+  {{- if $pages }}
+    <div class="timeline">
+      {{- /* Group pages by year using Hugo's built-in grouping */}}
+      {{- range $pages.GroupByDate "2006" "desc" }}
+        <section class="timeline-year">
+          <h2 class="timeline-year-label">{{ .Key }}</h2>
+
+          {{- range .Pages }}
+            <a class="timeline-entry" href="{{ .Permalink }}">
+              <div class="timeline-marker"></div>
+              <time class="timeline-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                {{- .Date.Format "January" }}
+              </time>
+              <h3 class="timeline-header">{{ .Title }}</h3>
+              {{- if .Description }}
+                <p class="timeline-description">{{ .Description }}</p>
+              {{- end }}
+              {{- with .Params.status }}
+                <span class="timeline-status timeline-status--{{ . }}">{{ . }}</span>
+              {{- end }}
+            </a>
+          {{- end }}
+
+        </section>
+      {{- end }}
+    </div>
+  {{- else }}
+    <p>No projects yet.</p>
+  {{- end }}
+
+{{- end }}
