@@ -29,8 +29,43 @@
     --darkcolor: #6a7ba2;
     --lightcolor: #cbd1de;
     --normal: 400;
+    --medium: 500;
     --semibold: 500;
     --bold: 700;
+    /* Notice colors */
+    --notice-abstract-bg: #ecfdf5;
+    --notice-abstract-border: #10b981;
+    --notice-abstract-text: #047857;
+    --notice-danger-bg: #fef2f2;
+    --notice-danger-border: #dc2626;
+    --notice-danger-text: #b91c1c;
+    --notice-example-bg: #faf5ff;
+    --notice-example-border: #a855f7;
+    --notice-example-text: #7e22ce;
+    --notice-info-bg: #eff6ff;
+    --notice-info-border: #3b82f6;
+    --notice-info-text: #1d4ed8;
+    --notice-note-bg: #eff6ff;
+    --notice-note-border: #6366f1;
+    --notice-note-text: #4338ca;
+    --notice-question-bg: #fffbeb;
+    --notice-question-border: #f59e0b;
+    --notice-question-text: #b45309;
+    --notice-quote-bg: #f9fafb;
+    --notice-quote-border: #9ca3af;
+    --notice-quote-text: #4b5563;
+    --notice-success-bg: #f0fdf4;
+    --notice-success-border: #22c55e;
+    --notice-success-text: #15803d;
+    --notice-tip-bg: #f0fdfa;
+    --notice-tip-border: #14b8a6;
+    --notice-tip-text: #0f766e;
+    --notice-todo-bg: #fdf4ff;
+    --notice-todo-border: #c026d3;
+    --notice-todo-text: #a21caf;
+    --notice-warning-bg: #fff7ed;
+    --notice-warning-border: #f97316;
+    --notice-warning-text: #c2410c;
     /* Typography scale (Major Third 1.25, base 18px) */
     --text-xs: 11px;
     --text-sm: 14px;
@@ -67,6 +102,40 @@
     --border: rgb(51, 51, 51);
     --darkcolor: #7aa2f7;
     --lightcolor: #6a7ba2;
+    /* Notice colors */
+    --notice-abstract-bg: rgba(16, 185, 129, 0.1);
+    --notice-abstract-border: #34d399;
+    --notice-abstract-text: #6ee7b7;
+    --notice-danger-bg: rgba(220, 38, 38, 0.1);
+    --notice-danger-border: #f87171;
+    --notice-danger-text: #fca5a5;
+    --notice-example-bg: rgba(168, 85, 247, 0.1);
+    --notice-example-border: #c084fc;
+    --notice-example-text: #d8b4fe;
+    --notice-info-bg: rgba(59, 130, 246, 0.1);
+    --notice-info-border: #60a5fa;
+    --notice-info-text: #93c5fd;
+    --notice-note-bg: rgba(99, 102, 241, 0.1);
+    --notice-note-border: #818cf8;
+    --notice-note-text: #a5b4fc;
+    --notice-question-bg: rgba(245, 158, 11, 0.1);
+    --notice-question-border: #fbbf24;
+    --notice-question-text: #fcd34d;
+    --notice-quote-bg: rgba(156, 163, 175, 0.1);
+    --notice-quote-border: #9ca3af;
+    --notice-quote-text: #d1d5db;
+    --notice-success-bg: rgba(34, 197, 94, 0.1);
+    --notice-success-border: #4ade80;
+    --notice-success-text: #86efac;
+    --notice-tip-bg: rgba(20, 184, 166, 0.1);
+    --notice-tip-border: #2dd4bf;
+    --notice-tip-text: #5eead4;
+    --notice-todo-bg: rgba(192, 38, 211, 0.1);
+    --notice-todo-border: #e879f9;
+    --notice-todo-text: #f0abfc;
+    --notice-warning-bg: rgba(249, 115, 22, 0.1);
+    --notice-warning-border: #fb923c;
+    --notice-warning-text: #fdba74;
 }
 
 /* Signal dark mode support to browser extensions (e.g., Noir) that scan for prefers-color-scheme */
