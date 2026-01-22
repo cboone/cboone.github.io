@@ -17,6 +17,10 @@ hugo server
 
 Site available at http://localhost:1313/
 
+## Color Scheme
+
+A visual reference for all CSS custom properties is available at `/colors/` (or `static/colors/index.html` locally). This includes backgrounds, text colors, accents, borders, scrollbar colors, and notice colors for both light and dark modes.
+
 ## Deployment
 
 Pushes to the `production` branch trigger automatic deployment via GitHub Actions.
