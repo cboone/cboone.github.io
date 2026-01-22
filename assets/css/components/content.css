@@ -187,7 +187,7 @@
 }
 
 .post-content .highlight:not(table) {
-    background: var(--background-code-block) !important;
+    background: var(--background-code) !important;
     border-radius: 0;
     direction: ltr;
     margin: 10px auto;

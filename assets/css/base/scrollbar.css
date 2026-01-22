@@ -25,7 +25,7 @@
 }
 
 .post-content :not(table) ::-webkit-scrollbar-thumb {
-    border: 2px solid var(--background-code-block);
+    border: 2px solid var(--background-code);
     background: var(--scrollbar-code-thumb);
 }
 

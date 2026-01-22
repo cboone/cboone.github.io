@@ -19,7 +19,6 @@
     --accent-secondary: #cbd1de;
     --background-card: rgb(255, 255, 255);
     --background-code: #f6f8fa;
-    --background-code-block: #f6f8fa;
     --background-page: rgb(255, 255, 255);
     --background-page-rgb: 255, 255, 255;
     --border-default: rgb(238, 238, 238);
@@ -93,8 +92,7 @@
     --accent-primary: #7aa2f7;
     --accent-secondary: #6a7ba2;
     --background-card: rgb(46, 46, 51);
-    --background-code: rgb(46, 49, 56);
-    --background-code-block: rgb(36, 39, 46);
+    --background-code: rgb(36, 39, 46);
     --background-page: rgb(29, 30, 32);
     --background-page-rgb: 29, 30, 32;
     --border-default: rgb(51, 51, 51);
