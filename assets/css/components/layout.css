@@ -5,6 +5,27 @@
 /* Navigation
    ========================================================================== */
 
+.header {
+    background: rgba(255, 255, 255, 0.85);
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+
+[data-theme="dark"] .header {
+    background: rgba(29, 30, 32, 0.85);
+}
+
+.header a {
+    transition: color 0.2s ease;
+}
+
+.header a:hover {
+    color: var(--darkcolor);
+}
+
 .nav {
     display: flex;
     flex-wrap: wrap;
@@ -65,6 +86,10 @@ button#theme-toggle {
     white-space: nowrap;
 }
 
+#menu-toggle {
+    display: none;
+}
+
 #menu li + li {
     margin-inline-start: var(--gap);
 }
@@ -109,6 +134,7 @@ button#theme-toggle {
     max-width: calc(var(--main-width) + var(--gap) * 2);
     margin: auto;
     padding: var(--gap);
+    padding-top: calc(var(--header-height) + var(--gap));
 }
 
 .page-header h1 {

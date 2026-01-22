@@ -55,6 +55,17 @@
     };
   }
 
+  let menuToggle = document.getElementById("menu-toggle");
+  if (menuToggle && menu) {
+    menuToggle.addEventListener("click", function () {
+      menu.classList.toggle("open");
+      menuToggle.setAttribute(
+        "aria-expanded",
+        menu.classList.contains("open")
+      );
+    });
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
