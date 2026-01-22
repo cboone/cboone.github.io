@@ -97,10 +97,180 @@
         .dark-section .swatch-value {
             color: #aaa;
         }
+
+        .usage-section {
+            margin-bottom: 3rem;
+        }
+
+        .usage-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .usage-table th,
+        .usage-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+
+        .usage-table th {
+            background: #f6f8fa;
+            font-weight: 600;
+        }
+
+        .usage-table code {
+            background: #f6f8fa;
+            border-radius: 4px;
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.875rem;
+            padding: 0.125rem 0.375rem;
+        }
+
+        h3 {
+            font-family: "TASA Explorer", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            margin-top: 1.5rem;
+        }
     </style>
 </head>
 <body>
     <h1>Color Scheme</h1>
+
+    <div class="usage-section">
+        <h2>Usage Guidelines</h2>
+
+        <h3>Backgrounds</h3>
+        <table class="usage-table">
+            <tr>
+                <th>Variable</th>
+                <th>Use For</th>
+            </tr>
+            <tr>
+                <td><code>--theme</code></td>
+                <td>Single page backgrounds, base background color</td>
+            </tr>
+            <tr>
+                <td><code>--theme-rgb</code></td>
+                <td>When you need <code>--theme</code> with opacity (e.g., <code>rgba(var(--theme-rgb), 0.85)</code>)</td>
+            </tr>
+            <tr>
+                <td><code>--entry</code></td>
+                <td>Cards, elevated surfaces, post entries (creates contrast on list pages)</td>
+            </tr>
+            <tr>
+                <td><code>--code-bg</code></td>
+                <td>List page backgrounds, inline code backgrounds</td>
+            </tr>
+            <tr>
+                <td><code>--code-block-bg</code></td>
+                <td>Code block backgrounds, pre elements</td>
+            </tr>
+        </table>
+
+        <h3>Text</h3>
+        <table class="usage-table">
+            <tr>
+                <th>Variable</th>
+                <th>Use For</th>
+            </tr>
+            <tr>
+                <td><code>--primary</code></td>
+                <td>Headings, buttons, high-emphasis text</td>
+            </tr>
+            <tr>
+                <td><code>--content</code></td>
+                <td>Body text, main content</td>
+            </tr>
+            <tr>
+                <td><code>--secondary</code></td>
+                <td>Metadata, descriptions, muted text, footer</td>
+            </tr>
+            <tr>
+                <td><code>--gray</code></td>
+                <td>h4/h5 headings, very muted text</td>
+            </tr>
+        </table>
+
+        <h3>Accents and Borders</h3>
+        <table class="usage-table">
+            <tr>
+                <th>Variable</th>
+                <th>Use For</th>
+            </tr>
+            <tr>
+                <td><code>--tertiary</code></td>
+                <td>Borders, list markers, subtle accents, scroll-to-top button</td>
+            </tr>
+            <tr>
+                <td><code>--border</code></td>
+                <td>Element borders, dividers</td>
+            </tr>
+            <tr>
+                <td><code>--darkcolor</code></td>
+                <td>Links, interactive elements, hover underlines, active states</td>
+            </tr>
+            <tr>
+                <td><code>--lightcolor</code></td>
+                <td>Hover states, button backgrounds, secondary accents</td>
+            </tr>
+        </table>
+
+        <h3>Notice Components</h3>
+        <p style="margin-bottom: 0.75rem;">Each notice type has three variables: <code>--notice-{type}-bg</code>, <code>--notice-{type}-border</code>, <code>--notice-{type}-text</code></p>
+        <table class="usage-table">
+            <tr>
+                <th>Type</th>
+                <th>Use For</th>
+            </tr>
+            <tr>
+                <td><code>abstract</code></td>
+                <td>Summaries, abstracts (green)</td>
+            </tr>
+            <tr>
+                <td><code>danger</code></td>
+                <td>Danger, bug, failure warnings (red) - shared by <code>.bug</code> and <code>.failure</code></td>
+            </tr>
+            <tr>
+                <td><code>example</code></td>
+                <td>Examples (purple)</td>
+            </tr>
+            <tr>
+                <td><code>info</code></td>
+                <td>Information callouts (blue)</td>
+            </tr>
+            <tr>
+                <td><code>note</code></td>
+                <td>Notes (indigo)</td>
+            </tr>
+            <tr>
+                <td><code>question</code></td>
+                <td>Questions (amber)</td>
+            </tr>
+            <tr>
+                <td><code>quote</code></td>
+                <td>Quotations (gray)</td>
+            </tr>
+            <tr>
+                <td><code>success</code></td>
+                <td>Success messages (green)</td>
+            </tr>
+            <tr>
+                <td><code>tip</code></td>
+                <td>Tips (teal)</td>
+            </tr>
+            <tr>
+                <td><code>todo</code></td>
+                <td>Todo items (fuchsia)</td>
+            </tr>
+            <tr>
+                <td><code>warning</code></td>
+                <td>Warnings (orange)</td>
+            </tr>
+        </table>
+    </div>
 
     <div class="theme-section">
         <h2>Light Mode</h2>
