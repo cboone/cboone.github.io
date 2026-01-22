@@ -6,6 +6,12 @@ module:
   imports:
     - path: github.com/adityatelange/hugo-PaperMod
 
+outputs:
+  home:
+    - HTML
+    - JSON
+    - RSS
+
 enableRobotsTXT: true
 
 pagination:
@@ -26,6 +32,9 @@ menu:
     # - name: Projects
     #   url: projects/
     #   weight: 3
+    - name: Search
+      url: search/
+      weight: 5
     - name: Tools
       url: tools/
       weight: 4
@@ -79,6 +88,8 @@ params:
       #   url: projects/
       - name: Tools
         url: tools/
+      - name: Search
+        url: search/
 
   socialIcons:
     - name: GitHub
