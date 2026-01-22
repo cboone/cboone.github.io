@@ -49,6 +49,25 @@
             overflow: hidden;
         }
 
+        a.swatch {
+            color: inherit;
+            display: block;
+            text-decoration: none;
+            transition: transform 0.15s ease;
+        }
+
+        a.swatch:hover {
+            transform: scale(1.02);
+        }
+
+        a.swatch .swatch-name {
+            transition: color 0.15s ease;
+        }
+
+        a.swatch:hover .swatch-name {
+            color: #6a7ba2;
+        }
+
         .swatch-color {
             height: 80px;
         }
@@ -63,6 +82,7 @@
             font-weight: 600;
             margin-bottom: 0.25rem;
         }
+
 
         .swatch-value {
             color: #666;
@@ -139,6 +159,218 @@
 <body>
     <h1>Color Scheme</h1>
 
+    <div class="theme-section">
+        <h2>Light Mode</h2>
+        <div class="color-grid">
+            <a class="swatch" href="#usage-theme">
+                <div class="swatch-color" style="background: rgb(255, 255, 255);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--theme</div>
+                    <div class="swatch-value">rgb(255, 255, 255)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-entry">
+                <div class="swatch-color" style="background: rgb(255, 255, 255);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--entry</div>
+                    <div class="swatch-value">rgb(255, 255, 255)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-primary">
+                <div class="swatch-color" style="background: rgb(30, 30, 30);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--primary</div>
+                    <div class="swatch-value">rgb(30, 30, 30)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-secondary">
+                <div class="swatch-color" style="background: rgb(108, 108, 108);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--secondary</div>
+                    <div class="swatch-value">rgb(108, 108, 108)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-tertiary">
+                <div class="swatch-color" style="background: rgb(214, 214, 214);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--tertiary</div>
+                    <div class="swatch-value">rgb(214, 214, 214)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-gray">
+                <div class="swatch-color" style="background: rgb(165, 165, 165);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--gray</div>
+                    <div class="swatch-value">rgb(165, 165, 165)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-content">
+                <div class="swatch-color" style="background: rgb(30, 30, 30);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--content</div>
+                    <div class="swatch-value">rgb(30, 30, 30)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-code-block-bg">
+                <div class="swatch-color" style="background: #f6f8fa;"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--code-block-bg</div>
+                    <div class="swatch-value">#f6f8fa</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-code-bg">
+                <div class="swatch-color" style="background: #f6f8fa;"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--code-bg</div>
+                    <div class="swatch-value">#f6f8fa</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-border">
+                <div class="swatch-color" style="background: rgb(238, 238, 238);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--border</div>
+                    <div class="swatch-value">rgb(238, 238, 238)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-darkcolor">
+                <div class="swatch-color" style="background: #6a7ba2;"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--darkcolor</div>
+                    <div class="swatch-value">#6a7ba2</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-lightcolor">
+                <div class="swatch-color" style="background: #cbd1de;"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--lightcolor</div>
+                    <div class="swatch-value">#cbd1de</div>
+                </div>
+            </a>
+        </div>
+
+        <h2>Scrollbar Colors (Light)</h2>
+        <div class="color-grid">
+            <div class="swatch">
+                <div class="swatch-color" style="background: rgb(113, 113, 117);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--scrollbar-code-thumb</div>
+                    <div class="swatch-value">rgb(113, 113, 117)</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background: rgb(163, 163, 165);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--scrollbar-code-thumb-hover</div>
+                    <div class="swatch-value">rgb(163, 163, 165)</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background: rgb(255, 255, 255);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--scrollbar-gist-border</div>
+                    <div class="swatch-value">rgb(255, 255, 255)</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background: rgb(173, 173, 173);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--scrollbar-gist-thumb</div>
+                    <div class="swatch-value">rgb(173, 173, 173)</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background: rgb(112, 112, 112);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--scrollbar-gist-thumb-hover</div>
+                    <div class="swatch-value">rgb(112, 112, 112)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dark-section">
+        <h2>Dark Mode</h2>
+        <div class="color-grid">
+            <a class="swatch" href="#usage-theme">
+                <div class="swatch-color" style="background: rgb(29, 30, 32);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--theme</div>
+                    <div class="swatch-value">rgb(29, 30, 32)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-entry">
+                <div class="swatch-color" style="background: rgb(46, 46, 51);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--entry</div>
+                    <div class="swatch-value">rgb(46, 46, 51)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-primary">
+                <div class="swatch-color" style="background: rgb(218, 218, 219);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--primary</div>
+                    <div class="swatch-value">rgb(218, 218, 219)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-secondary">
+                <div class="swatch-color" style="background: rgb(155, 156, 157);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--secondary</div>
+                    <div class="swatch-value">rgb(155, 156, 157)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-tertiary">
+                <div class="swatch-color" style="background: rgb(65, 66, 68);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--tertiary</div>
+                    <div class="swatch-value">rgb(65, 66, 68)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-content">
+                <div class="swatch-color" style="background: rgb(196, 196, 197);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--content</div>
+                    <div class="swatch-value">rgb(196, 196, 197)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-code-block-bg">
+                <div class="swatch-color" style="background: rgb(36, 39, 46);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--code-block-bg</div>
+                    <div class="swatch-value">rgb(36, 39, 46)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-code-bg">
+                <div class="swatch-color" style="background: rgb(46, 49, 56);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--code-bg</div>
+                    <div class="swatch-value">rgb(46, 49, 56)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-border">
+                <div class="swatch-color" style="background: rgb(51, 51, 51);"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--border</div>
+                    <div class="swatch-value">rgb(51, 51, 51)</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-darkcolor">
+                <div class="swatch-color" style="background: #7aa2f7;"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--darkcolor</div>
+                    <div class="swatch-value">#7aa2f7</div>
+                </div>
+            </a>
+            <a class="swatch" href="#usage-lightcolor">
+                <div class="swatch-color" style="background: #6a7ba2;"></div>
+                <div class="swatch-info">
+                    <div class="swatch-name">--lightcolor</div>
+                    <div class="swatch-value">#6a7ba2</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
     <div class="usage-section">
         <h2>Usage Guidelines</h2>
 
@@ -148,23 +380,23 @@
                 <th>Variable</th>
                 <th>Use For</th>
             </tr>
-            <tr>
+            <tr id="usage-theme">
                 <td><code>--theme</code></td>
                 <td>Single page backgrounds, base background color</td>
             </tr>
-            <tr>
+            <tr id="usage-theme-rgb">
                 <td><code>--theme-rgb</code></td>
                 <td>When you need <code>--theme</code> with opacity (e.g., <code>rgba(var(--theme-rgb), 0.85)</code>)</td>
             </tr>
-            <tr>
+            <tr id="usage-entry">
                 <td><code>--entry</code></td>
                 <td>Cards, elevated surfaces, post entries (creates contrast on list pages)</td>
             </tr>
-            <tr>
+            <tr id="usage-code-bg">
                 <td><code>--code-bg</code></td>
                 <td>List page backgrounds, inline code backgrounds</td>
             </tr>
-            <tr>
+            <tr id="usage-code-block-bg">
                 <td><code>--code-block-bg</code></td>
                 <td>Code block backgrounds, pre elements</td>
             </tr>
@@ -176,19 +408,19 @@
                 <th>Variable</th>
                 <th>Use For</th>
             </tr>
-            <tr>
+            <tr id="usage-primary">
                 <td><code>--primary</code></td>
                 <td>Headings, buttons, high-emphasis text</td>
             </tr>
-            <tr>
+            <tr id="usage-content">
                 <td><code>--content</code></td>
                 <td>Body text, main content</td>
             </tr>
-            <tr>
+            <tr id="usage-secondary">
                 <td><code>--secondary</code></td>
                 <td>Metadata, descriptions, muted text, footer</td>
             </tr>
-            <tr>
+            <tr id="usage-gray">
                 <td><code>--gray</code></td>
                 <td>h4/h5 headings, very muted text</td>
             </tr>
@@ -200,19 +432,19 @@
                 <th>Variable</th>
                 <th>Use For</th>
             </tr>
-            <tr>
+            <tr id="usage-tertiary">
                 <td><code>--tertiary</code></td>
                 <td>Borders, list markers, subtle accents, scroll-to-top button</td>
             </tr>
-            <tr>
+            <tr id="usage-border">
                 <td><code>--border</code></td>
                 <td>Element borders, dividers</td>
             </tr>
-            <tr>
+            <tr id="usage-darkcolor">
                 <td><code>--darkcolor</code></td>
                 <td>Links, interactive elements, hover underlines, active states</td>
             </tr>
-            <tr>
+            <tr id="usage-lightcolor">
                 <td><code>--lightcolor</code></td>
                 <td>Hover states, button backgrounds, secondary accents</td>
             </tr>
@@ -270,218 +502,6 @@
                 <td>Warnings (orange)</td>
             </tr>
         </table>
-    </div>
-
-    <div class="theme-section">
-        <h2>Light Mode</h2>
-        <div class="color-grid">
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(255, 255, 255);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--theme</div>
-                    <div class="swatch-value">rgb(255, 255, 255)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(255, 255, 255);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--entry</div>
-                    <div class="swatch-value">rgb(255, 255, 255)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(30, 30, 30);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--primary</div>
-                    <div class="swatch-value">rgb(30, 30, 30)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(108, 108, 108);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--secondary</div>
-                    <div class="swatch-value">rgb(108, 108, 108)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(214, 214, 214);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--tertiary</div>
-                    <div class="swatch-value">rgb(214, 214, 214)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(165, 165, 165);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--gray</div>
-                    <div class="swatch-value">rgb(165, 165, 165)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(30, 30, 30);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--content</div>
-                    <div class="swatch-value">rgb(30, 30, 30)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: #f6f8fa;"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--code-block-bg</div>
-                    <div class="swatch-value">#f6f8fa</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: #f6f8fa;"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--code-bg</div>
-                    <div class="swatch-value">#f6f8fa</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(238, 238, 238);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--border</div>
-                    <div class="swatch-value">rgb(238, 238, 238)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: #6a7ba2;"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--darkcolor</div>
-                    <div class="swatch-value">#6a7ba2</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: #cbd1de;"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--lightcolor</div>
-                    <div class="swatch-value">#cbd1de</div>
-                </div>
-            </div>
-        </div>
-
-        <h2>Scrollbar Colors (Light)</h2>
-        <div class="color-grid">
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(113, 113, 117);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--scrollbar-code-thumb</div>
-                    <div class="swatch-value">rgb(113, 113, 117)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(163, 163, 165);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--scrollbar-code-thumb-hover</div>
-                    <div class="swatch-value">rgb(163, 163, 165)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(255, 255, 255);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--scrollbar-gist-border</div>
-                    <div class="swatch-value">rgb(255, 255, 255)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(173, 173, 173);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--scrollbar-gist-thumb</div>
-                    <div class="swatch-value">rgb(173, 173, 173)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(112, 112, 112);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--scrollbar-gist-thumb-hover</div>
-                    <div class="swatch-value">rgb(112, 112, 112)</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="dark-section">
-        <h2>Dark Mode</h2>
-        <div class="color-grid">
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(29, 30, 32);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--theme</div>
-                    <div class="swatch-value">rgb(29, 30, 32)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(46, 46, 51);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--entry</div>
-                    <div class="swatch-value">rgb(46, 46, 51)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(218, 218, 219);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--primary</div>
-                    <div class="swatch-value">rgb(218, 218, 219)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(155, 156, 157);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--secondary</div>
-                    <div class="swatch-value">rgb(155, 156, 157)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(65, 66, 68);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--tertiary</div>
-                    <div class="swatch-value">rgb(65, 66, 68)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(196, 196, 197);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--content</div>
-                    <div class="swatch-value">rgb(196, 196, 197)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(36, 39, 46);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--code-block-bg</div>
-                    <div class="swatch-value">rgb(36, 39, 46)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(46, 49, 56);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--code-bg</div>
-                    <div class="swatch-value">rgb(46, 49, 56)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: rgb(51, 51, 51);"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--border</div>
-                    <div class="swatch-value">rgb(51, 51, 51)</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: #7aa2f7;"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--darkcolor</div>
-                    <div class="swatch-value">#7aa2f7</div>
-                </div>
-            </div>
-            <div class="swatch">
-                <div class="swatch-color" style="background: #6a7ba2;"></div>
-                <div class="swatch-info">
-                    <div class="swatch-name">--lightcolor</div>
-                    <div class="swatch-value">#6a7ba2</div>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
 </html>
