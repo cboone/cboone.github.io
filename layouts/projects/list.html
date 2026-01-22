@@ -39,7 +39,9 @@
               {{- end }}
               {{- with .Params.cover.image }}
                 {{- with $page.Resources.GetMatch . }}
-                  <img class="timeline-cover" src="{{ .RelPermalink }}" alt="{{ $page.Title }}">
+                  <div class="timeline-cover-wrapper">
+                    <img class="timeline-cover" src="{{ .RelPermalink }}" alt="{{ $page.Title }}">
+                  </div>
                 {{- end }}
               {{- end }}
               {{- with .Params.status }}

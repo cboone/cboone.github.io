@@ -111,10 +111,27 @@
 }
 
 /* Entry cover image */
+.timeline-cover-wrapper {
+  margin-top: 12px;
+  max-height: 12em;
+  overflow: hidden;
+  position: relative;
+}
+
+.timeline-cover-wrapper::after {
+  background: linear-gradient(to bottom, transparent, var(--entry));
+  bottom: 0;
+  content: "";
+  height: 3em;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
 .timeline-cover {
   border-radius: var(--radius-sm);
   display: block;
-  margin-top: 12px;
   max-width: 100%;
 }
 
