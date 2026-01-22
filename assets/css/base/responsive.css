@@ -12,7 +12,7 @@
 @media screen and (max-width: 768px) {
     /* header */
     .header {
-        background: var(--theme);
+        background: var(--background-page);
         position: static;
     }
 
@@ -31,7 +31,7 @@
     }
 
     #menu {
-        background: var(--theme);
+        background: var(--background-page);
         display: none;
         flex-basis: 100%;
         flex-direction: column;

@@ -15,19 +15,19 @@
     --footer-height: 70px;
     --radius: 8px;
     --radius-sm: 6px;
-    --theme: rgb(255, 255, 255);
-    --theme-rgb: 255, 255, 255;
-    --entry: rgb(255, 255, 255);
-    --primary: rgb(30, 30, 30);
-    --secondary: rgb(108, 108, 108);
-    --tertiary: rgb(214, 214, 214);
-    --gray: rgb(165, 165, 165);
-    --content: rgb(30, 30, 30);
-    --code-block-bg: #f6f8fa;
-    --code-bg: #f6f8fa;
-    --border: rgb(238, 238, 238);
-    --darkcolor: #6a7ba2;
-    --lightcolor: #cbd1de;
+    --accent-primary: #6a7ba2;
+    --accent-secondary: #cbd1de;
+    --background-card: rgb(255, 255, 255);
+    --background-code: #f6f8fa;
+    --background-code-block: #f6f8fa;
+    --background-page: rgb(255, 255, 255);
+    --background-page-rgb: 255, 255, 255;
+    --border-default: rgb(238, 238, 238);
+    --border-subtle: rgb(214, 214, 214);
+    --text-body: rgb(30, 30, 30);
+    --text-heading: rgb(30, 30, 30);
+    --text-muted: rgb(108, 108, 108);
+    --text-subtle: rgb(165, 165, 165);
     --normal: 400;
     --medium: 500;
     --semibold: 500;
@@ -90,18 +90,18 @@
 
 :root[data-theme="dark"] {
     color-scheme: dark;
-    --theme: rgb(29, 30, 32);
-    --theme-rgb: 29, 30, 32;
-    --entry: rgb(46, 46, 51);
-    --primary: rgb(218, 218, 219);
-    --secondary: rgb(155, 156, 157);
-    --tertiary: rgb(65, 66, 68);
-    --content: rgb(196, 196, 197);
-    --code-block-bg: rgb(36, 39, 46);
-    --code-bg: rgb(46, 49, 56);
-    --border: rgb(51, 51, 51);
-    --darkcolor: #7aa2f7;
-    --lightcolor: #6a7ba2;
+    --accent-primary: #7aa2f7;
+    --accent-secondary: #6a7ba2;
+    --background-card: rgb(46, 46, 51);
+    --background-code: rgb(46, 49, 56);
+    --background-code-block: rgb(36, 39, 46);
+    --background-page: rgb(29, 30, 32);
+    --background-page-rgb: 29, 30, 32;
+    --border-default: rgb(51, 51, 51);
+    --border-subtle: rgb(65, 66, 68);
+    --text-body: rgb(196, 196, 197);
+    --text-heading: rgb(218, 218, 219);
+    --text-muted: rgb(155, 156, 157);
     /* Notice colors */
     --notice-abstract-bg: rgba(16, 185, 129, 0.1);
     --notice-abstract-border: #34d399;
@@ -152,9 +152,9 @@
 }
 
 .list {
-    background: var(--code-bg);
+    background: var(--background-code);
 }
 
 [data-theme="dark"] .list {
-    background: var(--theme);
+    background: var(--background-page);
 }

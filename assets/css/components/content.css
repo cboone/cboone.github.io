@@ -24,7 +24,7 @@
 
 .post-meta,
 .breadcrumbs {
-    color: var(--secondary);
+    color: var(--text-muted);
     font-size: var(--text-sm);
 }
 
@@ -32,14 +32,14 @@
     display: inline-flex;
     list-style: none;
     margin: auto 3px;
-    box-shadow: 0 1px 0 var(--secondary);
+    box-shadow: 0 1px 0 var(--text-muted);
 }
 
 /* Post Content
    ========================================================================== */
 
 .post-content {
-    color: var(--content);
+    color: var(--text-body);
     line-height: var(--leading-normal);
     font-size: var(--text-base);
 }
@@ -65,7 +65,7 @@
 }
 
 .post-content h4 {
-    color: var(--gray);
+    color: var(--text-subtle);
     font-size: var(--text-lg);
     font-weight: var(--semibold);
     line-height: var(--leading-tight);
@@ -73,7 +73,7 @@
 }
 
 .post-content h5 {
-    color: var(--gray);
+    color: var(--text-subtle);
     font-size: var(--text-base);
     font-weight: var(--semibold);
     letter-spacing: var(--tracking-wide);
@@ -83,7 +83,7 @@
 }
 
 .post-content h6 {
-    color: var(--secondary);
+    color: var(--text-muted);
     font-size: var(--text-sm);
     font-weight: var(--semibold);
     letter-spacing: var(--tracking-wide);
@@ -95,14 +95,14 @@
 .post-content a,
 .post-meta a,
 .toc a:hover {
-    box-shadow: 0 2px 0 var(--darkcolor);
+    box-shadow: 0 2px 0 var(--accent-primary);
     color: currentColor;
 }
 
 .post-content a code {
     margin: auto 0;
     border-radius: 0;
-    box-shadow: 0 -1px 0 var(--primary) inset;
+    box-shadow: 0 -1px 0 var(--text-heading) inset;
 }
 
 .post-content del {
@@ -128,7 +128,7 @@
 }
 
 .post-content li::marker {
-    color: var(--tertiary);
+    color: var(--border-subtle);
 }
 
 .post-content li p {
@@ -166,7 +166,7 @@
     min-width: 80px;
     padding: 8px 5px;
     line-height: var(--leading-normal);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-default);
 }
 
 .post-content table th {
@@ -174,8 +174,8 @@
     font-size: 14px;
     font-weight: var(--semibold);
     text-transform: uppercase;
-    color: var(--gray);
-    border-bottom: 2px solid var(--tertiary);
+    color: var(--text-subtle);
+    border-bottom: 2px solid var(--border-subtle);
 }
 
 .post-content table:not(.highlighttable) td code:only-child {
@@ -187,7 +187,7 @@
 }
 
 .post-content .highlight:not(table) {
-    background: var(--code-block-bg) !important;
+    background: var(--background-code-block) !important;
     border-radius: 0;
     direction: ltr;
     margin: 10px auto;
@@ -228,7 +228,7 @@
     padding: 4px 6px;
     font-size: 0.78em;
     line-height: var(--leading-normal);
-    background: var(--code-bg);
+    background: var(--background-code);
     border-radius: 0;
 }
 
@@ -236,7 +236,7 @@
     display: grid;
     margin: auto 0;
     padding: 10px;
-    color: var(--secondary);
+    color: var(--text-muted);
     border-radius: 0;
     overflow-x: auto;
     word-break: break-all;
@@ -245,14 +245,14 @@
 .post-content blockquote {
     margin: 20px 0;
     padding: 0 20px;
-    color: var(--secondary);
-    border-inline-start: 6px solid var(--tertiary);
+    color: var(--text-muted);
+    border-inline-start: 6px solid var(--border-subtle);
 }
 
 .post-content hr {
     margin: 30px 0;
     height: 2px;
-    background: var(--tertiary);
+    background: var(--border-subtle);
     border: 0;
 }
 
@@ -274,14 +274,14 @@
 }
 
 .post-content figure > figcaption {
-    color: var(--primary);
+    color: var(--text-heading);
     font-size: 16px;
     font-weight: var(--bold);
     margin: 8px 0 16px;
 }
 
 .post-content figure > figcaption > p {
-    color: var(--secondary);
+    color: var(--text-muted);
     font-size: 14px;
     font-weight: var(--normal);
 }
@@ -291,18 +291,18 @@
 
 .toc {
     margin: 0 2px 20px 2px;
-    border: 1px solid var(--border);
-    background: var(--code-bg);
+    border: 1px solid var(--border-default);
+    background: var(--background-code);
     border-radius: var(--radius);
     padding: 0.4em;
 }
 
 .toc li::marker {
-    color: var(--tertiary);
+    color: var(--border-subtle);
 }
 
 [data-theme="dark"] .toc {
-    background: var(--entry);
+    background: var(--background-card);
 }
 
 .toc details summary {
@@ -362,20 +362,20 @@
 .share-buttons,
 .paginav {
     border-radius: var(--radius);
-    background: var(--code-bg);
+    background: var(--background-code);
 }
 
 .post-tags a {
     display: block;
     padding: 0 10px;
-    color: var(--secondary);
+    color: var(--text-muted);
     font-size: 16px;
     line-height: 32px;
-    background: var(--code-bg);
+    background: var(--background-code);
 }
 
 .post-tags a:hover {
-    background: var(--lightcolor);
+    background: var(--accent-secondary);
 }
 
 /* Share Buttons
@@ -408,7 +408,7 @@ h4:hover .anchor,
 h5:hover .anchor,
 h6:hover .anchor {
     display: inline-flex;
-    color: var(--darkcolor);
+    color: var(--accent-primary);
     margin-inline-start: 10px;
     font-weight: var(--bold);
     user-select: none;
@@ -427,18 +427,18 @@ h6:hover .anchor {
     padding-inline-start: 15px;
     padding-inline-end: 15px;
     border-radius: var(--radius);
-    color: var(--secondary);
+    color: var(--text-muted);
 }
 
 .paginav a:hover {
-    background: var(--lightcolor);
+    background: var(--accent-secondary);
 }
 
 .paginav .title {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: small;
-    color: var(--secondary);
+    color: var(--text-muted);
 }
 
 .paginav .prev,
@@ -473,7 +473,7 @@ a[href^="#fnref:"] {
 }
 
 a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
-    color: var(--darkcolor);
+    color: var(--accent-primary);
 }
 
 /* Archive
@@ -493,7 +493,7 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 }
 
 .archive-year:not(:last-of-type) {
-    border-bottom: 2px solid var(--tertiary);
+    border-bottom: 2px solid var(--border-subtle);
 }
 
 .archive-month {
@@ -523,7 +523,7 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 
 .archive-count,
 .archive-meta {
-    color: var(--secondary);
+    color: var(--text-muted);
     font-size: 14px;
 }
 
@@ -533,10 +533,10 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 #searchbox input {
     padding: 4px 10px;
     width: 100%;
-    color: var(--primary);
+    color: var(--text-heading);
     border-radius: var(--radius);
-    background: var(--entry);
-    border: 1px solid var(--border);
+    background: var(--background-card);
+    border: 1px solid var(--border-default);
 }
 
 #searchResults li {
@@ -563,5 +563,5 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 }
 
 #searchResults .focus {
-    border: 1px solid var(--darkcolor);
+    border: 1px solid var(--accent-primary);
 }

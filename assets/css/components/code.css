@@ -30,8 +30,8 @@
    Generated using: hugo gen chromastyles --style=github
    ========================================================================== */
 
-/* Background */ .bg { background-color: var(--code-block-bg); }
-/* PreWrapper */ .chroma { background-color: var(--code-block-bg); }
+/* Background */ .bg { background-color: var(--background-code-block); }
+/* PreWrapper */ .chroma { background-color: var(--background-code-block); }
 /* Error */ .chroma .err { color: #f6f8fa; background-color: #82071e; }
 /* LineLink */ .chroma .lnlinks { outline: none; text-decoration: none; color: inherit; }
 /* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
@@ -107,8 +107,8 @@
    Generated using: hugo gen chromastyles --style=github-dark
    ========================================================================== */
 
-[data-theme="dark"] .bg { color: #e6edf3; background-color: var(--code-block-bg); }
-[data-theme="dark"] .chroma { color: #e6edf3; background-color: var(--code-block-bg); }
+[data-theme="dark"] .bg { color: #e6edf3; background-color: var(--background-code-block); }
+[data-theme="dark"] .chroma { color: #e6edf3; background-color: var(--background-code-block); }
 [data-theme="dark"] .chroma .err { color: #f85149; }
 [data-theme="dark"] .chroma .lnlinks { color: inherit; }
 [data-theme="dark"] .chroma .hl { background-color: #6e7681; }
