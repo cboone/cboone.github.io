@@ -1,6 +1,6 @@
 ---
 date: 2025-01-23
-description: "Self may be the most influential programming language that most developers have never heard of."
+description: "How a radical 1980s experiment at Xerox PARC—eliminating classes from object-oriented programming—invented the optimization techniques that power today's JavaScript engines and Java virtual machines"
 sections:
   - reports
 title: "Self: The invisible language that powers modern computing"
