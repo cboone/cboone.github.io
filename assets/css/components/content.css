@@ -7,19 +7,19 @@
 
 .page-header,
 .post-header {
-    margin: 24px auto var(--content-gap) auto;
+    margin: var(--space-4) auto var(--content-gap) auto;
 }
 
 .post-title {
     font-size: var(--text-3xl);
     letter-spacing: var(--tracking-tighter);
     line-height: var(--leading-tight);
-    margin-bottom: 20px;
+    margin-bottom: var(--space-4);
 }
 
 .post-description {
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-1);
 }
 
 .post-meta,
@@ -48,20 +48,20 @@
     font-size: var(--text-3xl);
     letter-spacing: var(--tracking-tighter);
     line-height: var(--leading-tight);
-    margin: 48px auto 24px;
+    margin: var(--space-8) auto var(--space-4);
 }
 
 .post-content h2 {
     font-size: var(--text-2xl);
     letter-spacing: var(--tracking-tighter);
     line-height: var(--leading-tight);
-    margin: 40px auto 20px;
+    margin: var(--space-8) auto var(--space-4);
 }
 
 .post-content h3 {
     font-size: var(--text-xl);
     line-height: var(--leading-tight);
-    margin: 32px 0 16px;
+    margin: var(--space-6) 0 var(--space-3);
 }
 
 .post-content h4 {
@@ -69,7 +69,7 @@
     font-size: var(--text-lg);
     font-weight: var(--semibold);
     line-height: var(--leading-tight);
-    margin: 28px 0 14px;
+    margin: var(--space-5) 0 var(--space-2);
 }
 
 .post-content h5 {
@@ -78,7 +78,7 @@
     font-weight: var(--semibold);
     letter-spacing: var(--tracking-wide);
     line-height: var(--leading-tight);
-    margin: 24px 0 12px;
+    margin: var(--space-4) 0 var(--space-2);
     text-transform: uppercase;
 }
 
@@ -88,7 +88,7 @@
     font-weight: var(--semibold);
     letter-spacing: var(--tracking-wide);
     line-height: var(--leading-tight);
-    margin: 20px 0 10px;
+    margin: var(--space-4) 0 var(--space-2);
     text-transform: uppercase;
 }
 
@@ -124,7 +124,7 @@
 }
 
 .post-content li {
-    margin-top: 5px;
+    margin-top: var(--space-1);
 }
 
 .post-content li::marker {
@@ -154,7 +154,7 @@
 
 .post-content dd ~ dd,
 .post-content dt ~ dt {
-    margin-top: 10px;
+    margin-top: var(--space-2);
 }
 
 .post-content table {
@@ -190,7 +190,7 @@
     background: var(--background-code) !important;
     border-radius: 0;
     direction: ltr;
-    margin: 10px auto;
+    margin: var(--space-2) auto;
     overflow: hidden;
 }
 
@@ -243,14 +243,14 @@
 }
 
 .post-content blockquote {
-    margin: 20px 0;
-    padding: 0 20px;
+    margin: var(--space-4) 0;
+    padding: 0 var(--space-4);
     color: var(--text-muted);
-    border-inline-start: 6px solid var(--border-subtle);
+    border-inline-start: var(--space-1) solid var(--border-subtle);
 }
 
 .post-content hr {
-    margin: 30px 0;
+    margin: var(--space-5) 0;
     height: 2px;
     background: var(--border-subtle);
     border: 0;
@@ -262,11 +262,11 @@
 
 .post-content img {
     border-radius: 4px;
-    margin: 1rem 0;
+    margin: var(--space-3) 0;
 }
 
 .post-content img[src*="#center"] {
-    margin: 1rem auto;
+    margin: var(--space-3) auto;
 }
 
 .post-content figure.align-center {
@@ -277,7 +277,7 @@
     color: var(--text-heading);
     font-size: 16px;
     font-weight: var(--bold);
-    margin: 8px 0 16px;
+    margin: var(--space-2) 0 var(--space-3);
 }
 
 .post-content figure > figcaption > p {
@@ -290,7 +290,7 @@
    ========================================================================== */
 
 .toc {
-    margin: 0 2px 20px 2px;
+    margin: 0 2px var(--space-4) 2px;
     border: 1px solid var(--border-default);
     background: var(--background-code);
     border-radius: var(--radius);
@@ -341,17 +341,17 @@
    ========================================================================== */
 
 .post-footer {
-    margin-top: 60px;
+    margin-top: var(--space-10);
 }
 
 .post-footer>* {
-    margin-bottom: 10px;
+    margin-bottom: var(--space-2);
 }
 
 .post-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: var(--space-2);
 }
 
 .post-tags li {
@@ -382,11 +382,11 @@
    ========================================================================== */
 
 .share-buttons {
-    padding: 10px;
+    padding: var(--space-2);
     display: flex;
     justify-content: center;
     overflow-x: auto;
-    gap: 10px;
+    gap: var(--space-2);
 }
 
 .share-buttons li,
@@ -395,7 +395,7 @@
 }
 
 .share-buttons a:not(:last-of-type) {
-    margin-inline-end: 12px;
+    margin-inline-end: var(--space-2);
 }
 
 /* Heading Anchors
@@ -409,7 +409,7 @@ h5:hover .anchor,
 h6:hover .anchor {
     display: inline-flex;
     color: var(--accent-primary);
-    margin-inline-start: 10px;
+    margin-inline-start: var(--space-2);
     font-weight: var(--bold);
     user-select: none;
 }
@@ -484,7 +484,7 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 }
 
 .archive-year {
-    margin-top: 20px;
+    margin-top: var(--space-4);
 }
 
 .archive-year-header {
@@ -499,7 +499,7 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 .archive-month {
     display: flex;
     align-items: flex-start;
-    padding: 10px 0;
+    padding: var(--space-2) 0;
 }
 
 .archive-month-header {
@@ -511,12 +511,12 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 
 .archive-entry {
     position: relative;
-    padding: 5px 0;
-    margin: 10px 0;
+    padding: var(--space-1) 0;
+    margin: var(--space-2) 0;
 }
 
 .archive-entry-title {
-    margin: 5px 0;
+    margin: var(--space-1) 0;
     font-weight: var(--normal);
     font-size: var(--text-base);
 }
@@ -542,14 +542,14 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 #searchResults li {
     list-style: none;
     border-radius: var(--radius);
-    padding: 10px;
-    margin: 10px 0;
+    padding: var(--space-2);
+    margin: var(--space-2) 0;
     position: relative;
     font-weight: 400;
 }
 
 #searchResults {
-    margin: 10px 0;
+    margin: var(--space-2) 0;
     width: 100%;
 }
 

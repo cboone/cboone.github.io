@@ -7,8 +7,8 @@
 
 :root {
     color-scheme: light;
-    --gap: 24px;
-    --content-gap: 20px;
+    --gap: var(--space-4);
+    --content-gap: var(--space-4);
     --nav-width: 1024px;
     --main-width: 720px;
     --header-height: 44px;
@@ -80,6 +80,18 @@
     /* Letter spacing */
     --tracking-tighter: -0.02em;
     --tracking-wide: 0.025em;
+    /* Vertical rhythm - 6px base unit (1/3 of base font size) */
+    --rhythm-unit: 6px;
+    --space-1: 6px;   /* 1 unit */
+    --space-2: 12px;  /* 2 units */
+    --space-3: 18px;  /* 3 units - matches base font */
+    --space-4: 24px;  /* 4 units - standard gap */
+    --space-5: 30px;  /* 5 units */
+    --space-6: 36px;  /* 6 units */
+    --space-8: 48px;  /* 8 units */
+    --space-10: 60px; /* 10 units */
+    --space-12: 72px; /* 12 units */
+    --space-16: 96px; /* 16 units */
     /* Scrollbar colors */
     --scrollbar-code-thumb: rgb(113, 113, 117);
     --scrollbar-code-thumb-hover: rgb(163, 163, 165);

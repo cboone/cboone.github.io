@@ -158,13 +158,13 @@ button#theme-toggle {
 
 .social-icons a {
     display: inline-flex;
-    padding: 10px 14px 10px 0;
+    padding: var(--space-2) var(--space-2) var(--space-2) 0;
     transition: color 0.1s ease, transform 0.2s ease;
 }
 
 .social-icons a svg {
-    height: 30px;
-    width: 30px;
+    height: var(--space-5);
+    width: var(--space-5);
 }
 
 .social-icons a:hover {
@@ -249,13 +249,13 @@ pre:hover .copy-code {
 .top-link {
     visibility: hidden;
     position: fixed;
-    bottom: 60px;
-    right: 30px;
+    bottom: var(--space-10);
+    right: var(--space-5);
     z-index: 99;
     background: var(--border-subtle);
     width: 42px;
     height: 42px;
-    padding: 12px;
+    padding: var(--space-2);
     border-radius: 64px;
     transition: visibility 0.5s, opacity 0.8s linear;
 }

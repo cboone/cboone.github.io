@@ -10,7 +10,7 @@
     border-left-width: 4px;
     border-radius: var(--radius-sm);
     margin-bottom: var(--content-gap);
-    padding: 1rem 1.25rem;
+    padding: var(--space-3) var(--space-4);
 }
 
 .notice-head {
@@ -20,7 +20,7 @@
 
 .notice-head svg {
     flex-shrink: 0;
-    margin-right: 0.625rem;
+    margin-right: var(--space-2);
 }
 
 .notice-head p {
@@ -33,7 +33,7 @@
 }
 
 .notice-body {
-    margin-top: 0.625rem;
+    margin-top: var(--space-2);
 }
 
 .notice-body > *:last-child {
