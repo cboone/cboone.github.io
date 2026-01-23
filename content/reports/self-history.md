@@ -1,7 +1,8 @@
 ---
 date: 2025-01-23
 description: "Self may be the most influential programming language that most developers have never heard of."
-sections: []
+sections:
+  - reports
 title: "Self: The invisible language that powers modern computing"
 ---
 
