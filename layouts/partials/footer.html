@@ -20,138 +20,94 @@
   </span>
 </footer>
 {{- end }} {{- if (not site.Params.disableScrollToTop) }}
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g"
+   x-data x-cloak x-show="$store.scrollToTop.visible"
+   x-transition:enter="transition ease-out duration-200"
+   x-transition:enter-start="opacity-0"
+   x-transition:enter-end="opacity-100"
+   x-transition:leave="transition ease-in duration-150"
+   x-transition:leave-start="opacity-100"
+   x-transition:leave-end="opacity-0"
+   @click.prevent="window.scrollTo({top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); history.replaceState(null, null, ' ')">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
     <path d="M12 6H0l6-6z" />
   </svg>
 </a>
 {{- end }}
 
-<script>
-  let menu = document.getElementById("menu");
-  if (menu) {
-    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-    menu.onscroll = function () {
-      localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-    };
-  }
-
-  let menuToggle = document.getElementById("menu-toggle");
-  if (menuToggle && menu) {
-    menuToggle.addEventListener("click", function () {
-      menu.classList.toggle("open");
-      menuToggle.setAttribute(
-        "aria-expanded",
-        menu.classList.contains("open")
-      );
-    });
-  }
-
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      var id = this.getAttribute("href").substr(1);
-      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        document
-          .querySelector(`[id='${decodeURIComponent(id)}']`)
-          .scrollIntoView({
-            behavior: "smooth",
-          });
-      } else {
-        document
-          .querySelector(`[id='${decodeURIComponent(id)}']`)
-          .scrollIntoView();
-      }
-      if (id === "top") {
-        history.replaceState(null, null, " ");
-      } else {
-        history.pushState(null, null, `#${id}`);
-      }
-    });
-  });
-</script>
-
+{{- /* Alpine.js scroll listener for scroll-to-top visibility */}}
 {{- if (not site.Params.disableScrollToTop) }}
-<script>
-  var mybutton = document.getElementById("top-link");
-  window.onscroll = function () {
-    if (
-      document.body.scrollTop > 800 ||
-      document.documentElement.scrollTop > 800
-    ) {
-      mybutton.style.visibility = "visible";
-      mybutton.style.opacity = "1";
-    } else {
-      mybutton.style.visibility = "hidden";
-      mybutton.style.opacity = "0";
+<div x-data x-init="window.addEventListener('scroll', () => $store.scrollToTop.update())"></div>
+{{- end }}
+
+{{- /* Alpine.js smooth scroll component for anchor links */}}
+<div x-data="{
+    smoothScroll(e) {
+        const href = e.currentTarget.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+        e.preventDefault();
+        const id = href.substr(1);
+        const target = document.querySelector('[id=\'' + decodeURIComponent(id) + '\']');
+        if (!target) return;
+        const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+        target.scrollIntoView({ behavior: behavior });
+        if (id === 'top') {
+            history.replaceState(null, null, ' ');
+        } else {
+            history.pushState(null, null, '#' + id);
+        }
     }
-  };
-</script>
-{{- end }} {{- if (not site.Params.disableThemeToggle) }}
-<script>
-  document.getElementById("theme-toggle").addEventListener("click", () => {
-    const html = document.querySelector("html");
-    if (html.dataset.theme === "dark") {
-      html.dataset.theme = "light";
-      localStorage.setItem("pref-theme", "light");
-    } else {
-      html.dataset.theme = "dark";
-      localStorage.setItem("pref-theme", "dark");
+}" x-init="document.querySelectorAll('a[href^=\'#\']').forEach(a => a.addEventListener('click', smoothScroll))"></div>
+
+{{- /* Alpine.js code copy buttons */}}
+{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (.Param "ShowCodeCopyButtons")) }}
+<div x-data="{
+    copyText: '{{- i18n "code_copy" | default "copy" }}',
+    copiedText: '{{- i18n "code_copied" | default "copied!" }}',
+    initCopyButtons() {
+        document.querySelectorAll('pre > code').forEach((codeblock) => {
+            const container = codeblock.parentNode.parentNode;
+            const copybutton = document.createElement('button');
+            copybutton.classList.add('copy-code');
+            copybutton.innerHTML = this.copyText;
+
+            const copyingDone = () => {
+                copybutton.innerHTML = this.copiedText;
+                setTimeout(() => {
+                    copybutton.innerHTML = this.copyText;
+                }, 2000);
+            };
+
+            copybutton.addEventListener('click', () => {
+                if ('clipboard' in navigator) {
+                    navigator.clipboard.writeText(codeblock.textContent);
+                    copyingDone();
+                    return;
+                }
+                const range = document.createRange();
+                range.selectNodeContents(codeblock);
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                try {
+                    document.execCommand('copy');
+                    copyingDone();
+                } catch (e) { }
+                selection.removeRange(range);
+            });
+
+            if (container.classList.contains('highlight')) {
+                container.appendChild(copybutton);
+            } else if (container.parentNode.firstChild == container) {
+                // td containing LineNos
+            } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == 'TABLE') {
+                // table containing LineNos and code
+                codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+            } else {
+                // code blocks not having highlight as parent class
+                codeblock.parentNode.appendChild(copybutton);
+            }
+        });
     }
-  });
-</script>
-{{- end }} {{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout
-"search") (.Param "ShowCodeCopyButtons")) }}
-<script>
-  document.querySelectorAll("pre > code").forEach((codeblock) => {
-    const container = codeblock.parentNode.parentNode;
-
-    const copybutton = document.createElement("button");
-    copybutton.classList.add("copy-code");
-    copybutton.innerHTML = '{{- i18n "code_copy" | default "copy" }}';
-
-    function copyingDone() {
-      copybutton.innerHTML = '{{- i18n "code_copied" | default "copied!" }}';
-      setTimeout(() => {
-        copybutton.innerHTML = '{{- i18n "code_copy" | default "copy" }}';
-      }, 2000);
-    }
-
-    copybutton.addEventListener("click", (cb) => {
-      if ("clipboard" in navigator) {
-        navigator.clipboard.writeText(codeblock.textContent);
-        copyingDone();
-        return;
-      }
-
-      const range = document.createRange();
-      range.selectNodeContents(codeblock);
-      const selection = window.getSelection();
-      selection.removeAllRanges();
-      selection.addRange(range);
-      try {
-        document.execCommand("copy");
-        copyingDone();
-      } catch (e) { }
-      selection.removeRange(range);
-    });
-
-    if (container.classList.contains("highlight")) {
-      container.appendChild(copybutton);
-    } else if (container.parentNode.firstChild == container) {
-      // td containing LineNos
-    } else if (
-      codeblock.parentNode.parentNode.parentNode.parentNode.parentNode
-        .nodeName == "TABLE"
-    ) {
-      // table containing LineNos and code
-      codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(
-        copybutton,
-      );
-    } else {
-      // code blocks not having highlight as parent class
-      codeblock.parentNode.appendChild(copybutton);
-    }
-  });
-</script>
+}" x-init="initCopyButtons()"></div>
 {{- end }}
