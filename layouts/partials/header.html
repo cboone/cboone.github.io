@@ -35,7 +35,7 @@
             {{- end }}
             <div class="logo-switches">
                 {{- if (not site.Params.disableThemeToggle) }}
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" @click="$store.theme.toggle()">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -80,7 +80,7 @@
                 {{- end }}
             </div>
         </div>
-        <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <button id="menu-toggle" aria-label="Toggle menu" :aria-expanded="$store.menu.open ? 'true' : 'false'" @click="$store.menu.toggle()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -90,7 +90,7 @@
             </svg>
         </button>
         {{- $currentPage := . }}
-        <ul id="menu">
+        <ul id="menu" :class="{ 'open': $store.menu.open }" x-init="$nextTick(() => { $el.scrollLeft = $store.menu.scrollPosition })" @scroll="$store.menu.saveScrollPosition($el.scrollLeft)">
             {{- range site.Menus.main }}
             {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
             {{- $page_url:= $currentPage.Permalink | absLangURL }}
