@@ -230,9 +230,9 @@
   --notice-warning-text: #fdba74;
 }
 
-/* Signal dark mode support to browser extensions */
+/* Signal dark mode support to browser extensions (only when no explicit theme set) */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     color-scheme: dark;
   }
 }
@@ -2261,7 +2261,7 @@
 }
 
 /* Accessibility: disable animations for users who prefer reduced motion */
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
   .terms-tags a:active,
   .button:active,
   .post-entry:active,
