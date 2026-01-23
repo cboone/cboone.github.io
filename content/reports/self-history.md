@@ -6,23 +6,15 @@ sections:
 title: "Self: The invisible language that powers modern computing"
 ---
 
-Self may be the most influential programming language that most developers have never heard of. Designed in **1986** by **David Ungar** and **Randall B. Smith** at Xerox PARC,  this prototype-based language pioneered nearly every optimization technique used in today's JavaScript engines and Java virtual machines. Though Self never achieved mainstream adoption, its DNA runs through V8, HotSpot, SpiderMonkey, and JavaScript's object model—making it one of computing's most consequential "failures."
+Self may be the most influential programming language that most developers have never heard of. Designed in **1986** by **David Ungar** and **Randall B. Smith** at Xerox PARC, this prototype-based language pioneered nearly every optimization technique used in today's JavaScript engines and Java virtual machines. Though Self never achieved mainstream adoption, its DNA runs through V8, HotSpot, SpiderMonkey, and JavaScript's object model—making it one of computing's most consequential "failures."
 
 The language emerged from frustration with Smalltalk's complexity. Ungar, fresh from his award-winning Berkeley dissertation on Smalltalk performance, joined Smith at PARC to explore a radical simplification: what if object-oriented programming didn't need classes at all?
 
-## From PARC to Stanford to Sun: a research odyssey
-
-Self's journey through three institutions shaped both the language and the engineers who would later transform the industry.  The **design phase at Xerox PARC (1985-1986)** established the conceptual foundations, with Smith bringing insights from his Alternate Reality Kit prototype system and Ungar contributing deep expertise in dynamic language implementation.
-
-When Ungar moved to Stanford as an assistant professor, **implementation began in earnest (1987-1990)**. His graduate students—including **Craig Chambers** and **Urs Hölzle**—built the first working compiler in 1987  and published "Self: The Power of Simplicity" at OOPSLA that year. The paper was later recognized as one of the three most influential OOPSLA papers from 1986-1996. The team publicly released Self in 1990, demonstrating that a prototype-based language could achieve remarkable performance.
-
-The **Sun Microsystems era (1991-1995)** brought additional talent, including **Lars Bak**  and Mario Wolczko. The team developed the Morphic UI framework  and released Version 4.0 in 1995 with a completely redesigned programming environment. But 1995 also marked Java's launch, and Sun redirected resources toward its new commercial priority.  The Self project officially ended that year.
-
 ## The technical revolution: eliminating classes, inventing modern JIT
 
-Self's core insight was that classes are unnecessary for object-oriented programming.  Objects inherit directly from other objects through **prototype delegation**—when a message is sent, the system searches the receiver for a matching slot, then recursively searches parent objects.  Creating new objects requires only **cloning** existing ones, not instantiating from abstract class descriptions.
+Self's core insight was that classes are unnecessary for object-oriented programming. Objects inherit directly from other objects through **prototype delegation**—when a message is sent, the system searches the receiver for a matching slot, then recursively searches parent objects. Creating new objects requires only **cloning** existing ones, not instantiating from abstract class descriptions.
 
-This simplicity created severe performance challenges that drove groundbreaking innovations. The most important was **maps** (now called "hidden classes" in V8): an implementation-level structure that transparently groups objects with identical slot layouts.   Since objects cloned from the same prototype typically share structure, maps enabled class-like optimization without language-level classes. V8's documentation explicitly acknowledges: "This basic idea is not new—the prototype-based programming language Self used maps to do something similar."
+This simplicity created severe performance challenges that drove groundbreaking innovations. The most important was **maps** (now called "hidden classes" in V8): an implementation-level structure that transparently groups objects with identical slot layouts. Since objects cloned from the same prototype typically share structure, maps enabled class-like optimization without language-level classes. V8's documentation explicitly acknowledges: "This basic idea is not new—the prototype-based programming language Self used maps to do something similar."
 
 **Polymorphic inline caches (PICs)**, introduced by Hölzle, Chambers, and Ungar in 1991, solved the problem of call sites that encounter multiple receiver types. Rather than falling back to slow dictionary lookups, PICs generate stub routines that test receiver types and branch directly to cached methods. This technique achieved **11% median speedup** on typical programs and became standard in all modern JavaScript engines.
 
@@ -30,19 +22,260 @@ The team's work on **adaptive optimization** proved equally transformative. Urs 
 
 ## Why Self remained a research curiosity
 
-Despite its technical brilliance, Self faced formidable adoption barriers. The system required approximately **32MB of RAM**—extraordinary when typical PCs had 8-16MB.   Its image-based development model, where programs existed as "snapshots" of memory rather than source files, confused developers trained in file-based workflows.  The GUI-intensive environment demanded substantial hardware and made text-based development awkward.
+Despite its technical brilliance, Self faced formidable adoption barriers. The system required approximately **32MB of RAM**—extraordinary when typical PCs had 8-16MB. Its image-based development model, where programs existed as "snapshots" of memory rather than source files, confused developers trained in file-based workflows. The GUI-intensive environment demanded substantial hardware and made text-based development awkward.
 
-More fundamentally, prototype-based programming was simply unfamiliar. Industry and academia had converged on class-based object orientation, and Self's alternative paradigm required conceptual reorientation that few were willing to undertake.  When Sun cancelled the project in favor of Java, Self lost its institutional champion. By the time hardware caught up with Self's requirements, JavaScript and Java had captured mindshare.
+More fundamentally, prototype-based programming was simply unfamiliar. Industry and academia had converged on class-based object orientation, and Self's alternative paradigm required conceptual reorientation that few were willing to undertake. When Sun cancelled the project in favor of Java, Self lost its institutional champion. By the time hardware caught up with Self's requirements, JavaScript and Java had captured mindshare.
 
-The project didn't entirely disappear. Community members released Version 4.4 in 2010 with Linux support, and **Self 2024.1** shipped in August 2024  with FreeBSD and NetBSD support. The codebase remains active on GitHub, maintained by enthusiasts who recognize its historical significance.
+## Timeline
 
-## Legacy: powering billions of devices invisibly
+<div class="timeline">
 
-Self's influence flows through two channels: language design and virtual machine technology. **Brendan Eich** explicitly adopted Self's prototype model when creating JavaScript in 1995, later writing: "I'm not proud, but I'm happy that I chose Scheme-ish first-class functions and Self-ish prototypes as the main ingredients."   Every JavaScript object's ability to inherit directly from another object descends from Self.
+<div class="timeline-year">
+<div class="timeline-year-label">Predecessors</div>
 
-**NewtonScript** (1993) adapted Self for Apple's Newton PDA, demonstrating that prototype-based programming could work on resource-constrained devices.   **Lua**'s metatable mechanism enables Self-style delegation.  **Io**, **Slate**, and numerous research languages carried forward the prototype paradigm.
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1972</span>
+<h3 class="timeline-header">Smalltalk created at Xerox PARC</h3>
+<p class="timeline-description">Alan Kay, Dan Ingalls, and Adele Goldstein create Smalltalk at Xerox PARC.</p>
+</div>
 
-The VM influence runs even deeper. After Sun cancelled Self, Hölzle and Bak founded Animorphic to build Strongtalk, a high-performance Smalltalk using Self techniques. **Sun acquired Animorphic in 1997**, and the technology became the **Java HotSpot VM** released in 1999.  When Google hired Lars Bak in 2006 to build Chrome's JavaScript engine, he directly transplanted Self's optimizations into **V8**.  Hidden classes, inline caches, adaptive optimization, and deoptimization—the techniques that make JavaScript fast enough to power modern web applications—all originated in Self research.
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1980</span>
+<h3 class="timeline-header">Smalltalk-80 released</h3>
+<p class="timeline-description">Smalltalk-80 released publicly; becomes dominant dynamic OO language.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1984</span>
+<h3 class="timeline-header">Ungar completes Berkeley PhD</h3>
+<p class="timeline-description">David Ungar completes Berkeley PhD on Smalltalk performance, introducing Generation Scavenging GC.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1986</span>
+<h3 class="timeline-header">Alternate Reality Kit</h3>
+<p class="timeline-description">Randall B. Smith creates Alternate Reality Kit at Xerox PARC—a prototype-based predecessor to Self.</p>
+</div>
+
+</div>
+
+<div class="timeline-year">
+<div class="timeline-year-label">The PARC Era (1985–1987)</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1985</span>
+<h3 class="timeline-header">Self design begins</h3>
+<p class="timeline-description">Ungar joins Smith at Xerox PARC; they begin designing Self. Smith brings insights from his Alternate Reality Kit prototype system and Ungar contributes deep expertise in dynamic language implementation.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1986</span>
+<h3 class="timeline-header">Self language design completed</h3>
+<p class="timeline-description">Self language design completed at PARC, establishing the conceptual foundations for prototype-based programming.</p>
+</div>
+
+</div>
+
+<div class="timeline-year">
+<div class="timeline-year-label">The Stanford Era (1987–1991)</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1987</span>
+<h3 class="timeline-header">Implementation begins at Stanford</h3>
+<p class="timeline-description">Ungar moves to Stanford as assistant professor; implementation begins with graduate students Craig Chambers and Urs Hölzle. First Self compiler completed.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1987</span>
+<h3 class="timeline-header">"Self: The Power of Simplicity" published</h3>
+<p class="timeline-description">The foundational paper published at OOPSLA—later named one of three most influential OOPSLA papers (1986–1996).</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1989</span>
+<h3 class="timeline-header">"An Efficient Implementation of Self" published</h3>
+<p class="timeline-description">Introduces maps (hidden classes)—the optimization technique that would later power V8 and other JavaScript engines.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1990</span>
+<h3 class="timeline-header">Self publicly released</h3>
+<p class="timeline-description">The team publicly releases Self, demonstrating that a prototype-based language could achieve remarkable performance.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1991</span>
+<h3 class="timeline-header">"Polymorphic Inline Caches" paper published</h3>
+<p class="timeline-description">Hölzle, Chambers, and Ungar publish the foundational PIC paper at ECOOP, introducing the technique that achieved 11% median speedup.</p>
+</div>
+
+</div>
+
+<div class="timeline-year">
+<div class="timeline-year-label">The Sun Microsystems Era (1991–1995)</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1991</span>
+<h3 class="timeline-header">Self moves to Sun Microsystems</h3>
+<p class="timeline-description">Self project moves to Sun Microsystems Labs; Lars Bak and Mario Wolczko join the team.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1992</span>
+<h3 class="timeline-header">Chambers completes PhD thesis</h3>
+<p class="timeline-description">Craig Chambers completes PhD thesis on Self compiler—a deep dive into compilation strategies.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1993</span>
+<h3 class="timeline-header">Morphic UI framework developed</h3>
+<p class="timeline-description">John Maloney and Randall B. Smith develop Morphic UI framework—the direct-manipulation UI that influenced Squeak.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1994</span>
+<h3 class="timeline-header">Hölzle completes PhD thesis</h3>
+<p class="timeline-description">Urs Hölzle completes "Adaptive Optimization for Self"—foundational work on type feedback and deoptimization that became the basis for HotSpot and modern JavaScript engines.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1995</span>
+<h3 class="timeline-header">Self 4.0 released; project ends</h3>
+<p class="timeline-description">Self 4.0 released with redesigned programming environment. Java launched; Sun redirects resources. Self project officially ends at Sun.</p>
+</div>
+
+</div>
+
+<div class="timeline-year">
+<div class="timeline-year-label">Immediate Descendants (1993–1995)</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1993</span>
+<h3 class="timeline-header">NewtonScript created</h3>
+<p class="timeline-description">NewtonScript created for Apple Newton PDA—adopts Self's prototype model, demonstrating that prototype-based programming could work on resource-constrained devices.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1993</span>
+<h3 class="timeline-header">Lua 1.0 released</h3>
+<p class="timeline-description">Lua 1.0 released—later adopts Self-style delegation via metatables.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1995</span>
+<h3 class="timeline-header">JavaScript created</h3>
+<p class="timeline-description">Brendan Eich creates JavaScript at Netscape—directly adopts Self's prototype-based inheritance. He later wrote: "I'm not proud, but I'm happy that I chose Scheme-ish first-class functions and Self-ish prototypes as the main ingredients."</p>
+</div>
+
+</div>
+
+<div class="timeline-year">
+<div class="timeline-year-label">The VM Legacy (1994–2008)</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1994</span>
+<h3 class="timeline-header">Animorphic Systems founded</h3>
+<p class="timeline-description">Hölzle and Bak co-found Animorphic Systems; build Strongtalk VM using Self techniques.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1997</span>
+<h3 class="timeline-header">Sun acquires Animorphic</h3>
+<p class="timeline-description">Sun acquires Animorphic Systems, bringing Self's optimization techniques into the Java ecosystem.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">1999</span>
+<h3 class="timeline-header">Java HotSpot VM released</h3>
+<p class="timeline-description">Java HotSpot VM released—directly derived from Self/Strongtalk technology.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">2002</span>
+<h3 class="timeline-header">Io language created</h3>
+<p class="timeline-description">Steve Dekorte creates Io language—explicitly inspired by Self.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">2006</span>
+<h3 class="timeline-header">Google hires Lars Bak</h3>
+<p class="timeline-description">Google hires Lars Bak to build Chrome's JavaScript engine.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">2008</span>
+<h3 class="timeline-header">V8 JavaScript engine released</h3>
+<p class="timeline-description">V8 released—implements Self's hidden classes, inline caches, and adaptive optimization. The techniques that make JavaScript fast enough to power modern web applications all originated in Self research.</p>
+</div>
+
+</div>
+
+<div class="timeline-year">
+<div class="timeline-year-label">Modern Era (2006–Present)</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">2006</span>
+<h3 class="timeline-header">Self 4.3 released</h3>
+<p class="timeline-description">First release in 11 years.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">2010</span>
+<h3 class="timeline-header">Self 4.4 released</h3>
+<p class="timeline-description">Community members release Self 4.4 with Linux support.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">2017</span>
+<h3 class="timeline-header">Self 2017.1 released</h3>
+<p class="timeline-description">New versioning scheme adopted.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">August 2024</span>
+<h3 class="timeline-header">Self 2024.1 released</h3>
+<p class="timeline-description">Released with FreeBSD and NetBSD support.</p>
+</div>
+
+<div class="timeline-entry">
+<span class="timeline-marker"></span>
+<span class="timeline-date">Present</span>
+<h3 class="timeline-header">Self's legacy continues</h3>
+<p class="timeline-description">Self maintained on GitHub; V8 and HotSpot continue to use Self's optimization techniques in billions of devices worldwide.</p>
+</div>
+
+</div>
+
+</div>
 
 ## Key academic papers and resources
 
@@ -70,6 +303,6 @@ The VM influence runs even deeper. After Sun cancelled Self, Hölzle and Bak fou
 
 ## Conclusion
 
-Self represents a fascinating paradox: a language that "failed" commercially yet became foundational to modern computing. The techniques Ungar, Smith, Chambers, Hölzle, and Bak developed at PARC, Stanford, and Sun now execute every time JavaScript runs in a browser, Java runs on a server, or any JIT compiler optimizes hot code paths.  Self's vision of "simplicity, uniformity, concreteness, and liveness" lives on  not in Self programs but in the infrastructure that powers billions of devices daily.
+Self represents a fascinating paradox: a language that "failed" commercially yet became foundational to modern computing. The techniques Ungar, Smith, Chambers, Hölzle, and Bak developed at PARC, Stanford, and Sun now execute every time JavaScript runs in a browser, Java runs on a server, or any JIT compiler optimizes hot code paths. Self's vision of "simplicity, uniformity, concreteness, and liveness" lives on not in Self programs but in the infrastructure that powers billions of devices daily.
 
 The language also demonstrated that radical simplification can drive innovation. By eliminating classes, Self forced its implementers to invent new optimization strategies—strategies that proved more powerful and general than the class-based approaches they replaced. Self's lesson for language designers: constraints can catalyze creativity, and today's research curiosity may become tomorrow's invisible foundation.
