@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertical Rhythm</title>
+    <title>Spacing Scale</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@800&family=TASA+Orbiter:wght@400&display=swap" rel="stylesheet">
@@ -180,35 +180,46 @@
             font-weight: 600;
         }
 
-        /* Rhythm demo */
-        .rhythm-demo {
-            background: repeating-linear-gradient(
-                to bottom,
-                transparent 0,
-                transparent 5px,
-                rgba(147, 168, 208, 0.15) 5px,
-                rgba(147, 168, 208, 0.15) 6px
-            );
+        /* Spacing demo */
+        .spacing-demo {
             border: 1px solid #ddd;
             border-radius: 8px;
             margin-top: 1rem;
             padding: 1.5rem;
         }
 
-        .rhythm-demo h3 {
-            background: rgba(255, 255, 255, 0.9);
-            margin-top: 0;
+        .spacing-demo-item {
+            display: flex;
+            flex-direction: column;
         }
 
-        .rhythm-demo p {
-            background: rgba(255, 255, 255, 0.9);
+        .spacing-demo-element {
+            background: #f6f8fa;
+            border-radius: 4px;
+            padding: 0.75rem 1rem;
         }
 
-        .rhythm-demo-label {
-            color: #666;
-            font-size: 0.75rem;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
+        .spacing-demo-element:first-child {
+            font-family: "TASA Explorer", sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+
+        .spacing-demo-gap {
+            align-items: center;
+            background: linear-gradient(135deg, rgba(147, 168, 208, 0.3) 0%, rgba(106, 123, 162, 0.3) 100%);
+            border-left: 3px solid #93a8d0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .spacing-demo-label {
+            background: white;
+            border-radius: 4px;
+            color: #6a7ba2;
+            font-family: "Iosevka Slab Extended", monospace;
+            font-size: 0.7rem;
+            padding: 0.125rem 0.5rem;
         }
 
         /* Comparison blocks */
@@ -288,11 +299,11 @@
     </style>
 </head>
 <body>
-    <h1>Vertical Rhythm</h1>
+    <h1>Spacing Scale</h1>
 
     <div class="intro">
-        <p><strong>Vertical rhythm</strong> creates visual harmony by aligning elements to a consistent baseline grid. This site uses a <strong>6px base unit</strong>, which is one-third of the 18px base font size.</p>
-        <p>All spacing values are multiples of this unit, creating proportional relationships between elements throughout the design.</p>
+        <p>This site uses a <strong>spacing scale</strong> based on a <strong>6px unit</strong> (one-third of the 18px base font size). All margins, padding, and gaps use multiples of this unit.</p>
+        <p>This is not a true baseline grid (which would require line-heights to be exact multiples of the unit). Instead, it provides <strong>consistent, proportional spacing</strong> between elements.</p>
     </div>
 
     <div class="category-section">
@@ -536,15 +547,25 @@
     </div>
 
     <div class="category-section">
-        <h2>Visual Rhythm Demo</h2>
-        <p>The background grid shows 6px increments. Notice how elements align to the rhythm:</p>
+        <h2>Spacing in Practice</h2>
+        <p>The colored bars show actual spacing values between elements:</p>
 
-        <div class="rhythm-demo">
-            <div class="rhythm-demo-label">6px baseline grid overlay</div>
-            <h3 style="margin-bottom: var(--space-3);">Section Heading</h3>
-            <p style="margin-bottom: var(--space-4);">This paragraph has a bottom margin of <code>--space-4</code> (24px), which is 4 rhythm units. The consistent spacing creates visual harmony.</p>
-            <p style="margin-bottom: var(--space-2);">A shorter gap using <code>--space-2</code> (12px) for tighter grouping.</p>
-            <p>Final paragraph with default spacing.</p>
+        <div class="spacing-demo">
+            <div class="spacing-demo-item">
+                <div class="spacing-demo-element">Heading</div>
+                <div class="spacing-demo-gap" style="height: var(--space-4);">
+                    <span class="spacing-demo-label">--space-4 (24px)</span>
+                </div>
+                <div class="spacing-demo-element">Paragraph text follows the heading with comfortable separation.</div>
+                <div class="spacing-demo-gap" style="height: var(--space-4);">
+                    <span class="spacing-demo-label">--space-4 (24px)</span>
+                </div>
+                <div class="spacing-demo-element">Another paragraph maintains the same rhythm.</div>
+                <div class="spacing-demo-gap" style="height: var(--space-2);">
+                    <span class="spacing-demo-label">--space-2 (12px)</span>
+                </div>
+                <div class="spacing-demo-element" style="font-size: var(--text-sm); color: #666;">Tighter spacing groups related items like metadata.</div>
+            </div>
         </div>
     </div>
 
@@ -559,6 +580,15 @@
             <li style="margin-bottom: 0.5rem;">Common multiples (12, 24, 48) align with typical design expectations</li>
             <li style="margin-bottom: 0.5rem;">Small enough for fine control, large enough to be visually meaningful</li>
         </ul>
+
+        <h4>Why Not True Baseline Alignment?</h4>
+        <p>True baseline grid alignment requires that line-height be an exact multiple of the rhythm unit. With 18px text and 1.5 line-height, each line is 27px tall, which doesn't divide evenly into 6px.</p>
+        <p>Achieving true baseline alignment would require either:</p>
+        <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+            <li style="margin-bottom: 0.5rem;">Changing line-height to 24px (1.33) or 30px (1.67), which compromises readability</li>
+            <li style="margin-bottom: 0.5rem;">Complex calculations for every element to compensate for the mismatch</li>
+        </ul>
+        <p>The spacing scale approach provides 90% of the visual benefit with none of the complexity.</p>
 
         <h4>Relationship to Typography</h4>
         <p>The spacing scale relates to the type scale:</p>
@@ -582,11 +612,6 @@
                 <td><code>--text-lg</code></td>
                 <td>22px</td>
                 <td><code>--space-4</code> (close: 24px)</td>
-            </tr>
-            <tr>
-                <td>Line height (1.5)</td>
-                <td>27px</td>
-                <td><code>--space-4</code> + <code>--space-1</code> (24px + 6px = 30px, close)</td>
             </tr>
         </table>
     </div>
