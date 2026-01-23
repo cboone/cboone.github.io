@@ -173,6 +173,7 @@
   --text-heading: rgb(218, 218, 219);
   --text-body: rgb(196, 196, 197);
   --text-muted: rgb(155, 156, 157);
+  --text-subtle: rgb(175, 176, 176);
 
   --border-default: rgb(51, 51, 51);
   --border-subtle: rgb(65, 66, 68);
@@ -271,6 +272,7 @@
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-relaxed);
+    margin: 0;
     word-break: break-word;
     background: var(--background-page);
     color: var(--text-heading);
@@ -661,9 +663,10 @@
     color: var(--text-muted);
   }
 
-  .top-link:focus,
-  #theme-toggle:focus {
-    outline: 0;
+  .top-link:focus-visible,
+  #theme-toggle:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
   }
 
   /* Post Header */
@@ -992,8 +995,14 @@
     margin-inline-start: var(--gap);
   }
 
-  .toc summary:focus {
+  .toc summary:focus:not(:focus-visible) {
     outline: 0;
+  }
+
+  .toc summary:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 
   /* Post Footer & Tags */
