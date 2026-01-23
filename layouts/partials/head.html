@@ -219,7 +219,7 @@
 
         Alpine.store('menu', {
             open: false,
-            scrollPosition: parseInt(localStorage.getItem('menu-scroll-position')) || 0,
+            scrollPosition: Number(localStorage.getItem('menu-scroll-position')) || 0,
             toggle: function() {
                 this.open = !this.open;
             },

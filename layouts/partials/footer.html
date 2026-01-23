@@ -47,7 +47,7 @@
         if (!href || !href.startsWith('#')) return;
         e.preventDefault();
         const id = href.substring(1);
-        const target = document.querySelector('[id=\'' + decodeURIComponent(id) + '\']');
+        const target = document.getElementById(decodeURIComponent(id));
         if (!target) return;
         const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
         target.scrollIntoView({ behavior: behavior });
