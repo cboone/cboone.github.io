@@ -3,27 +3,36 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
 
-{{- /* Alpine.js component to initialize KaTeX rendering */}}
-<div x-data x-init="
-    const renderMath = () => {
-        if (typeof renderMathInElement === 'function') {
-            renderMathInElement(document.body, {
-                delimiters: [
-                    {left: '$$', right: '$$', display: true},
-                    {left: '$', right: '$', display: false},
-                    {left: '\\begin{equation}', right: '\\end{equation}', display: true},
-                    {left: '\\begin{equation*}', right: '\\end{equation*}', display: true},
-                    {left: '\\begin{align}', right: '\\end{align}', display: true},
-                    {left: '\\begin{align*}', right: '\\end{align*}', display: true},
-                    {left: '\\begin{alignat}', right: '\\end{alignat}', display: true},
-                    {left: '\\begin{gather}', right: '\\end{gather}', display: true},
-                    {left: '\\begin{CD}', right: '\\end{CD}', display: true}
-                ],
-                throwOnError: false
-            });
+{{- /* Initialize KaTeX rendering */}}
+<script>
+    (function() {
+        let retries = 0;
+        const maxRetries = 100;
+        const renderMath = () => {
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\begin{equation}', right: '\\end{equation}', display: true},
+                        {left: '\\begin{equation*}', right: '\\end{equation*}', display: true},
+                        {left: '\\begin{align}', right: '\\end{align}', display: true},
+                        {left: '\\begin{align*}', right: '\\end{align*}', display: true},
+                        {left: '\\begin{alignat}', right: '\\end{alignat}', display: true},
+                        {left: '\\begin{gather}', right: '\\end{gather}', display: true},
+                        {left: '\\begin{CD}', right: '\\end{CD}', display: true}
+                    ],
+                    throwOnError: false
+                });
+            } else if (retries < maxRetries) {
+                retries++;
+                setTimeout(renderMath, 50);
+            }
+        };
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', renderMath);
         } else {
-            setTimeout(renderMath, 50);
+            renderMath();
         }
-    };
-    renderMath();
-"></div>
+    })();
+</script>

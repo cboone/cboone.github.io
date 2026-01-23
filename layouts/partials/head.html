@@ -39,7 +39,7 @@
 <link href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@800&family=TASA+Orbiter:wght@400&display=swap" rel="stylesheet">
 
 {{- /* Alpine.js */}}
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js" integrity="sha384-Bwp1iiDL2N8tn9t51Dj9IuyFx5LiPqfSc7B4l/PLSyB3mLeR1b/+yzSuBIqSfRzQ" crossorigin="anonymous"></script>
 
 {{- /* Styles */}}
 
@@ -209,7 +209,7 @@
 <script>
     document.addEventListener('alpine:init', function() {
         Alpine.store('theme', {
-            value: window.__theme || 'light',
+            value: document.documentElement.dataset.theme || window.__theme || 'light',
             toggle: function() {
                 this.value = this.value === 'dark' ? 'light' : 'dark';
                 document.documentElement.dataset.theme = this.value;

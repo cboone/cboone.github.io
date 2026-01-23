@@ -37,7 +37,7 @@
 
 {{- /* Alpine.js scroll listener for scroll-to-top visibility */}}
 {{- if (not site.Params.disableScrollToTop) }}
-<div x-data x-init="window.addEventListener('scroll', () => $store.scrollToTop.update())"></div>
+<div x-data @scroll.window="$store.scrollToTop.update()"></div>
 {{- end }}
 
 {{- /* Alpine.js smooth scroll component for anchor links */}}
@@ -46,7 +46,7 @@
         const href = e.currentTarget.getAttribute('href');
         if (!href || !href.startsWith('#')) return;
         e.preventDefault();
-        const id = href.substr(1);
+        const id = href.substring(1);
         const target = document.querySelector('[id=\'' + decodeURIComponent(id) + '\']');
         if (!target) return;
         const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
