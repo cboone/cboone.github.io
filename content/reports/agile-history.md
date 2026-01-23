@@ -254,9 +254,9 @@ The morning sessions featured presentations in the Aspen Room; afternoons allowe
 
 **2025** — Ongoing consolidation of agile tooling vendors under Broadcom, with significant restructuring impacting the visibility and availability of XP-style consulting services formerly offered by Pivotal Labs/Tanzu Labs.
 
-**2025** — The enterprise agile transformation market was estimated at around **$48.75 billion in 2025** and is projected to grow to $96.28 billion by 2029.
+**2025** — Industry analysts estimated the enterprise agile transformation market at around **$48.75 billion** for 2025, with projections forecasting growth to approximately $96.28 billion by 2029.
 
-**2025** — Industry surveys report approximately **71% of organizations** use agile in software development, with 97% reporting some agile adoption. **Scrum** remains the dominant framework (87% of agile teams), followed by Kanban and hybrid approaches.
+**2025** — Industry surveys reported approximately **71% of organizations** using agile in software development, with 97% reporting some level of agile adoption. **Scrum** remained the dominant framework (approximately 87% of agile teams), followed by Kanban and hybrid approaches.
 
 **2025** — Ongoing debates continue about "Agile Industrial Complex" commercialization, certification proliferation, and whether mainstream adoption has preserved or diluted original agile values. Post-agile and "Modern Agile" movements advocate returning to ultra-light approaches.
 
@@ -300,7 +300,7 @@ What began as a ski lodge conversation among 17 people has transformed into a gl
 
 ## Bibliography
 
-This bibliography accompanies the comprehensive history of agile methodology, organized by category for easier navigation. All links were verified as of January 2025.
+This bibliography accompanies the comprehensive history of agile methodology, organized by category for easier navigation. All links were verified as of January 2026.
 
 ### Primary Sources and Foundational Documents
 
@@ -465,4 +465,4 @@ This bibliography accompanies the comprehensive history of agile methodology, or
 - UMA Technology. "10 Books Every Tech Professional Should Read." [https://umatechnology.org/10-books-every-tech-professional-should-read/](https://umatechnology.org/10-books-every-tech-professional-should-read/)
 - Gihyo (Japan). "#27 Ward Cunningham: Wiki Inventor; Agile Programming Pioneer." [https://gihyo.jp/dev/serial/01/software_designers/0027](https://gihyo.jp/dev/serial/01/software_designers/0027)
 
-*Timeline compiled from primary sources and historical research, January 2025.*
+*Timeline compiled from primary sources and historical research, January 2026.*
