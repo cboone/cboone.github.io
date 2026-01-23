@@ -26,21 +26,18 @@ menu:
     - name: LLMs
       url: llms/
       weight: 1
-    # - name: Math
-    #   url: math/
-    #   weight: 2
-    - name: Projects
-      url: projects/
-      weight: 4
-    - name: Reports
-      url: reports/
-      weight: 5
-    - name: Search
-      url: search/
-      weight: 6
     - name: Tools
       url: tools/
+      weight: 2
+    - name: Projects
+      url: projects/
       weight: 3
+    - name: Reports
+      url: reports/
+      weight: 4
+    - name: Search
+      url: search/
+      weight: 5
 
 params:
   author: Christopher Boone
@@ -85,13 +82,11 @@ params:
     buttons:
       - name: LLMs
         url: llms/
-      # - name: Math
-      #   url: math/
-      - name: Reports
-        url: reports/
       - name: Tools
         url: tools/
       - divider: true
+      - name: Reports
+        url: reports/
       - name: Projects
         url: projects/
       - divider: true
