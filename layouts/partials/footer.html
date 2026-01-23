@@ -28,7 +28,7 @@
    x-transition:leave="transition ease-in duration-150"
    x-transition:leave-start="opacity-100"
    x-transition:leave-end="opacity-0"
-   @click.prevent="window.scrollTo({top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); history.replaceState(null, null, ' ')">
+   @click.prevent="window.scrollTo({top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); history.replaceState(null, null, window.location.pathname)">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
     <path d="M12 6H0l6-6z" />
   </svg>
@@ -52,7 +52,7 @@
         const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
         target.scrollIntoView({ behavior: behavior });
         if (id === 'top') {
-            history.replaceState(null, null, ' ');
+            history.replaceState(null, null, window.location.pathname);
         } else {
             history.pushState(null, null, '#' + id);
         }
@@ -80,8 +80,13 @@
 
             copybutton.addEventListener('click', () => {
                 if ('clipboard' in navigator) {
-                    navigator.clipboard.writeText(codeblock.textContent);
-                    copyingDone();
+                    navigator.clipboard.writeText(codeblock.textContent)
+                        .then(() => {
+                            copyingDone();
+                        })
+                        .catch((error) => {
+                            console.error('Failed to copy code to clipboard:', error);
+                        });
                     return;
                 }
                 const range = document.createRange();
@@ -92,7 +97,9 @@
                 try {
                     document.execCommand('copy');
                     copyingDone();
-                } catch (e) { }
+                } catch (error) {
+                    console.error('Failed to copy code using execCommand:', error);
+                }
                 selection.removeRange(range);
             });
 
