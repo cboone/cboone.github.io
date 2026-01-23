@@ -63,7 +63,7 @@
           .scrollIntoView();
       }
       if (id === "top") {
-        history.replaceState(null, null, " ");
+        history.replaceState(null, null, window.location.pathname);
       } else {
         history.pushState(null, null, `#${id}`);
       }
@@ -119,8 +119,9 @@
 
     copybutton.addEventListener("click", (cb) => {
       if ("clipboard" in navigator) {
-        navigator.clipboard.writeText(codeblock.textContent);
-        copyingDone();
+        navigator.clipboard.writeText(codeblock.textContent)
+          .then(() => copyingDone())
+          .catch((err) => console.warn("Clipboard write failed:", err));
         return;
       }
 
@@ -132,7 +133,9 @@
       try {
         document.execCommand("copy");
         copyingDone();
-      } catch (e) { }
+      } catch (e) {
+        console.warn("Fallback copy failed:", e);
+      }
       selection.removeRange(range);
     });
 
