@@ -6,7 +6,7 @@ sections:
 title: "Self: The invisible language that powers modern computing"
 ---
 
-Self may be the most influential programming language that most developers have never heard of. Designed in **1986** by **David Ungar** and **Randall B. Smith** at Xerox PARC, this prototype-based language pioneered nearly every optimization technique used in today's JavaScript engines and Java virtual machines. Though Self never achieved mainstream adoption, its DNA runs through V8, HotSpot, SpiderMonkey, and JavaScript's object model—making it one of computing's most consequential "failures."
+Self may be the most influential programming language that most developers have never heard of. Designed between **1985 and 1986** by **David Ungar** and **Randall B. Smith** at Xerox PARC, this prototype-based language pioneered nearly every optimization technique used in today's JavaScript engines and Java virtual machines. Though Self never achieved mainstream adoption, its DNA runs through V8, HotSpot, SpiderMonkey, and JavaScript's object model—making it one of computing's most consequential "failures."
 
 The language emerged from frustration with Smalltalk's complexity. Ungar, fresh from his award-winning Berkeley dissertation on Smalltalk performance, joined Smith at PARC to explore a radical simplification: what if object-oriented programming didn't need classes at all?
 
