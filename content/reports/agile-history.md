@@ -17,7 +17,7 @@ From Toyota's factory floors to today's global software industry, this timeline 
 
 **1950s** — **Shigeo Shingo** collaborates with Ohno to refine TPS, developing Single-Minute Exchange of Dies (SMED) and poka-yoke (mistake-proofing) techniques.
 
-**1958–1963** — NASA's **Project Mercury** uses half-day time-boxed iterations with test-first development—planning and writing tests before each micro-increment. Gerald Weinberg later recalls this as deliberate incremental development: "We were doing incremental development as early as 1957… All of us, as far as I can remember, thought waterfalling of a huge project was rather stupid."
+**1958–early 1960s** — NASA's **Project Mercury** uses half-day time-boxed iterations with test-first development—planning and writing tests before each micro-increment. Gerald Weinberg later recalls this as deliberate incremental development: "We were doing incremental development as early as 1957… All of us, as far as I can remember, thought waterfalling of a huge project was rather stupid."
 
 **1961** — IBM's **Federal Systems Division**, seeded by Mercury personnel, becomes a major proponent of iterative approaches for government and aerospace projects.
 
@@ -69,7 +69,7 @@ From Toyota's factory floors to today's global software industry, this timeline 
 
 **1993** — **ThoughtWorks** founded in Chicago by Roy Singham, later becoming a leading agile consultancy.
 
-**1993** — The **Chrysler Comprehensive Compensation System (C3)** project initiated to replace multiple legacy COBOL payroll systems with a single Smalltalk/GemStone application for 87,000 employees.
+**1993** — The **Chrysler Comprehensive Compensation System (C3)** project initiated to replace multiple legacy COBOL payroll systems with a single Smalltalk/GemStone application intended to eventually serve 87,000 employees.
 
 **1994** — **DSDM (Dynamic Systems Development Method) Consortium** founded in the UK by a group of RAD practitioners including representatives from British Airways, American Express, and Oracle. Introduces MoSCoW prioritization.
 
@@ -83,15 +83,15 @@ From Toyota's factory floors to today's global software industry, this timeline 
 
 **1997** — **Feature-Driven Development (FDD)** created by **Jeff De Luca** and **Peter Coad** on a 50-person Singapore bank project. David Anderson (later the Kanban pioneer) participates in the original team.
 
-**1997** — C3 goes live, successfully paying approximately 10,000 salaried Chrysler employees.
+**1997** — C3 first goes live, initially paying approximately 10,000 salaried Chrysler employees.
 
 **1997** — **Kent Beck** and **Erich Gamma** create **JUnit** on a flight to OOPSLA, making test-driven development practical and spawning the xUnit family of testing frameworks. Beck saw it as "a political statement—as a programmer I accept responsibility for the quality of my work."
 
 **1998** — Daimler-Benz acquires Chrysler; the on-site customer at C3 resigns from burnout and cannot be replaced.
 
-**1999** — C3 development stops; DaimlerChrysler officially cancels the project in February 2000, but by then XP has spread to many other projects. Martin Fowler noted: "C3's cancellation also proves that XP is no guarantee of success."
+**1999** — C3 development stops before expansion beyond the initial population; DaimlerChrysler officially cancels the project in February 2000, but by then XP has spread to many other projects. Martin Fowler noted: "C3's cancellation also proves that XP is no guarantee of success."
 
-**1999** — A review of U.S. Department of Defense projects reveals **75% failed or were never used**, with only 2% deployed without extensive modification—approximately $37 billion in failed spending.
+**Late 1980s–1990s** — Reviews of U.S. Department of Defense software projects report very high rates of failure and non-use, with only a small fraction of systems deployed without extensive modification and large sums effectively wasted.
 
 **October 1999** — **Kent Beck** publishes *Extreme Programming Explained: Embrace Change*, defining XP's practices and philosophy. Reviewers call it "dynamite" for changing industry thinking.
 
@@ -132,7 +132,7 @@ The morning sessions featured presentations in the Aspen Room; afternoons allowe
 
 **2001** — **Ken Schwaber** and **Mike Beedle** publish *Agile Software Development with Scrum*, introducing Scrum comprehensively to the software community.
 
-**2002** — **Atlassian** founded in Sydney, Australia by Mike Cannon-Brookes and Scott Farquhar.
+**2002** — **Atlassian** founded in Sydney, Australia by Mike Cannon-Brookes and Scott Farquhar, becoming a dominant provider of agile and collaboration tooling for software teams.
 
 **2002** — **Jira** launched by Atlassian as bug-tracking software; it will later become the dominant agile project management tool.
 
@@ -160,7 +160,7 @@ The morning sessions featured presentations in the Aspen Room; afternoons allowe
 
 **April 3, 2005** — **Linus Torvalds** begins coding **Git** after a BitKeeper licensing dispute threatens Linux kernel development.
 
-**December 21, 2005** — Git 1.0 released, revolutionizing distributed version control.
+**Late 2005** — Git reaches a 1.0 release, revolutionizing distributed version control.
 
 **2005** — **Hudson** continuous integration server development begins (later forked as Jenkins).
 
@@ -168,17 +168,17 @@ The morning sessions featured presentations in the Aspen Room; afternoons allowe
 
 ## Scaling, DevOps, and Mainstream Adoption (2006–2014)
 
-**2006–2007** — **David Anderson** develops the full **Kanban Method** at Corbis, achieving **240% improvement in delivery rates and 90% reduction in delivery times**. His approach drew from Toyota's production Kanban (Japanese for "signboard"), Eli Goldratt's Theory of Constraints, and Don Reinertsen's product development flow principles.
+**2006–2007** — **David Anderson** develops the full **Kanban Method** at Corbis, reportedly achieving significant improvements in delivery rates and cycle times. His approach drew from Toyota's production Kanban (Japanese for "signboard"), Eli Goldratt's Theory of Constraints, and Don Reinertsen's product development flow principles.
 
 **2007** — **Dean Leffingwell** publishes *Scaling Software Agility: Best Practices for Large Enterprises*, laying theoretical groundwork for SAFe.
 
 **August 2008** — **Patrick Debois** attends an "Agile Infrastructure" session at the Toronto Agile Conference—as the only attendee—and meets Andrew Shafer, forming the Agile System Administration Group.
 
-**2008** — **GitHub** founded by Tom Preston-Werner, Chris Wanstrath, PJ Hyett, and Scott Chacon, transforming Git from command-line tool to global collaboration platform.
+**2008** — **GitHub** founded by Tom Preston-Werner, Chris Wanstrath, PJ Hyett, and Scott Chacon, transforming Git from command-line tool to global collaboration platform; by the 2024 Stack Overflow Developer Survey, approximately **95% of professional developers** reported using Git.
 
 **2008** — **Robert C. Martin** publishes *Clean Code: A Handbook of Agile Software Craftsmanship*, defining code quality standards for agile teams.
 
-**2008** — **Pivotal Tracker** launched as an agile project management tool focused on XP practices.
+**2008** — **Pivotal Tracker** launched as an agile project management tool focused on XP practices, becoming a favorite among XP-focused teams, especially in startup and Pivotal Labs–led projects.
 
 **June 2009** — **John Allspaw** and **Paul Hammond** present "10+ Deploys a Day: Dev and Ops Cooperation at Flickr" at O'Reilly's Velocity Conference—a pivotal moment for the DevOps movement.
 
@@ -192,7 +192,7 @@ The morning sessions featured presentations in the Aspen Room; afternoons allowe
 
 **2010** — **David Anderson** publishes *Kanban: Successful Evolutionary Change for Your Technology Business*, codifying the Kanban Method. Unlike Scrum's prescribed roles and fixed sprints, Kanban has no mandatory roles and enables continuous flow.
 
-**2010** — First official **Scrum Guide** published by Ken Schwaber and Jeff Sutherland.
+**2010** — First **Scrum Guide** published by Ken Schwaber and Jeff Sutherland (following earlier books, papers, and training material describing Scrum), with subsequent updates in 2011, 2013, 2016, 2017, and 2020.
 
 **2010** — Dean Leffingwell publishes *Agile Software Requirements*, further developing scaled agile concepts.
 
@@ -218,7 +218,7 @@ The morning sessions featured presentations in the Aspen Room; afternoons allowe
 
 **2015** — **Ken Schwaber** releases the **Nexus** framework through Scrum.org, providing a lightweight approach for 3–9 Scrum teams working on a single product backlog.
 
-**2016** — Scrum Guide updated to add the five **Scrum Values**: commitment, courage, focus, openness, and respect.
+**2016** — Scrum Guide updated to introduce the five **Scrum Values**: commitment, courage, focus, openness, and respect; the 2020 guide later simplified language and added the Product Goal.
 
 **2016** — **Gene Kim**, Jez Humble, Patrick Debois, and John Willis publish *The DevOps Handbook*, providing comprehensive guidance on implementing DevOps practices.
 
@@ -226,7 +226,7 @@ The morning sessions featured presentations in the Aspen Room; afternoons allowe
 
 **2018** — **Martin Fowler** delivers influential keynote at Agile Australia identifying the "Agile Industrial Complex" as a key problem—criticizing imposition of processes on teams rather than letting teams choose their own approaches.
 
-**2018** — **Ron Jeffries** publishes provocative article "Developers Should Abandon Agile," criticizing "Dark Scrum" and "Flaccid Scrum" implementations that use agile's name while abandoning its principles: "Dark Scrum is actively using the name 'agile' against the basic principles."
+**2018** — **Ron Jeffries** publishes provocative article "Developers Should Abandon Agile," criticizing "Dark Scrum" and "Flaccid Scrum" implementations that use agile's name while abandoning its principles: "Dark Scrum is actively using the name 'agile' against the basic principles." The certification industry—what some call "Certified Vanity Plates"—drew particular criticism for prioritizing revenue over genuine capability building.
 
 **2018** — Google acquires **DORA (DevOps Research and Assessment)**, the research organization founded by Nicole Forsgren, Jez Humble, and Gene Kim that established empirical links between technical practices and organizational performance.
 
@@ -250,15 +250,13 @@ The morning sessions featured presentations in the Aspen Room; afternoons allowe
 
 **2023** — **Broadcom acquires VMware** (including Pivotal Labs).
 
-**2024** — **XP2024** celebrates the 25th anniversary of Extreme Programming in Bolzano, Italy, with XP2025 planned for Switzerland.
+**2024** — **XP2024** celebrates the 25th anniversary of Extreme Programming in Bolzano, Italy, with XP2025 scheduled for Switzerland.
 
-**January 2025** — **Tanzu Labs** (formerly Pivotal Labs) shut down by Broadcom—a significant loss for the XP community.
+**2025** — Ongoing consolidation of agile tooling vendors under Broadcom, with significant restructuring impacting the visibility and availability of XP-style consulting services formerly offered by Pivotal Labs/Tanzu Labs.
 
-**April 2025** — **Pivotal Tracker** retired by Broadcom, ending a 17-year run as an XP-focused project management tool.
+**2025** — The enterprise agile transformation market was estimated at around **$48.75 billion in 2025** and is projected to grow to $96.28 billion by 2029.
 
-**2025** — Enterprise agile transformation market reaches **$48.75 billion**, projected to grow to $96.28 billion by 2029.
-
-**2025** — Industry surveys report **71% of organizations** use agile in software development, with 97% reporting some agile adoption. **Scrum** remains the dominant framework (87% of agile teams), followed by Kanban and hybrid approaches.
+**2025** — Industry surveys report approximately **71% of organizations** use agile in software development, with 97% reporting some agile adoption. **Scrum** remains the dominant framework (87% of agile teams), followed by Kanban and hybrid approaches.
 
 **2025** — Ongoing debates continue about "Agile Industrial Complex" commercialization, certification proliferation, and whether mainstream adoption has preserved or diluted original agile values. Post-agile and "Modern Agile" movements advocate returning to ultra-light approaches.
 
