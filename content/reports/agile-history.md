@@ -1,7 +1,7 @@
 ---
 date: 2026-01-23T10:00:00-05:00
 description: "Agile methodology's origins from the Toyota Production System through modern DevOps and scaled frameworks"
-sections: []
+sections: ["reports"]
 title: "The complete history of agile: from Toyota to transformation"
 ---
 
