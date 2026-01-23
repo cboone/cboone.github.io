@@ -2255,7 +2255,7 @@
   }
 }
 
-/* Shorter viewports */
+/* Narrower viewports */
 @media screen and (max-width: 900px) {
   .list .top-link {
     transform: translateY(-5rem);
