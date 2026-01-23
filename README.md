@@ -11,9 +11,14 @@ brew install hugo
 # Clone repository
 git clone https://github.com/cboone/cboone.github.io.git
 
+# Install dependencies (required for CSS processing)
+npm install
+
 # Run local server
 hugo server
 ```
+
+**Note:** This project uses Tailwind CSS v4 with PostCSS. The `npm install` step is required before running Hugo to ensure CSS is processed correctly. Requires Node.js 18 or later.
 
 Site available at http://localhost:1313/
 
