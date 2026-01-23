@@ -14,6 +14,9 @@ Personal website for Christopher Boone, built with Hugo and the PaperMod theme, 
 ## Common Commands
 
 ```bash
+# Install dependencies (required for CSS processing)
+npm install
+
 # Run local development server
 hugo server
 
