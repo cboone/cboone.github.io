@@ -59,7 +59,7 @@ function activeToggle(ae) {
     });
     if (ae) {
         ae.focus()
-        document.activeElement = current_elem = ae;
+        current_elem = ae;
         ae.parentElement.classList.add("focus")
     } else {
         document.activeElement.parentElement.classList.add("focus")
@@ -87,10 +87,9 @@ sInput.onkeyup = function (e) {
             // build our html if result exists
             let resultSet = ''; // our results bucket
 
-            for (let item in results) {
-                resultSet += `<li class="post-entry"><header class="entry-header">${results[item].item.title}&nbsp;»</header>` +
-                    `<a href="${results[item].item.permalink}" aria-label="${results[item].item.title}"></a></li>`;
-
+            for (let result of results) {
+                resultSet += `<li class="post-entry"><header class="entry-header">${result.item.title}&nbsp;»</header>` +
+                    `<a href="${result.item.permalink}" aria-label="${result.item.title}"></a></li>`;
             }
 
             resList.innerHTML = resultSet;
