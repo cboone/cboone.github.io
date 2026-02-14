@@ -69,3 +69,12 @@ Main configuration is in `config.yml`. Key sections:
 ## Deployment
 
 Push to `production` branch triggers GitHub Actions workflow that builds and deploys to GitHub Pages.
+
+## Styling
+
+When making changes that involve colors or styling, consult the style references:
+
+- **Colors:** `static/styles/colors/index.html` (available at `/styles/colors/` on the live site) - documents all CSS custom properties including backgrounds, text colors, accents, borders, scrollbar colors, and notice colors for both light and dark modes
+- **Typography:** `static/styles/typography/index.html` (available at `/styles/typography/` on the live site) - documents font families, type scale, font weights, line heights, and letter spacing
+
+Always use the existing CSS variables rather than hardcoded values.

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@800&family=TASA+Orbiter:wght@400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-display: swap;
+            font-family: "Iosevka Slab Extended";
+            font-style: normal;
+            font-weight: 400;
+            src: url("/fonts/IosevkaSlab-Extended.woff2") format("woff2");
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-family: "TASA Orbiter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.5;
+            padding: 2rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "TASA Explorer", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-weight: 800;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        h4 {
+            font-family: "TASA Explorer", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .category-section {
+            margin-bottom: 3rem;
+        }
+
+        .font-family-demo {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .font-family-header {
+            background: #f6f8fa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.75rem 1rem;
+        }
+
+        .font-family-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .font-family-meta {
+            color: #666;
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.75rem;
+        }
+
+        .font-family-sample {
+            padding: 1.5rem 1rem;
+        }
+
+        .sample-heading {
+            font-family: "TASA Explorer", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .sample-body {
+            font-family: "TASA Orbiter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .sample-code {
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .scale-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .scale-item {
+            align-items: baseline;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 120px 1fr;
+            overflow: hidden;
+            padding: 1rem;
+        }
+
+        .scale-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .scale-var {
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .scale-value {
+            color: #666;
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.75rem;
+        }
+
+        .scale-sample {
+            font-family: "TASA Orbiter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .usage-section {
+            margin-top: 2rem;
+        }
+
+        .usage-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .usage-table th,
+        .usage-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+
+        .usage-table th {
+            background: #f6f8fa;
+            font-weight: 600;
+        }
+
+        .usage-table code {
+            background: #f6f8fa;
+            border-radius: 4px;
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.875rem;
+            padding: 0.125rem 0.375rem;
+        }
+
+        .dark-mode {
+            background: rgb(29, 30, 32);
+            border-radius: 12px;
+            color: rgb(196, 196, 197);
+            margin-top: 1rem;
+            padding: 1.5rem;
+        }
+
+        .dark-mode h3 {
+            color: #fff;
+            margin-top: 0;
+        }
+
+        .dark-mode .font-family-demo {
+            border-color: #444;
+        }
+
+        .dark-mode .font-family-header {
+            background: rgb(46, 46, 51);
+            border-color: #444;
+            color: #fff;
+        }
+
+        .dark-mode .font-family-meta {
+            color: #aaa;
+        }
+
+        .dark-mode .scale-item {
+            border-color: #444;
+        }
+
+        .dark-mode .scale-value {
+            color: #aaa;
+        }
+
+        .weight-samples {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .weight-sample {
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 140px 1fr;
+            padding: 0.75rem 1rem;
+        }
+
+        .weight-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.125rem;
+        }
+
+        .weight-var {
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .weight-value {
+            color: #666;
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.75rem;
+        }
+
+        .spacing-samples {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .spacing-sample {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .spacing-header {
+            background: #f6f8fa;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            gap: 1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .spacing-var {
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .spacing-value {
+            color: #666;
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.75rem;
+        }
+
+        .spacing-preview {
+            font-family: "TASA Explorer", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            padding: 1rem;
+        }
+
+        .tracking-tighter {
+            letter-spacing: -0.02em;
+        }
+
+        .tracking-wide {
+            letter-spacing: 0.025em;
+        }
+
+        .leading-preview {
+            background: linear-gradient(to bottom, transparent 49%, rgba(147, 168, 208, 0.3) 49%, rgba(147, 168, 208, 0.3) 51%, transparent 51%);
+            font-family: "TASA Orbiter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 1rem;
+            padding: 1rem;
+        }
+
+        .leading-tight {
+            line-height: 1.25;
+        }
+
+        .leading-normal {
+            line-height: 1.5;
+        }
+
+        .alphabet-sample {
+            color: #666;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Typography</h1>
+
+    <div class="category-section">
+        <h2>Font Families</h2>
+
+        <div class="font-family-demo">
+            <div class="font-family-header">
+                <div class="font-family-name">TASA Explorer</div>
+                <div class="font-family-meta">Headings, navigation, footer | Weight: 800</div>
+            </div>
+            <div class="font-family-sample">
+                <div class="sample-heading">The quick brown fox jumps over the lazy dog</div>
+                <div class="alphabet-sample" style="font-family: 'TASA Explorer', sans-serif; font-weight: 800;">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    0123456789
+                </div>
+            </div>
+        </div>
+
+        <div class="font-family-demo">
+            <div class="font-family-header">
+                <div class="font-family-name">TASA Orbiter</div>
+                <div class="font-family-meta">Body text | Weight: 400</div>
+            </div>
+            <div class="font-family-sample">
+                <div class="sample-body">The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs. How vexingly quick daft zebras jump!</div>
+                <div class="alphabet-sample">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    0123456789
+                </div>
+            </div>
+        </div>
+
+        <div class="font-family-demo">
+            <div class="font-family-header">
+                <div class="font-family-name">Iosevka Slab Extended</div>
+                <div class="font-family-meta">Code, inline code, preformatted text | Weight: 400</div>
+            </div>
+            <div class="font-family-sample">
+                <div class="sample-code">const greeting = "Hello, World!";<br>function fibonacci(n) { return n <= 1 ? n : fibonacci(n - 1) + fibonacci(n - 2); }</div>
+                <div class="alphabet-sample" style="font-family: 'Iosevka Slab Extended', monospace;">
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                    0123456789 !@#$%^&amp;*()_+-=[]{}|;':",&lt;&gt;.?/
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-section">
+            <h4>Usage</h4>
+            <table class="usage-table">
+                <tr>
+                    <th>Font</th>
+                    <th>CSS Declaration</th>
+                    <th>Use For</th>
+                </tr>
+                <tr>
+                    <td>TASA Explorer</td>
+                    <td><code>font-family: "TASA Explorer", -apple-system, ...</code></td>
+                    <td>h1-h6, .logo, #menu, .footer</td>
+                </tr>
+                <tr>
+                    <td>TASA Orbiter</td>
+                    <td><code>font-family: "TASA Orbiter", -apple-system, ...</code></td>
+                    <td>body, all content text</td>
+                </tr>
+                <tr>
+                    <td>Iosevka Slab Extended</td>
+                    <td><code>font-family: "Iosevka Slab Extended", ui-monospace, ...</code></td>
+                    <td>code, kbd, pre, samp</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Type Scale</h2>
+        <p style="color: #666; margin-bottom: 1.5rem;">Major Third ratio (1.25), base 18px</p>
+
+        <div class="scale-grid">
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--text-3xl</span>
+                    <span class="scale-value">44px</span>
+                </div>
+                <div class="scale-sample" style="font-size: 44px; line-height: 1.25;">Display</div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--text-2xl</span>
+                    <span class="scale-value">35px</span>
+                </div>
+                <div class="scale-sample" style="font-size: 35px; line-height: 1.25;">Heading 1</div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--text-xl</span>
+                    <span class="scale-value">28px</span>
+                </div>
+                <div class="scale-sample" style="font-size: 28px; line-height: 1.25;">Heading 2</div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--text-lg</span>
+                    <span class="scale-value">22px</span>
+                </div>
+                <div class="scale-sample" style="font-size: 22px; line-height: 1.25;">Heading 3</div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--text-base</span>
+                    <span class="scale-value">18px</span>
+                </div>
+                <div class="scale-sample" style="font-size: 18px;">Body text (base size)</div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--text-sm</span>
+                    <span class="scale-value">14px</span>
+                </div>
+                <div class="scale-sample" style="font-size: 14px;">Small text, metadata</div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--text-xs</span>
+                    <span class="scale-value">11px</span>
+                </div>
+                <div class="scale-sample" style="font-size: 11px;">Extra small, captions</div>
+            </div>
+        </div>
+
+        <div class="usage-section">
+            <h4>Usage</h4>
+            <table class="usage-table">
+                <tr>
+                    <th>Variable</th>
+                    <th>Size</th>
+                    <th>Use For</th>
+                </tr>
+                <tr>
+                    <td><code>--text-3xl</code></td>
+                    <td>44px</td>
+                    <td>Hero titles, display text</td>
+                </tr>
+                <tr>
+                    <td><code>--text-2xl</code></td>
+                    <td>35px</td>
+                    <td>Page titles, h1 elements</td>
+                </tr>
+                <tr>
+                    <td><code>--text-xl</code></td>
+                    <td>28px</td>
+                    <td>Section headers, h2 elements</td>
+                </tr>
+                <tr>
+                    <td><code>--text-lg</code></td>
+                    <td>22px</td>
+                    <td>Subsection headers, h3 elements</td>
+                </tr>
+                <tr>
+                    <td><code>--text-base</code></td>
+                    <td>18px</td>
+                    <td>Body text, paragraphs, default size</td>
+                </tr>
+                <tr>
+                    <td><code>--text-sm</code></td>
+                    <td>14px</td>
+                    <td>Metadata, timestamps, secondary info</td>
+                </tr>
+                <tr>
+                    <td><code>--text-xs</code></td>
+                    <td>11px</td>
+                    <td>Captions, fine print</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Font Weights</h2>
+
+        <div class="weight-samples">
+            <div class="weight-sample">
+                <div class="weight-meta">
+                    <span class="weight-var">--normal</span>
+                    <span class="weight-value">400</span>
+                </div>
+                <div style="font-weight: 400;">Regular body text weight</div>
+            </div>
+            <div class="weight-sample">
+                <div class="weight-meta">
+                    <span class="weight-var">--medium</span>
+                    <span class="weight-value">500</span>
+                </div>
+                <div style="font-weight: 500;">Medium emphasis text</div>
+            </div>
+            <div class="weight-sample">
+                <div class="weight-meta">
+                    <span class="weight-var">--semibold</span>
+                    <span class="weight-value">500</span>
+                </div>
+                <div style="font-weight: 500;">Semibold (same as medium)</div>
+            </div>
+            <div class="weight-sample">
+                <div class="weight-meta">
+                    <span class="weight-var">--bold</span>
+                    <span class="weight-value">700</span>
+                </div>
+                <div style="font-weight: 700;">Bold emphasis text</div>
+            </div>
+        </div>
+
+        <div class="usage-section">
+            <h4>Usage</h4>
+            <table class="usage-table">
+                <tr>
+                    <th>Variable</th>
+                    <th>Weight</th>
+                    <th>Use For</th>
+                </tr>
+                <tr>
+                    <td><code>--normal</code></td>
+                    <td>400</td>
+                    <td>Body text, regular content</td>
+                </tr>
+                <tr>
+                    <td><code>--medium</code></td>
+                    <td>500</td>
+                    <td>Slightly emphasized text</td>
+                </tr>
+                <tr>
+                    <td><code>--semibold</code></td>
+                    <td>500</td>
+                    <td>Alias for medium weight</td>
+                </tr>
+                <tr>
+                    <td><code>--bold</code></td>
+                    <td>700</td>
+                    <td>Strong emphasis, important text</td>
+                </tr>
+            </table>
+            <p style="color: #666; font-size: 0.875rem; margin-top: 0.75rem;">Note: TASA Explorer headings use weight 800 (extra bold) directly, not these variables.</p>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Line Height</h2>
+
+        <div class="spacing-samples">
+            <div class="spacing-sample">
+                <div class="spacing-header">
+                    <span class="spacing-var">--leading-tight</span>
+                    <span class="spacing-value">1.25</span>
+                </div>
+                <div class="leading-preview leading-tight">
+                    Tight line height for headings and display text where vertical rhythm needs to be compact. This creates a more condensed feel that works well with larger type sizes.
+                </div>
+            </div>
+            <div class="spacing-sample">
+                <div class="spacing-header">
+                    <span class="spacing-var">--leading-normal</span>
+                    <span class="spacing-value">1.5</span>
+                </div>
+                <div class="leading-preview leading-normal">
+                    Normal line height for body text and paragraphs. This provides comfortable reading with adequate space between lines, improving readability for longer content blocks.
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-section">
+            <h4>Usage</h4>
+            <table class="usage-table">
+                <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                    <th>Use For</th>
+                </tr>
+                <tr>
+                    <td><code>--leading-tight</code></td>
+                    <td>1.25</td>
+                    <td>Headings, display text, compact layouts</td>
+                </tr>
+                <tr>
+                    <td><code>--leading-normal</code></td>
+                    <td>1.5</td>
+                    <td>Body text, paragraphs, readable content</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Letter Spacing</h2>
+
+        <div class="spacing-samples">
+            <div class="spacing-sample">
+                <div class="spacing-header">
+                    <span class="spacing-var">--tracking-tighter</span>
+                    <span class="spacing-value">-0.02em</span>
+                </div>
+                <div class="spacing-preview tracking-tighter">
+                    TIGHTER TRACKING FOR LARGE HEADINGS
+                </div>
+            </div>
+            <div class="spacing-sample">
+                <div class="spacing-header">
+                    <span class="spacing-var">(default)</span>
+                    <span class="spacing-value">0</span>
+                </div>
+                <div class="spacing-preview">
+                    DEFAULT LETTER SPACING
+                </div>
+            </div>
+            <div class="spacing-sample">
+                <div class="spacing-header">
+                    <span class="spacing-var">--tracking-wide</span>
+                    <span class="spacing-value">0.025em</span>
+                </div>
+                <div class="spacing-preview tracking-wide">
+                    WIDE TRACKING FOR SMALL CAPS
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-section">
+            <h4>Usage</h4>
+            <table class="usage-table">
+                <tr>
+                    <th>Variable</th>
+                    <th>Value</th>
+                    <th>Use For</th>
+                </tr>
+                <tr>
+                    <td><code>--tracking-tighter</code></td>
+                    <td>-0.02em</td>
+                    <td>Large display headings where default spacing looks too loose</td>
+                </tr>
+                <tr>
+                    <td><code>--tracking-wide</code></td>
+                    <td>0.025em</td>
+                    <td>Small caps, uppercase labels, buttons</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Dark Mode Preview</h2>
+
+        <div class="dark-mode">
+            <h3>Typography in Dark Mode</h3>
+            <p style="margin-bottom: 1rem;">Typography settings remain consistent between light and dark modes. Only text colors change:</p>
+
+            <div class="font-family-demo">
+                <div class="font-family-header">
+                    <div class="font-family-name" style="color: rgb(218, 218, 219);">Heading Text</div>
+                    <div class="font-family-meta">--text-heading: rgb(218, 218, 219)</div>
+                </div>
+                <div class="font-family-sample">
+                    <div class="sample-heading" style="color: rgb(218, 218, 219);">The quick brown fox</div>
+                </div>
+            </div>
+
+            <div class="font-family-demo" style="margin-top: 1rem;">
+                <div class="font-family-header">
+                    <div class="font-family-name" style="color: rgb(196, 196, 197);">Body Text</div>
+                    <div class="font-family-meta">--text-body: rgb(196, 196, 197)</div>
+                </div>
+                <div class="font-family-sample">
+                    <div class="sample-body" style="color: rgb(196, 196, 197);">Pack my box with five dozen liquor jugs. How vexingly quick daft zebras jump!</div>
+                </div>
+            </div>
+
+            <div class="font-family-demo" style="margin-top: 1rem;">
+                <div class="font-family-header">
+                    <div class="font-family-name" style="color: rgb(155, 156, 157);">Muted Text</div>
+                    <div class="font-family-meta">--text-muted: rgb(155, 156, 157)</div>
+                </div>
+                <div class="font-family-sample">
+                    <div class="sample-body" style="color: rgb(155, 156, 157);">Metadata, descriptions, and secondary information use muted colors.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

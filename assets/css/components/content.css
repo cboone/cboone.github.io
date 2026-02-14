@@ -7,24 +7,24 @@
 
 .page-header,
 .post-header {
-    margin: 24px auto var(--content-gap) auto;
+    margin: var(--space-4) auto var(--content-gap) auto;
 }
 
 .post-title {
     font-size: var(--text-3xl);
     letter-spacing: var(--tracking-tighter);
     line-height: var(--leading-tight);
-    margin-bottom: 20px;
+    margin-bottom: var(--space-4);
 }
 
 .post-description {
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-1);
 }
 
 .post-meta,
 .breadcrumbs {
-    color: var(--secondary);
+    color: var(--text-muted);
     font-size: var(--text-sm);
 }
 
@@ -32,14 +32,14 @@
     display: inline-flex;
     list-style: none;
     margin: auto 3px;
-    box-shadow: 0 1px 0 var(--secondary);
+    box-shadow: 0 1px 0 var(--text-muted);
 }
 
 /* Post Content
    ========================================================================== */
 
 .post-content {
-    color: var(--content);
+    color: var(--text-body);
     line-height: var(--leading-normal);
     font-size: var(--text-base);
 }
@@ -48,61 +48,61 @@
     font-size: var(--text-3xl);
     letter-spacing: var(--tracking-tighter);
     line-height: var(--leading-tight);
-    margin: 48px auto 24px;
+    margin: var(--space-8) auto var(--space-4);
 }
 
 .post-content h2 {
     font-size: var(--text-2xl);
     letter-spacing: var(--tracking-tighter);
     line-height: var(--leading-tight);
-    margin: 40px auto 20px;
+    margin: var(--space-8) auto var(--space-4);
 }
 
 .post-content h3 {
     font-size: var(--text-xl);
     line-height: var(--leading-tight);
-    margin: 32px 0 16px;
+    margin: var(--space-6) 0 var(--space-3);
 }
 
 .post-content h4 {
-    color: var(--gray);
+    color: var(--text-subtle);
     font-size: var(--text-lg);
     font-weight: var(--semibold);
     line-height: var(--leading-tight);
-    margin: 28px 0 14px;
+    margin: var(--space-5) 0 var(--space-2);
 }
 
 .post-content h5 {
-    color: var(--gray);
+    color: var(--text-subtle);
     font-size: var(--text-base);
     font-weight: var(--semibold);
     letter-spacing: var(--tracking-wide);
     line-height: var(--leading-tight);
-    margin: 24px 0 12px;
+    margin: var(--space-4) 0 var(--space-2);
     text-transform: uppercase;
 }
 
 .post-content h6 {
-    color: var(--secondary);
+    color: var(--text-muted);
     font-size: var(--text-sm);
     font-weight: var(--semibold);
     letter-spacing: var(--tracking-wide);
     line-height: var(--leading-tight);
-    margin: 20px 0 10px;
+    margin: var(--space-4) 0 var(--space-2);
     text-transform: uppercase;
 }
 
 .post-content a,
 .post-meta a,
 .toc a:hover {
-    box-shadow: 0 2px 0 var(--darkcolor);
+    box-shadow: 0 2px 0 var(--accent-primary);
     color: currentColor;
 }
 
 .post-content a code {
     margin: auto 0;
     border-radius: 0;
-    box-shadow: 0 -1px 0 var(--primary) inset;
+    box-shadow: 0 -1px 0 var(--text-heading) inset;
 }
 
 .post-content del {
@@ -124,11 +124,11 @@
 }
 
 .post-content li {
-    margin-top: 5px;
+    margin-top: var(--space-1);
 }
 
 .post-content li::marker {
-    color: var(--tertiary);
+    color: var(--border-subtle);
 }
 
 .post-content li p {
@@ -154,7 +154,7 @@
 
 .post-content dd ~ dd,
 .post-content dt ~ dt {
-    margin-top: 10px;
+    margin-top: var(--space-2);
 }
 
 .post-content table {
@@ -166,7 +166,7 @@
     min-width: 80px;
     padding: 8px 5px;
     line-height: var(--leading-normal);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-default);
 }
 
 .post-content table th {
@@ -174,8 +174,8 @@
     font-size: 14px;
     font-weight: var(--semibold);
     text-transform: uppercase;
-    color: var(--gray);
-    border-bottom: 2px solid var(--tertiary);
+    color: var(--text-subtle);
+    border-bottom: 2px solid var(--border-subtle);
 }
 
 .post-content table:not(.highlighttable) td code:only-child {
@@ -187,10 +187,10 @@
 }
 
 .post-content .highlight:not(table) {
-    background: var(--code-block-bg) !important;
+    background: var(--background-code) !important;
     border-radius: 0;
     direction: ltr;
-    margin: 10px auto;
+    margin: var(--space-2) auto;
     overflow: hidden;
 }
 
@@ -228,7 +228,7 @@
     padding: 4px 6px;
     font-size: 0.78em;
     line-height: var(--leading-normal);
-    background: var(--code-bg);
+    background: var(--background-code);
     border-radius: 0;
 }
 
@@ -236,23 +236,23 @@
     display: grid;
     margin: auto 0;
     padding: 10px;
-    color: var(--secondary);
+    color: var(--text-muted);
     border-radius: 0;
     overflow-x: auto;
     word-break: break-all;
 }
 
 .post-content blockquote {
-    margin: 20px 0;
-    padding: 0 20px;
-    color: var(--secondary);
-    border-inline-start: 6px solid var(--tertiary);
+    margin: var(--space-4) 0;
+    padding: 0 var(--space-4);
+    color: var(--text-muted);
+    border-inline-start: var(--space-1) solid var(--border-subtle);
 }
 
 .post-content hr {
-    margin: 30px 0;
+    margin: var(--space-5) 0;
     height: 2px;
-    background: var(--tertiary);
+    background: var(--border-subtle);
     border: 0;
 }
 
@@ -262,11 +262,11 @@
 
 .post-content img {
     border-radius: 4px;
-    margin: 1rem 0;
+    margin: var(--space-3) 0;
 }
 
 .post-content img[src*="#center"] {
-    margin: 1rem auto;
+    margin: var(--space-3) auto;
 }
 
 .post-content figure.align-center {
@@ -274,14 +274,14 @@
 }
 
 .post-content figure > figcaption {
-    color: var(--primary);
+    color: var(--text-heading);
     font-size: 16px;
     font-weight: var(--bold);
-    margin: 8px 0 16px;
+    margin: var(--space-2) 0 var(--space-3);
 }
 
 .post-content figure > figcaption > p {
-    color: var(--secondary);
+    color: var(--text-muted);
     font-size: 14px;
     font-weight: var(--normal);
 }
@@ -290,19 +290,19 @@
    ========================================================================== */
 
 .toc {
-    margin: 0 2px 20px 2px;
-    border: 1px solid var(--border);
-    background: var(--code-bg);
+    margin: 0 2px var(--space-4) 2px;
+    border: 1px solid var(--border-default);
+    background: var(--background-code);
     border-radius: var(--radius);
     padding: 0.4em;
 }
 
 .toc li::marker {
-    color: var(--tertiary);
+    color: var(--border-subtle);
 }
 
 [data-theme="dark"] .toc {
-    background: var(--entry);
+    background: var(--background-card);
 }
 
 .toc details summary {
@@ -341,17 +341,17 @@
    ========================================================================== */
 
 .post-footer {
-    margin-top: 60px;
+    margin-top: var(--space-10);
 }
 
 .post-footer>* {
-    margin-bottom: 10px;
+    margin-bottom: var(--space-2);
 }
 
 .post-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: var(--space-2);
 }
 
 .post-tags li {
@@ -362,31 +362,31 @@
 .share-buttons,
 .paginav {
     border-radius: var(--radius);
-    background: var(--code-bg);
+    background: var(--background-code);
 }
 
 .post-tags a {
     display: block;
     padding: 0 10px;
-    color: var(--secondary);
+    color: var(--text-muted);
     font-size: 16px;
     line-height: 32px;
-    background: var(--code-bg);
+    background: var(--background-code);
 }
 
 .post-tags a:hover {
-    background: var(--lightcolor);
+    background: var(--accent-tertiary);
 }
 
 /* Share Buttons
    ========================================================================== */
 
 .share-buttons {
-    padding: 10px;
+    padding: var(--space-2);
     display: flex;
     justify-content: center;
     overflow-x: auto;
-    gap: 10px;
+    gap: var(--space-2);
 }
 
 .share-buttons li,
@@ -395,7 +395,7 @@
 }
 
 .share-buttons a:not(:last-of-type) {
-    margin-inline-end: 12px;
+    margin-inline-end: var(--space-2);
 }
 
 /* Heading Anchors
@@ -408,8 +408,8 @@ h4:hover .anchor,
 h5:hover .anchor,
 h6:hover .anchor {
     display: inline-flex;
-    color: var(--darkcolor);
-    margin-inline-start: 10px;
+    color: var(--accent-primary);
+    margin-inline-start: var(--space-2);
     font-weight: var(--bold);
     user-select: none;
 }
@@ -427,18 +427,18 @@ h6:hover .anchor {
     padding-inline-start: 15px;
     padding-inline-end: 15px;
     border-radius: var(--radius);
-    color: var(--secondary);
+    color: var(--text-muted);
 }
 
 .paginav a:hover {
-    background: var(--lightcolor);
+    background: var(--accent-tertiary);
 }
 
 .paginav .title {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: small;
-    color: var(--secondary);
+    color: var(--text-muted);
 }
 
 .paginav .prev,
@@ -473,7 +473,7 @@ a[href^="#fnref:"] {
 }
 
 a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
-    color: var(--darkcolor);
+    color: var(--accent-primary);
 }
 
 /* Archive
@@ -484,7 +484,7 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 }
 
 .archive-year {
-    margin-top: 20px;
+    margin-top: var(--space-4);
 }
 
 .archive-year-header {
@@ -493,13 +493,13 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 }
 
 .archive-year:not(:last-of-type) {
-    border-bottom: 2px solid var(--tertiary);
+    border-bottom: 2px solid var(--border-subtle);
 }
 
 .archive-month {
     display: flex;
     align-items: flex-start;
-    padding: 10px 0;
+    padding: var(--space-2) 0;
 }
 
 .archive-month-header {
@@ -511,19 +511,19 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 
 .archive-entry {
     position: relative;
-    padding: 5px 0;
-    margin: 10px 0;
+    padding: var(--space-1) 0;
+    margin: var(--space-2) 0;
 }
 
 .archive-entry-title {
-    margin: 5px 0;
+    margin: var(--space-1) 0;
     font-weight: var(--normal);
     font-size: var(--text-base);
 }
 
 .archive-count,
 .archive-meta {
-    color: var(--secondary);
+    color: var(--text-muted);
     font-size: 14px;
 }
 
@@ -533,23 +533,23 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 #searchbox input {
     padding: 4px 10px;
     width: 100%;
-    color: var(--primary);
+    color: var(--text-heading);
     border-radius: var(--radius);
-    background: var(--entry);
-    border: 1px solid var(--border);
+    background: var(--background-card);
+    border: 1px solid var(--border-default);
 }
 
 #searchResults li {
     list-style: none;
     border-radius: var(--radius);
-    padding: 10px;
-    margin: 10px 0;
+    padding: var(--space-2);
+    margin: var(--space-2) 0;
     position: relative;
     font-weight: 400;
 }
 
 #searchResults {
-    margin: 10px 0;
+    margin: var(--space-2) 0;
     width: 100%;
 }
 
@@ -563,5 +563,5 @@ a[href^="#fn:"]:hover, a[href^="#fnref:"]:hover {
 }
 
 #searchResults .focus {
-    border: 1px solid var(--darkcolor);
+    border: 1px solid var(--accent-primary);
 }

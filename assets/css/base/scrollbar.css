@@ -3,21 +3,21 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--tertiary);
-    border: 5px solid var(--theme);
+    background: var(--border-subtle);
+    border: 5px solid var(--background-page);
     border-radius: var(--radius);
 }
 
 [data-theme="light"] .list::-webkit-scrollbar-thumb {
-    border: 5px solid var(--code-bg);
+    border: 5px solid var(--background-code);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--secondary);
+    background: var(--text-muted);
 }
 
 ::-webkit-scrollbar:not(.highlighttable, .highlight table, .gist .highlight) {
-    background: var(--theme);
+    background: var(--background-page);
 }
 
 .post-content .highlighttable td .highlight pre code::-webkit-scrollbar {
@@ -25,7 +25,7 @@
 }
 
 .post-content :not(table) ::-webkit-scrollbar-thumb {
-    border: 2px solid var(--code-block-bg);
+    border: 2px solid var(--background-code);
     background: var(--scrollbar-code-thumb);
 }
 

@@ -5,6 +5,25 @@
 /* Navigation
    ========================================================================== */
 
+.header {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background: rgba(var(--background-page-rgb), 0.85);
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.header a {
+    transition: color 0.2s ease;
+}
+
+.header a:hover {
+    color: var(--accent-primary);
+}
+
 .nav {
     display: flex;
     flex-wrap: wrap;
@@ -22,6 +41,7 @@
 #menu {
     display: flex;
     margin: auto var(--gap);
+    text-transform: uppercase;
 }
 
 .logo {
@@ -64,6 +84,10 @@ button#theme-toggle {
     white-space: nowrap;
 }
 
+#menu-toggle {
+    display: none;
+}
+
 #menu li + li {
     margin-inline-start: var(--gap);
 }
@@ -74,7 +98,7 @@ button#theme-toggle {
 }
 
 #menu .active {
-    border-bottom: 2px solid var(--darkcolor);
+    border-bottom: 2px solid var(--accent-primary);
 }
 
 .lang-switch li,
@@ -108,6 +132,7 @@ button#theme-toggle {
     max-width: calc(var(--main-width) + var(--gap) * 2);
     margin: auto;
     padding: var(--gap);
+    padding-top: calc(var(--header-height) + var(--gap));
 }
 
 .page-header h1 {
@@ -119,10 +144,10 @@ button#theme-toggle {
 }
 
 .pagination a {
-    color: var(--theme);
+    color: var(--background-page);
     font-size: 13px;
     line-height: 36px;
-    background: var(--primary);
+    background: var(--text-heading);
     border-radius: calc(36px / 2);
     padding: 0 16px;
 }
@@ -133,22 +158,22 @@ button#theme-toggle {
 
 .social-icons a {
     display: inline-flex;
-    padding: 10px 14px 10px 0;
+    padding: var(--space-2) var(--space-2) var(--space-2) 0;
     transition: color 0.1s ease, transform 0.2s ease;
 }
 
 .social-icons a svg {
-    height: 30px;
-    width: 30px;
+    height: var(--space-5);
+    width: var(--space-5);
 }
 
 .social-icons a:hover {
-    color: var(--darkcolor);
+    color: var(--accent-primary);
     transform: scale(1.1);
 }
 
 [data-theme="dark"] .social-icons a:hover {
-    color: var(--lightcolor);
+    color: var(--accent-secondary);
 }
 
 /* Code blocks (positioning) */
@@ -189,12 +214,12 @@ pre:hover .copy-code {
 
 .footer {
     font-size: var(--text-sm);
-    color: var(--secondary);
+    color: var(--text-muted);
 }
 
 .top-link {
     font-size: var(--text-xs);
-    color: var(--secondary);
+    color: var(--text-muted);
 }
 
 .footer {
@@ -214,35 +239,35 @@ pre:hover .copy-code {
 }
 
 .footer a {
-    color: var(--secondary);
+    color: var(--text-muted);
 }
 
 .footer a:hover {
-    border-bottom: 2px solid var(--darkcolor);
+    border-bottom: 2px solid var(--accent-primary);
 }
 
 .top-link {
     visibility: hidden;
     position: fixed;
-    bottom: 60px;
-    right: 30px;
+    bottom: var(--space-10);
+    right: var(--space-5);
     z-index: 99;
-    background: var(--tertiary);
+    background: var(--border-subtle);
     width: 42px;
     height: 42px;
-    padding: 12px;
+    padding: var(--space-2);
     border-radius: 64px;
     transition: visibility 0.5s, opacity 0.8s linear;
 }
 
 .top-link,
 .top-link svg {
-    filter: drop-shadow(0px 0px 0px var(--theme));
+    filter: drop-shadow(0px 0px 0px var(--background-page));
 }
 
 .footer a:hover,
 .top-link:hover {
-    color: var(--secondary);
+    color: var(--text-muted);
 }
 
 .top-link:focus,

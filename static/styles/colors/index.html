@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Scheme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@800&family=TASA+Orbiter:wght@400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "TASA Orbiter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.5;
+            padding: 2rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "TASA Explorer", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-weight: 800;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        h4 {
+            font-family: "TASA Explorer", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .color-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+
+        .swatch {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .swatch-color {
+            height: 80px;
+        }
+
+        .swatch-info {
+            background: #fff;
+            font-size: 0.875rem;
+            padding: 0.75rem;
+        }
+
+        .swatch-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .swatch-value {
+            color: #666;
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.75rem;
+        }
+
+        .category-section {
+            margin-bottom: 3rem;
+        }
+
+        .mode-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .dark-mode {
+            background: rgb(29, 30, 32);
+            border-radius: 12px;
+            margin-top: 1rem;
+            padding: 1.5rem;
+        }
+
+        .dark-mode h3 {
+            color: #fff;
+            margin-top: 0;
+        }
+
+        .dark-mode .swatch {
+            border-color: #444;
+        }
+
+        .dark-mode .swatch-info {
+            background: rgb(46, 46, 51);
+            color: #fff;
+        }
+
+        .dark-mode .swatch-value {
+            color: #aaa;
+        }
+
+        .usage-section {
+            margin-top: 2rem;
+        }
+
+        .usage-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .usage-table th,
+        .usage-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+
+        .usage-table th {
+            background: #f6f8fa;
+            font-weight: 600;
+        }
+
+        .usage-table code {
+            background: #f6f8fa;
+            border-radius: 4px;
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.875rem;
+            padding: 0.125rem 0.375rem;
+        }
+
+        .notice-swatch {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .notice-swatch-color {
+            align-items: center;
+            border-left: 6px solid;
+            display: flex;
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            height: 60px;
+            padding-left: 1rem;
+        }
+
+        .notice-swatch-info {
+            background: #fff;
+            display: grid;
+            font-size: 0.7rem;
+            gap: 0.125rem;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 0.5rem;
+        }
+
+        .notice-swatch-info span {
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+        }
+
+        .dark-mode .notice-swatch {
+            border-color: #444;
+        }
+
+        .dark-mode .notice-swatch-info {
+            background: rgb(46, 46, 51);
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Scheme</h1>
+
+    <div class="category-section">
+        <h2>Backgrounds</h2>
+
+        <div class="mode-section">
+            <h3>Light</h3>
+            <div class="color-grid">
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #f6f8fa;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--background-page</div>
+                        <div class="swatch-value">#f6f8fa</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(255, 255, 255);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--background-card</div>
+                        <div class="swatch-value">rgb(255, 255, 255)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #eef1f5;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--background-code</div>
+                        <div class="swatch-value">#eef1f5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dark-mode">
+            <h3>Dark</h3>
+            <div class="color-grid">
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(29, 30, 32);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--background-page</div>
+                        <div class="swatch-value">rgb(29, 30, 32)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(46, 46, 51);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--background-card</div>
+                        <div class="swatch-value">rgb(46, 46, 51)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(36, 39, 46);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--background-code</div>
+                        <div class="swatch-value">rgb(36, 39, 46)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-section">
+            <h4>Usage</h4>
+            <table class="usage-table">
+                <tr>
+                    <th>Variable</th>
+                    <th>Use For</th>
+                </tr>
+                <tr>
+                    <td><code>--background-card</code></td>
+                    <td>Cards, elevated surfaces, post entries (creates contrast on list pages)</td>
+                </tr>
+                <tr>
+                    <td><code>--background-code</code></td>
+                    <td>Code blocks, inline code, list page backgrounds (light mode)</td>
+                </tr>
+                <tr>
+                    <td><code>--background-page</code></td>
+                    <td>All page backgrounds (body element), base background color</td>
+                </tr>
+                <tr>
+                    <td><code>--background-page-rgb</code></td>
+                    <td>When you need <code>--background-page</code> with opacity (e.g., <code>rgba(var(--background-page-rgb), 0.85)</code>)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Text</h2>
+
+        <div class="mode-section">
+            <h3>Light</h3>
+            <div class="color-grid">
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(30, 30, 30);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--text-heading</div>
+                        <div class="swatch-value">rgb(30, 30, 30)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(30, 30, 30);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--text-body</div>
+                        <div class="swatch-value">rgb(30, 30, 30)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(108, 108, 108);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--text-muted</div>
+                        <div class="swatch-value">rgb(108, 108, 108)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(165, 165, 165);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--text-subtle</div>
+                        <div class="swatch-value">rgb(165, 165, 165)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dark-mode">
+            <h3>Dark</h3>
+            <div class="color-grid">
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(218, 218, 219);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--text-heading</div>
+                        <div class="swatch-value">rgb(218, 218, 219)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(196, 196, 197);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--text-body</div>
+                        <div class="swatch-value">rgb(196, 196, 197)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(155, 156, 157);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--text-muted</div>
+                        <div class="swatch-value">rgb(155, 156, 157)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(165, 165, 165);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--text-subtle</div>
+                        <div class="swatch-value">rgb(165, 165, 165)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-section">
+            <h4>Usage</h4>
+            <table class="usage-table">
+                <tr>
+                    <th>Variable</th>
+                    <th>Use For</th>
+                </tr>
+                <tr>
+                    <td><code>--text-body</code></td>
+                    <td>Body text, main content</td>
+                </tr>
+                <tr>
+                    <td><code>--text-heading</code></td>
+                    <td>Headings, buttons, high-emphasis text</td>
+                </tr>
+                <tr>
+                    <td><code>--text-muted</code></td>
+                    <td>Metadata, descriptions, muted text, footer</td>
+                </tr>
+                <tr>
+                    <td><code>--text-subtle</code></td>
+                    <td>h4/h5 headings, very muted text</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Accents and Borders</h2>
+
+        <div class="mode-section">
+            <h3>Light</h3>
+            <div class="color-grid">
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(238, 238, 238);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--border-default</div>
+                        <div class="swatch-value">rgb(238, 238, 238)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(214, 214, 214);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--border-subtle</div>
+                        <div class="swatch-value">rgb(214, 214, 214)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #93a8d0;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--accent-primary</div>
+                        <div class="swatch-value">#93a8d0</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #6a7ba2;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--accent-secondary</div>
+                        <div class="swatch-value">#6a7ba2</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #cbd1de;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--accent-tertiary</div>
+                        <div class="swatch-value">#cbd1de</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dark-mode">
+            <h3>Dark</h3>
+            <div class="color-grid">
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(51, 51, 51);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--border-default</div>
+                        <div class="swatch-value">rgb(51, 51, 51)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(65, 66, 68);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--border-subtle</div>
+                        <div class="swatch-value">rgb(65, 66, 68)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #7aa2f7;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--accent-primary</div>
+                        <div class="swatch-value">#7aa2f7</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #93a8d0;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--accent-secondary</div>
+                        <div class="swatch-value">#93a8d0</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: #6a7ba2;"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--accent-tertiary</div>
+                        <div class="swatch-value">#6a7ba2</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-section">
+            <h4>Usage</h4>
+            <table class="usage-table">
+                <tr>
+                    <th>Variable</th>
+                    <th>Use For</th>
+                </tr>
+                <tr>
+                    <td><code>--accent-primary</code></td>
+                    <td>Links, interactive elements, hover underlines, active states</td>
+                </tr>
+                <tr>
+                    <td><code>--accent-secondary</code></td>
+                    <td>Secondary accent color, dark mode social icon hover</td>
+                </tr>
+                <tr>
+                    <td><code>--accent-tertiary</code></td>
+                    <td>Hover backgrounds, button backgrounds, subtle accents</td>
+                </tr>
+                <tr>
+                    <td><code>--border-default</code></td>
+                    <td>Element borders, dividers</td>
+                </tr>
+                <tr>
+                    <td><code>--border-subtle</code></td>
+                    <td>Borders, list markers, subtle accents, scroll-to-top button</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Scrollbar Colors</h2>
+
+        <div class="mode-section">
+            <h3>Light</h3>
+            <div class="color-grid">
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(113, 113, 117);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--scrollbar-code-thumb</div>
+                        <div class="swatch-value">rgb(113, 113, 117)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(163, 163, 165);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--scrollbar-code-thumb-hover</div>
+                        <div class="swatch-value">rgb(163, 163, 165)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(255, 255, 255);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--scrollbar-gist-border</div>
+                        <div class="swatch-value">rgb(255, 255, 255)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(173, 173, 173);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--scrollbar-gist-thumb</div>
+                        <div class="swatch-value">rgb(173, 173, 173)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(112, 112, 112);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--scrollbar-gist-thumb-hover</div>
+                        <div class="swatch-value">rgb(112, 112, 112)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dark-mode">
+            <h3>Dark</h3>
+            <div class="color-grid">
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(155, 156, 157);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--scrollbar-code-thumb</div>
+                        <div class="swatch-value">rgb(155, 156, 157)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(180, 180, 182);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--scrollbar-code-thumb-hover</div>
+                        <div class="swatch-value">rgb(180, 180, 182)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(29, 30, 32);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--scrollbar-gist-border</div>
+                        <div class="swatch-value">rgb(29, 30, 32)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(100, 100, 105);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--scrollbar-gist-thumb</div>
+                        <div class="swatch-value">rgb(100, 100, 105)</div>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="background: rgb(140, 140, 145);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">--scrollbar-gist-thumb-hover</div>
+                        <div class="swatch-value">rgb(140, 140, 145)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-section">
+            <h4>Usage</h4>
+            <table class="usage-table">
+                <tr>
+                    <th>Variable</th>
+                    <th>Use For</th>
+                </tr>
+                <tr>
+                    <td><code>--scrollbar-code-thumb</code></td>
+                    <td>Code block scrollbar thumb</td>
+                </tr>
+                <tr>
+                    <td><code>--scrollbar-code-thumb-hover</code></td>
+                    <td>Code block scrollbar thumb on hover</td>
+                </tr>
+                <tr>
+                    <td><code>--scrollbar-gist-border</code></td>
+                    <td>GitHub Gist embed scrollbar border</td>
+                </tr>
+                <tr>
+                    <td><code>--scrollbar-gist-thumb</code></td>
+                    <td>GitHub Gist embed scrollbar thumb</td>
+                </tr>
+                <tr>
+                    <td><code>--scrollbar-gist-thumb-hover</code></td>
+                    <td>GitHub Gist embed scrollbar thumb on hover</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Notice Colors</h2>
+
+        <div class="mode-section">
+            <h3>Light</h3>
+            <div class="color-grid">
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: #ecfdf5; border-color: #10b981; color: #047857;">abstract</div>
+                    <div class="notice-swatch-info">
+                        <span>#ecfdf5</span>
+                        <span>#10b981</span>
+                        <span>#047857</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: #fef2f2; border-color: #dc2626; color: #b91c1c;">danger</div>
+                    <div class="notice-swatch-info">
+                        <span>#fef2f2</span>
+                        <span>#dc2626</span>
+                        <span>#b91c1c</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: #faf5ff; border-color: #a855f7; color: #7e22ce;">example</div>
+                    <div class="notice-swatch-info">
+                        <span>#faf5ff</span>
+                        <span>#a855f7</span>
+                        <span>#7e22ce</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: #eff6ff; border-color: #3b82f6; color: #1d4ed8;">info</div>
+                    <div class="notice-swatch-info">
+                        <span>#eff6ff</span>
+                        <span>#3b82f6</span>
+                        <span>#1d4ed8</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: #eff6ff; border-color: #6366f1; color: #4338ca;">note</div>
+                    <div class="notice-swatch-info">
+                        <span>#eff6ff</span>
+                        <span>#6366f1</span>
+                        <span>#4338ca</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: #fffbeb; border-color: #f59e0b; color: #b45309;">question</div>
+                    <div class="notice-swatch-info">
+                        <span>#fffbeb</span>
+                        <span>#f59e0b</span>
+                        <span>#b45309</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: #f9fafb; border-color: #9ca3af; color: #4b5563;">quote</div>
+                    <div class="notice-swatch-info">
+                        <span>#f9fafb</span>
+                        <span>#9ca3af</span>
+                        <span>#4b5563</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: #f0fdf4; border-color: #22c55e; color: #15803d;">success</div>
+                    <div class="notice-swatch-info">
+                        <span>#f0fdf4</span>
+                        <span>#22c55e</span>
+                        <span>#15803d</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: #f0fdfa; border-color: #14b8a6; color: #0f766e;">tip</div>
+                    <div class="notice-swatch-info">
+                        <span>#f0fdfa</span>
+                        <span>#14b8a6</span>
+                        <span>#0f766e</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: #fdf4ff; border-color: #c026d3; color: #a21caf;">todo</div>
+                    <div class="notice-swatch-info">
+                        <span>#fdf4ff</span>
+                        <span>#c026d3</span>
+                        <span>#a21caf</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: #fff7ed; border-color: #f97316; color: #c2410c;">warning</div>
+                    <div class="notice-swatch-info">
+                        <span>#fff7ed</span>
+                        <span>#f97316</span>
+                        <span>#c2410c</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dark-mode">
+            <h3>Dark</h3>
+            <div class="color-grid">
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: rgba(16, 185, 129, 0.1); border-color: #34d399; color: #6ee7b7;">abstract</div>
+                    <div class="notice-swatch-info">
+                        <span>rgba(16,185,129,0.1)</span>
+                        <span>#34d399</span>
+                        <span>#6ee7b7</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: rgba(220, 38, 38, 0.1); border-color: #f87171; color: #fca5a5;">danger</div>
+                    <div class="notice-swatch-info">
+                        <span>rgba(220,38,38,0.1)</span>
+                        <span>#f87171</span>
+                        <span>#fca5a5</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: rgba(168, 85, 247, 0.1); border-color: #c084fc; color: #d8b4fe;">example</div>
+                    <div class="notice-swatch-info">
+                        <span>rgba(168,85,247,0.1)</span>
+                        <span>#c084fc</span>
+                        <span>#d8b4fe</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: rgba(59, 130, 246, 0.1); border-color: #60a5fa; color: #93c5fd;">info</div>
+                    <div class="notice-swatch-info">
+                        <span>rgba(59,130,246,0.1)</span>
+                        <span>#60a5fa</span>
+                        <span>#93c5fd</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: rgba(99, 102, 241, 0.1); border-color: #818cf8; color: #a5b4fc;">note</div>
+                    <div class="notice-swatch-info">
+                        <span>rgba(99,102,241,0.1)</span>
+                        <span>#818cf8</span>
+                        <span>#a5b4fc</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: rgba(245, 158, 11, 0.1); border-color: #fbbf24; color: #fcd34d;">question</div>
+                    <div class="notice-swatch-info">
+                        <span>rgba(245,158,11,0.1)</span>
+                        <span>#fbbf24</span>
+                        <span>#fcd34d</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: rgba(156, 163, 175, 0.1); border-color: #9ca3af; color: #d1d5db;">quote</div>
+                    <div class="notice-swatch-info">
+                        <span>rgba(156,163,175,0.1)</span>
+                        <span>#9ca3af</span>
+                        <span>#d1d5db</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: rgba(34, 197, 94, 0.1); border-color: #4ade80; color: #86efac;">success</div>
+                    <div class="notice-swatch-info">
+                        <span>rgba(34,197,94,0.1)</span>
+                        <span>#4ade80</span>
+                        <span>#86efac</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: rgba(20, 184, 166, 0.1); border-color: #2dd4bf; color: #5eead4;">tip</div>
+                    <div class="notice-swatch-info">
+                        <span>rgba(20,184,166,0.1)</span>
+                        <span>#2dd4bf</span>
+                        <span>#5eead4</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: rgba(192, 38, 211, 0.1); border-color: #e879f9; color: #f0abfc;">todo</div>
+                    <div class="notice-swatch-info">
+                        <span>rgba(192,38,211,0.1)</span>
+                        <span>#e879f9</span>
+                        <span>#f0abfc</span>
+                    </div>
+                </div>
+                <div class="notice-swatch">
+                    <div class="notice-swatch-color" style="background: rgba(249, 115, 22, 0.1); border-color: #fb923c; color: #fdba74;">warning</div>
+                    <div class="notice-swatch-info">
+                        <span>rgba(249,115,22,0.1)</span>
+                        <span>#fb923c</span>
+                        <span>#fdba74</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-section">
+            <h4>Usage</h4>
+            <p style="margin-bottom: 0.75rem;">Each notice type has three variables: <code>--notice-{type}-bg</code>, <code>--notice-{type}-border</code>, <code>--notice-{type}-text</code></p>
+            <table class="usage-table">
+                <tr>
+                    <th>Type</th>
+                    <th>Variables</th>
+                    <th>Use For</th>
+                </tr>
+                <tr>
+                    <td><code>abstract</code></td>
+                    <td><code>--notice-abstract-bg</code>, <code>--notice-abstract-border</code>, <code>--notice-abstract-text</code></td>
+                    <td>Summaries, abstracts (green)</td>
+                </tr>
+                <tr>
+                    <td><code>danger</code></td>
+                    <td><code>--notice-danger-bg</code>, <code>--notice-danger-border</code>, <code>--notice-danger-text</code></td>
+                    <td>Danger, bug, failure warnings (red) - shared by <code>.bug</code> and <code>.failure</code></td>
+                </tr>
+                <tr>
+                    <td><code>example</code></td>
+                    <td><code>--notice-example-bg</code>, <code>--notice-example-border</code>, <code>--notice-example-text</code></td>
+                    <td>Examples (purple)</td>
+                </tr>
+                <tr>
+                    <td><code>info</code></td>
+                    <td><code>--notice-info-bg</code>, <code>--notice-info-border</code>, <code>--notice-info-text</code></td>
+                    <td>Information callouts (blue)</td>
+                </tr>
+                <tr>
+                    <td><code>note</code></td>
+                    <td><code>--notice-note-bg</code>, <code>--notice-note-border</code>, <code>--notice-note-text</code></td>
+                    <td>Notes (indigo)</td>
+                </tr>
+                <tr>
+                    <td><code>question</code></td>
+                    <td><code>--notice-question-bg</code>, <code>--notice-question-border</code>, <code>--notice-question-text</code></td>
+                    <td>Questions (amber)</td>
+                </tr>
+                <tr>
+                    <td><code>quote</code></td>
+                    <td><code>--notice-quote-bg</code>, <code>--notice-quote-border</code>, <code>--notice-quote-text</code></td>
+                    <td>Quotations (gray)</td>
+                </tr>
+                <tr>
+                    <td><code>success</code></td>
+                    <td><code>--notice-success-bg</code>, <code>--notice-success-border</code>, <code>--notice-success-text</code></td>
+                    <td>Success messages (green)</td>
+                </tr>
+                <tr>
+                    <td><code>tip</code></td>
+                    <td><code>--notice-tip-bg</code>, <code>--notice-tip-border</code>, <code>--notice-tip-text</code></td>
+                    <td>Tips (teal)</td>
+                </tr>
+                <tr>
+                    <td><code>todo</code></td>
+                    <td><code>--notice-todo-bg</code>, <code>--notice-todo-border</code>, <code>--notice-todo-text</code></td>
+                    <td>Todo items (fuchsia)</td>
+                </tr>
+                <tr>
+                    <td><code>warning</code></td>
+                    <td><code>--notice-warning-bg</code>, <code>--notice-warning-border</code>, <code>--notice-warning-text</code></td>
+                    <td>Warnings (orange)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

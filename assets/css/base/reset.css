@@ -20,13 +20,13 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--primary);
+    color: var(--text-heading);
 }
 
 body {
     line-height: 1.6;
     word-break: break-word;
-    background: var(--theme);
+    background: var(--background-page);
 }
 
 article,
@@ -107,7 +107,7 @@ input[type=submit] {
 
 input:-webkit-autofill,
 textarea:-webkit-autofill {
-    box-shadow: 0 0 0 50px var(--theme) inset;
+    box-shadow: 0 0 0 50px var(--background-page) inset;
 }
 
 img {

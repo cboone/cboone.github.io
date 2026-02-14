@@ -11,7 +11,7 @@
 
 /* Vertical line */
 .timeline::before {
-  background: var(--tertiary);
+  background: var(--border-subtle);
   bottom: 0;
   content: "";
   left: 7px;
@@ -31,7 +31,7 @@
 }
 
 .timeline-year-label {
-  color: var(--secondary);
+  color: var(--text-muted);
   font-size: var(--text-sm);
   font-weight: var(--semibold);
   letter-spacing: var(--tracking-wide);
@@ -44,8 +44,8 @@
 
 /* Year marker (larger circle) */
 .timeline-year-label::before {
-  background: var(--darkcolor);
-  border: 3px solid var(--theme);
+  background: var(--accent-primary);
+  border: 3px solid var(--background-page);
   border-radius: 50%;
   content: "";
   height: 14px;
@@ -58,8 +58,8 @@
 
 /* Individual entry */
 .timeline-entry {
-  background: var(--entry);
-  border: 1px solid var(--border);
+  background: var(--background-card);
+  border: 1px solid var(--border-default);
   border-radius: var(--radius);
   display: block;
   margin-bottom: var(--gap);
@@ -74,13 +74,13 @@
 }
 
 .timeline-entry:hover {
-  border-color: var(--darkcolor);
+  border-color: var(--accent-primary);
 }
 
 /* Entry marker (smaller circle) */
 .timeline-marker {
-  background: var(--lightcolor);
-  border: 2px solid var(--theme);
+  background: var(--accent-tertiary);
+  border: 2px solid var(--background-page);
   border-radius: 50%;
   height: 10px;
   left: -29px;
@@ -91,20 +91,20 @@
 }
 
 .timeline-entry:hover .timeline-marker {
-  background: var(--darkcolor);
+  background: var(--accent-primary);
 }
 
 /* Entry date */
 .timeline-date {
-  color: var(--secondary);
+  color: var(--text-muted);
   display: block;
   font-size: var(--text-sm);
-  margin-bottom: 6px;
+  margin-bottom: var(--space-1);
 }
 
 /* Entry title */
 .timeline-header {
-  color: var(--primary);
+  color: var(--text-heading);
   font-size: var(--text-lg);
   line-height: var(--leading-tight);
   margin: 0;
@@ -112,14 +112,14 @@
 
 /* Entry cover image */
 .timeline-cover-wrapper {
-  margin-top: 12px;
+  margin-top: var(--space-2);
   max-height: 12em;
   overflow: hidden;
   position: relative;
 }
 
 .timeline-cover-wrapper::after {
-  background: linear-gradient(to bottom, transparent, var(--entry));
+  background: linear-gradient(to bottom, transparent, var(--background-card));
   bottom: 0;
   content: "";
   height: 3em;
@@ -139,25 +139,25 @@
 .timeline-description {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  color: var(--content);
+  color: var(--text-body);
   display: -webkit-box;
   font-size: var(--text-base);
   line-height: var(--leading-normal);
-  margin: 10px 0 0;
+  margin: var(--space-2) 0 0;
   overflow: hidden;
 }
 
 /* Status badge (optional) */
 .timeline-status {
-  background: var(--code-bg);
+  background: var(--background-code);
   border-radius: var(--radius-sm);
-  color: var(--secondary);
+  color: var(--text-muted);
   display: inline-block;
   font-size: var(--text-xs);
   font-weight: var(--semibold);
   letter-spacing: var(--tracking-wide);
-  margin-top: 12px;
-  padding: 4px 8px;
+  margin-top: var(--space-2);
+  padding: var(--space-1) var(--space-2);
   text-transform: uppercase;
 }
 
@@ -172,8 +172,8 @@
 }
 
 .timeline-status--archived {
-  background: var(--code-bg);
-  color: var(--secondary);
+  background: var(--background-code);
+  color: var(--text-muted);
 }
 
 /* Dark mode adjustments */
@@ -227,19 +227,19 @@
 /* Project external link */
 .project-external-link {
   align-items: center;
-  background: var(--tertiary);
+  background: var(--border-subtle);
   border-radius: var(--radius);
-  color: var(--primary);
+  color: var(--text-heading);
   display: inline-flex;
   font-size: var(--text-sm);
-  gap: 6px;
-  margin-bottom: 18px;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
   margin-top: 0;
-  padding: 8px 12px;
+  padding: var(--space-2) var(--space-2);
   text-decoration: none;
   transition: background 0.1s;
 }
 
 .project-external-link:hover {
-  background: var(--lightcolor);
+  background: var(--accent-tertiary);
 }

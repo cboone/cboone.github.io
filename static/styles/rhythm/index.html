@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacing Scale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@800&family=TASA+Orbiter:wght@400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-display: swap;
+            font-family: "Iosevka Slab Extended";
+            font-style: normal;
+            font-weight: 400;
+            src: url("/fonts/IosevkaSlab-Extended.woff2") format("woff2");
+        }
+
+        :root {
+            /* Vertical rhythm - 6px base unit (1/3 of base font size) */
+            --rhythm-unit: 6px;
+            --space-1: 6px;
+            --space-2: 12px;
+            --space-3: 18px;
+            --space-4: 24px;
+            --space-5: 30px;
+            --space-6: 36px;
+            --space-8: 48px;
+            --space-10: 60px;
+            --space-12: 72px;
+            --space-16: 96px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-family: "TASA Orbiter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 18px;
+            line-height: 1.5;
+            padding: 2rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "TASA Explorer", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-weight: 800;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        h4 {
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        code {
+            background: #f6f8fa;
+            border-radius: 4px;
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.875rem;
+            padding: 0.125rem 0.375rem;
+        }
+
+        .intro {
+            background: #f0f4f8;
+            border-left: 4px solid #93a8d0;
+            border-radius: 8px;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .category-section {
+            margin-bottom: 3rem;
+        }
+
+        /* Scale visualization */
+        .scale-grid {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .scale-item {
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 140px 100px 1fr;
+            overflow: hidden;
+            padding: 0.75rem 1rem;
+        }
+
+        .scale-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.125rem;
+        }
+
+        .scale-var {
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .scale-value {
+            color: #666;
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.75rem;
+        }
+
+        .scale-units {
+            color: #999;
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.75rem;
+        }
+
+        .scale-visual {
+            align-items: center;
+            display: flex;
+        }
+
+        .scale-bar {
+            background: linear-gradient(135deg, #93a8d0 0%, #6a7ba2 100%);
+            border-radius: 4px;
+            height: 24px;
+        }
+
+        /* Usage table */
+        .usage-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .usage-table th,
+        .usage-table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+
+        .usage-table th {
+            background: #f6f8fa;
+            font-weight: 600;
+        }
+
+        /* Spacing demo */
+        .spacing-demo {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-top: 1rem;
+            padding: 1.5rem;
+        }
+
+        .spacing-demo-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .spacing-demo-element {
+            background: #f6f8fa;
+            border-radius: 4px;
+            padding: 0.75rem 1rem;
+        }
+
+        .spacing-demo-element:first-child {
+            font-family: "TASA Explorer", sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+
+        .spacing-demo-gap {
+            align-items: center;
+            background: linear-gradient(135deg, rgba(147, 168, 208, 0.3) 0%, rgba(106, 123, 162, 0.3) 100%);
+            border-left: 3px solid #93a8d0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .spacing-demo-label {
+            background: white;
+            border-radius: 4px;
+            color: #6a7ba2;
+            font-family: "Iosevka Slab Extended", monospace;
+            font-size: 0.7rem;
+            padding: 0.125rem 0.5rem;
+        }
+
+        /* Comparison blocks */
+        .comparison {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .comparison-block {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-header {
+            background: #f6f8fa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.75rem 1rem;
+        }
+
+        .comparison-header.bad {
+            background: #fef2f2;
+            border-color: #fecaca;
+            color: #b91c1c;
+        }
+
+        .comparison-header.good {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+            color: #15803d;
+        }
+
+        .comparison-content {
+            padding: 1rem;
+        }
+
+        .comparison-content pre {
+            background: #f6f8fa;
+            border-radius: 4px;
+            font-family: "Iosevka Slab Extended", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.8rem;
+            margin: 0;
+            overflow-x: auto;
+            padding: 0.75rem;
+        }
+
+        /* Dark mode preview */
+        .dark-mode {
+            background: rgb(29, 30, 32);
+            border-radius: 12px;
+            color: rgb(196, 196, 197);
+            margin-top: 1rem;
+            padding: 1.5rem;
+        }
+
+        .dark-mode h3 {
+            color: #fff;
+            margin-top: 0;
+        }
+
+        .dark-mode .scale-item {
+            border-color: #444;
+        }
+
+        .dark-mode .scale-value,
+        .dark-mode .scale-units {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Spacing Scale</h1>
+
+    <div class="intro">
+        <p>This site uses a <strong>spacing scale</strong> based on a <strong>6px unit</strong> (one-third of the 18px base font size). All margins, padding, and gaps use multiples of this unit.</p>
+        <p>This is not a true baseline grid (which would require line-heights to be exact multiples of the unit). Instead, it provides <strong>consistent, proportional spacing</strong> between elements.</p>
+    </div>
+
+    <div class="category-section">
+        <h2>Spacing Scale</h2>
+        <p style="color: #666; margin-bottom: 1.5rem;">Base unit: 6px (1/3 of 18px body text)</p>
+
+        <div class="scale-grid">
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--space-1</span>
+                    <span class="scale-value">6px</span>
+                </div>
+                <span class="scale-units">1 unit</span>
+                <div class="scale-visual">
+                    <div class="scale-bar" style="width: 6px;"></div>
+                </div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--space-2</span>
+                    <span class="scale-value">12px</span>
+                </div>
+                <span class="scale-units">2 units</span>
+                <div class="scale-visual">
+                    <div class="scale-bar" style="width: 12px;"></div>
+                </div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--space-3</span>
+                    <span class="scale-value">18px</span>
+                </div>
+                <span class="scale-units">3 units</span>
+                <div class="scale-visual">
+                    <div class="scale-bar" style="width: 18px;"></div>
+                </div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--space-4</span>
+                    <span class="scale-value">24px</span>
+                </div>
+                <span class="scale-units">4 units</span>
+                <div class="scale-visual">
+                    <div class="scale-bar" style="width: 24px;"></div>
+                </div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--space-5</span>
+                    <span class="scale-value">30px</span>
+                </div>
+                <span class="scale-units">5 units</span>
+                <div class="scale-visual">
+                    <div class="scale-bar" style="width: 30px;"></div>
+                </div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--space-6</span>
+                    <span class="scale-value">36px</span>
+                </div>
+                <span class="scale-units">6 units</span>
+                <div class="scale-visual">
+                    <div class="scale-bar" style="width: 36px;"></div>
+                </div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--space-8</span>
+                    <span class="scale-value">48px</span>
+                </div>
+                <span class="scale-units">8 units</span>
+                <div class="scale-visual">
+                    <div class="scale-bar" style="width: 48px;"></div>
+                </div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--space-10</span>
+                    <span class="scale-value">60px</span>
+                </div>
+                <span class="scale-units">10 units</span>
+                <div class="scale-visual">
+                    <div class="scale-bar" style="width: 60px;"></div>
+                </div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--space-12</span>
+                    <span class="scale-value">72px</span>
+                </div>
+                <span class="scale-units">12 units</span>
+                <div class="scale-visual">
+                    <div class="scale-bar" style="width: 72px;"></div>
+                </div>
+            </div>
+            <div class="scale-item">
+                <div class="scale-meta">
+                    <span class="scale-var">--space-16</span>
+                    <span class="scale-value">96px</span>
+                </div>
+                <span class="scale-units">16 units</span>
+                <div class="scale-visual">
+                    <div class="scale-bar" style="width: 96px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Usage Guidelines</h2>
+
+        <h4>Recommended Use Cases</h4>
+        <table class="usage-table">
+            <tr>
+                <th>Variable</th>
+                <th>Size</th>
+                <th>Use For</th>
+            </tr>
+            <tr>
+                <td><code>--space-1</code></td>
+                <td>6px</td>
+                <td>Tight gaps, list item margins, small inline spacing</td>
+            </tr>
+            <tr>
+                <td><code>--space-2</code></td>
+                <td>12px</td>
+                <td>Default gaps, button padding, card internal spacing</td>
+            </tr>
+            <tr>
+                <td><code>--space-3</code></td>
+                <td>18px</td>
+                <td>Paragraph margins, image margins (matches base font)</td>
+            </tr>
+            <tr>
+                <td><code>--space-4</code></td>
+                <td>24px</td>
+                <td>Section padding, content gaps, h5/h6 top margins</td>
+            </tr>
+            <tr>
+                <td><code>--space-5</code></td>
+                <td>30px</td>
+                <td>Horizontal rules, h4 top margins</td>
+            </tr>
+            <tr>
+                <td><code>--space-6</code></td>
+                <td>36px</td>
+                <td>h3 top margins, larger component spacing</td>
+            </tr>
+            <tr>
+                <td><code>--space-8</code></td>
+                <td>48px</td>
+                <td>h1/h2 top margins, major section breaks</td>
+            </tr>
+            <tr>
+                <td><code>--space-10</code></td>
+                <td>60px</td>
+                <td>Post footer margins, large section gaps</td>
+            </tr>
+            <tr>
+                <td><code>--space-12</code></td>
+                <td>72px</td>
+                <td>Page-level spacing, hero sections</td>
+            </tr>
+            <tr>
+                <td><code>--space-16</code></td>
+                <td>96px</td>
+                <td>Extra large gaps, footer/header heights</td>
+            </tr>
+        </table>
+
+        <h4>Layout Variables</h4>
+        <p>The existing layout variables now reference the spacing scale:</p>
+        <table class="usage-table">
+            <tr>
+                <th>Variable</th>
+                <th>Value</th>
+                <th>Use For</th>
+            </tr>
+            <tr>
+                <td><code>--gap</code></td>
+                <td>var(--space-4) = 24px</td>
+                <td>Standard layout gap, container padding</td>
+            </tr>
+            <tr>
+                <td><code>--content-gap</code></td>
+                <td>var(--space-4) = 24px</td>
+                <td>Gap between content elements</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="category-section">
+        <h2>Code Examples</h2>
+
+        <div class="comparison">
+            <div class="comparison-block">
+                <div class="comparison-header bad">Avoid: Magic Numbers</div>
+                <div class="comparison-content">
+                    <pre>.component {
+    margin-top: 47px;
+    padding: 13px 22px;
+    gap: 9px;
+}</pre>
+                </div>
+            </div>
+            <div class="comparison-block">
+                <div class="comparison-header good">Use: Rhythm Variables</div>
+                <div class="comparison-content">
+                    <pre>.component {
+    margin-top: var(--space-8);
+    padding: var(--space-2) var(--space-4);
+    gap: var(--space-2);
+}</pre>
+                </div>
+            </div>
+        </div>
+
+        <h4>Heading Margins Pattern</h4>
+        <p>Headings use larger top margins to create visual separation, with smaller bottom margins to connect with their content:</p>
+        <div class="comparison">
+            <div class="comparison-block">
+                <div class="comparison-header good">Heading Spacing</div>
+                <div class="comparison-content">
+                    <pre>.post-content h2 {
+    /* More space above, less below */
+    margin: var(--space-8) auto var(--space-4);
+}
+
+.post-content h3 {
+    margin: var(--space-6) 0 var(--space-3);
+}
+
+.post-content h4 {
+    margin: var(--space-5) 0 var(--space-2);
+}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Spacing in Practice</h2>
+        <p>The colored bars show actual spacing values between elements:</p>
+
+        <div class="spacing-demo">
+            <div class="spacing-demo-item">
+                <div class="spacing-demo-element">Heading</div>
+                <div class="spacing-demo-gap" style="height: var(--space-4);">
+                    <span class="spacing-demo-label">--space-4 (24px)</span>
+                </div>
+                <div class="spacing-demo-element">Paragraph text follows the heading with comfortable separation.</div>
+                <div class="spacing-demo-gap" style="height: var(--space-4);">
+                    <span class="spacing-demo-label">--space-4 (24px)</span>
+                </div>
+                <div class="spacing-demo-element">Another paragraph maintains the same rhythm.</div>
+                <div class="spacing-demo-gap" style="height: var(--space-2);">
+                    <span class="spacing-demo-label">--space-2 (12px)</span>
+                </div>
+                <div class="spacing-demo-element" style="font-size: var(--text-sm); color: #666;">Tighter spacing groups related items like metadata.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Design Rationale</h2>
+
+        <h4>Why 6px?</h4>
+        <p>The 6px base unit was chosen because:</p>
+        <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+            <li style="margin-bottom: 0.5rem;">It divides evenly into the 18px base font size (18 / 3 = 6)</li>
+            <li style="margin-bottom: 0.5rem;">It creates a flexible scale with useful intermediate values</li>
+            <li style="margin-bottom: 0.5rem;">Common multiples (12, 24, 48) align with typical design expectations</li>
+            <li style="margin-bottom: 0.5rem;">Small enough for fine control, large enough to be visually meaningful</li>
+        </ul>
+
+        <h4>Why Not True Baseline Alignment?</h4>
+        <p>True baseline grid alignment requires that line-height be an exact multiple of the rhythm unit. With 18px text and 1.5 line-height, each line is 27px tall, which doesn't divide evenly into 6px.</p>
+        <p>Achieving true baseline alignment would require either:</p>
+        <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+            <li style="margin-bottom: 0.5rem;">Changing line-height to 24px (1.33) or 30px (1.67), which compromises readability</li>
+            <li style="margin-bottom: 0.5rem;">Complex calculations for every element to compensate for the mismatch</li>
+        </ul>
+        <p>The spacing scale approach provides 90% of the visual benefit with none of the complexity.</p>
+
+        <h4>Relationship to Typography</h4>
+        <p>The spacing scale relates to the type scale:</p>
+        <table class="usage-table">
+            <tr>
+                <th>Typography</th>
+                <th>Size</th>
+                <th>Related Spacing</th>
+            </tr>
+            <tr>
+                <td><code>--text-base</code></td>
+                <td>18px</td>
+                <td><code>--space-3</code> (exact match)</td>
+            </tr>
+            <tr>
+                <td><code>--text-sm</code></td>
+                <td>14px</td>
+                <td><code>--space-2</code> (close: 12px)</td>
+            </tr>
+            <tr>
+                <td><code>--text-lg</code></td>
+                <td>22px</td>
+                <td><code>--space-4</code> (close: 24px)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="category-section">
+        <h2>Dark Mode</h2>
+
+        <div class="dark-mode">
+            <h3>Spacing in Dark Mode</h3>
+            <p style="margin-bottom: 1rem;">Vertical rhythm values remain consistent between light and dark modes. Only colors change, not spacing.</p>
+
+            <div class="scale-grid" style="max-width: 400px;">
+                <div class="scale-item">
+                    <div class="scale-meta">
+                        <span class="scale-var">--space-2</span>
+                        <span class="scale-value">12px</span>
+                    </div>
+                    <span class="scale-units">2 units</span>
+                    <div class="scale-visual">
+                        <div class="scale-bar" style="width: 12px; background: linear-gradient(135deg, #7aa2f7 0%, #93a8d0 100%);"></div>
+                    </div>
+                </div>
+                <div class="scale-item">
+                    <div class="scale-meta">
+                        <span class="scale-var">--space-4</span>
+                        <span class="scale-value">24px</span>
+                    </div>
+                    <span class="scale-units">4 units</span>
+                    <div class="scale-visual">
+                        <div class="scale-bar" style="width: 24px; background: linear-gradient(135deg, #7aa2f7 0%, #93a8d0 100%);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

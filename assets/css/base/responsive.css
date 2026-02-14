@@ -10,6 +10,44 @@
 
 /* Mobile and tablet */
 @media screen and (max-width: 768px) {
+    /* header */
+    .header {
+        background: var(--background-page);
+        position: static;
+    }
+
+    .main {
+        padding-top: var(--gap);
+    }
+
+    /* mobile menu */
+    #menu-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: block;
+        margin: auto var(--gap);
+        padding: 0;
+    }
+
+    #menu {
+        background: var(--background-page);
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+        margin: 0;
+        padding: var(--gap);
+    }
+
+    #menu.open {
+        display: flex;
+    }
+
+    #menu li + li {
+        margin-inline-start: 0;
+        margin-top: var(--gap);
+    }
+
     /* theme-vars */
     :root {
         --gap: 14px;
