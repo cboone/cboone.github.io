@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "setup": "ln -s \"$CONDUCTOR_ROOT_PATH/.claude/settings.local.json\" ./claude/"
-  }
-}
