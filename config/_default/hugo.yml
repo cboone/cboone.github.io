@@ -40,7 +40,9 @@ menu:
       weight: 3
 
 params:
-  author: Christopher Boone
+  author:
+    email: contact@catamounthardware.com
+    name: Christopher Boone
 
   MainSections: ["posts"]
 
