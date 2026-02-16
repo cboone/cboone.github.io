@@ -247,7 +247,7 @@ pre:hover .copy-code {
 }
 
 .top-link {
-    visibility: hidden;
+    display: none;
     position: fixed;
     bottom: var(--space-10);
     right: var(--space-5);
@@ -257,7 +257,6 @@ pre:hover .copy-code {
     height: 42px;
     padding: var(--space-2);
     border-radius: 64px;
-    transition: visibility 0.5s, opacity 0.8s linear;
 }
 
 .top-link,
