@@ -20,17 +20,8 @@ hugo server
 # Build site (outputs to public/)
 hugo
 
-# Create new LLM post
-hugo new llms/my-post.md
-
-# Create new math post
-hugo new math/my-post.md
-
-# Create new project
-hugo new projects/my-project.md
-
-# Create new tool post
-hugo new tools/my-tool.md
+# Create new post (then set sections in front matter)
+hugo new content posts/my-post.md
 ```
 
 ## Project Structure
@@ -39,20 +30,21 @@ hugo new tools/my-tool.md
 .
 ├── archetypes/          # Templates for new content
 ├── assets/css/          # Custom CSS overrides
+├── config/_default/     # Hugo configuration (hugo.yml)
 ├── content/
-│   ├── llms/            # LLM-related posts
-│   ├── math/            # Math-related posts
+│   ├── llms/            # LLM category listing (_index.md with section-taxonomy layout)
+│   ├── posts/           # All posts (categorized via sections front matter)
 │   ├── projects/        # Project pages
-│   └── tools/           # Tools I use
+│   ├── reports/         # Report pages
+│   └── tools/           # Tools category listing (_index.md with section-taxonomy layout)
 ├── layouts/             # Custom layout overrides
 ├── static/              # Static files (images, favicon, etc.)
-├── go.mod               # Hugo module dependencies (includes PaperMod theme)
-└── config.yml           # Hugo configuration
+└── go.mod               # Hugo module dependencies (includes PaperMod theme)
 ```
 
 ## Configuration
 
-Main configuration is in `config.yml`. Key sections:
+Main configuration is in `config/_default/hugo.yml`. Key sections:
 
 - `menu.main` - Navigation menu items
 - `params.profileMode` - Homepage profile settings
@@ -60,10 +52,16 @@ Main configuration is in `config.yml`. Key sections:
 
 ## Content
 
-- LLM posts go in `content/llms/` with front matter including `date`, `title`, and optional `description`
-- Math posts go in `content/math/` with front matter including `date`, `title`, and optional `description`
+All posts live in `content/posts/` and are categorized via a custom `sections` taxonomy in the front matter:
+
+```yaml
+sections: ["llms"]    # or "tools", "projects", etc.
+```
+
+Category listing pages (e.g., `content/llms/_index.md`) use the `section-taxonomy` layout, which queries all posts matching the given `sections` value and displays them automatically.
+
+- Posts go in `content/posts/` with front matter including `date`, `title`, `sections`, and optional `description`
 - Projects go in `content/projects/` with similar front matter
-- Tool posts go in `content/tools/` with similar front matter
 - Static files (images, PDFs) go in `static/`
 
 ## Deployment

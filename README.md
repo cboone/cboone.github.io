@@ -13,9 +13,22 @@ git clone https://github.com/cboone/cboone.github.io.git
 
 # Run local server
 hugo server
+
+# Create a new post (then set sections in front matter)
+hugo new content posts/my-post.md
 ```
 
 Site available at http://localhost:1313/
+
+## Content
+
+All posts live in `content/posts/` and are categorized via a custom `sections` taxonomy in the front matter:
+
+```yaml
+sections: ["llms"]    # or "tools", "projects", etc.
+```
+
+Category listing pages (e.g., `content/llms/_index.md`) use a `section-taxonomy` layout that automatically displays all posts matching their section.
 
 ## Style References
 
