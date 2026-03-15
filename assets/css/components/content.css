@@ -97,6 +97,12 @@
 .toc a:hover {
     box-shadow: 0 2px 0 var(--accent-primary);
     color: currentColor;
+    transition: color 0.2s ease;
+}
+
+.post-content a:hover,
+.post-meta a:hover {
+    color: var(--accent-primary);
 }
 
 .post-content a code {
