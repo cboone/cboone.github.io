@@ -21,24 +21,6 @@ taxonomies:
   section: sections
   tag: tags
 
-menu:
-  main:
-    - name: LLMs
-      url: llms/
-      weight: 1
-    # - name: Math
-    #   url: math/
-    #   weight: 2
-    - name: Projects
-      url: projects/
-      weight: 4
-    - name: Search
-      url: search/
-      weight: 5
-    - name: Tools
-      url: tools/
-      weight: 3
-
 params:
   author:
     email: contact@catamounthardware.com
@@ -80,20 +62,6 @@ params:
     imageTitle: Christopher Boone
     imageHeight: 160
     imageWidth: 160
-
-    buttons:
-      - name: LLMs
-        url: llms/
-      # - name: Math
-      #   url: math/
-      - name: Tools
-        url: tools/
-      - divider: true
-      - name: Projects
-        url: projects/
-      - divider: true
-      - name: Search
-        url: search/
 
   socialIcons:
     - name: GitHub
