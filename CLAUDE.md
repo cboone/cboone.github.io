@@ -2,12 +2,12 @@
 
 ## Project Overview
 
-Personal website for Christopher Boone, built with Hugo and the PaperMod theme, as updated by [Pascal Michaillat](https://pascalmichaillat.org)'s [hugo-website theme](https://github.com/pmichaillat/hugo-website). Deployed to GitHub Pages at `https://cboone.github.io`.
+Personal website for Christopher Boone, built with Hugo. Originally based on the [PaperMod theme](https://github.com/adityatelange/hugo-PaperMod), as updated by [Pascal Michaillat](https://pascalmichaillat.org)'s [hugo-website theme](https://github.com/pmichaillat/hugo-website). Deployed to GitHub Pages at `https://cboone.github.io`.
 
 ## Tech Stack
 
 - **Static site generator:** Hugo
-- **Theme:** PaperMod (Hugo Module, see `go.mod`)
+- **Theme:** PaperMod (vendored in `layouts/`, `assets/`, and `i18n/`)
 - **Deployment:** GitHub Actions to GitHub Pages
 - **Branch strategy:** `main` for development, `production` for deployment
 
@@ -38,21 +38,25 @@ hugo new tools/my-tool.md
 ```text
 .
 ├── archetypes/          # Templates for new content
-├── assets/css/          # Custom CSS overrides
+├── assets/
+│   ├── css/             # Stylesheets (variables, base, components)
+│   └── js/              # JavaScript (search functionality)
+├── config/              # Hugo configuration (split by environment)
 ├── content/
 │   ├── llms/            # LLM-related posts
 │   ├── math/            # Math-related posts
 │   ├── projects/        # Project pages
 │   └── tools/           # Tools I use
-├── layouts/             # Custom layout overrides
+├── i18n/                # Internationalization strings
+├── layouts/             # Hugo templates (based on PaperMod)
+├── LICENSES/            # Third-party licenses (PaperMod, Fuse.js)
 ├── static/              # Static files (images, favicon, etc.)
-├── go.mod               # Hugo module dependencies (includes PaperMod theme)
-└── config.yml           # Hugo configuration
+└── go.mod               # Hugo module definition
 ```
 
 ## Configuration
 
-Main configuration is in `config.yml`. Key sections:
+Main configuration is in `config/_default/hugo.yml` with environment-specific overrides in `config/development/` and `config/production/`. Key sections:
 
 - `menu.main` - Navigation menu items
 - `params.profileMode` - Homepage profile settings
