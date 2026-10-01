@@ -2,10 +2,6 @@ baseURL: "https://cboone.github.io/"
 title: Christopher Boone
 enableInlineShortcodes: true
 
-module:
-  imports:
-    - path: github.com/adityatelange/hugo-PaperMod
-
 outputs:
   home:
     - HTML
